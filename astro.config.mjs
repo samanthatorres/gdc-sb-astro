@@ -16,7 +16,8 @@ export default defineConfig({
         page: 'storyblok/Page',
         feature: 'storyblok/Feature',
         grid: 'storyblok/Grid',
-        teaser: 'storyblok/Teaser',
+        hero: 'storyblok/Hero',
+        config: 'storyblok/Config'
     }
   }), tailwind()],
   vite: {

@@ -1,0 +1,15 @@
+---
+import RichTextRenderer, { type RichTextType } from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
+import { storyblokEditable } from "@storyblok/astro";
+
+export interface Props {
+  blok: {
+    text: RichTextType;
+  };
+}
+
+const { blok } = Astro.props;
+const { text } = blok;
+---
+
+<RichTextRenderer content={text} {...storyblokEditable(blok)} />

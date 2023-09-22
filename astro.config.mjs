@@ -19,7 +19,9 @@ export default defineConfig({
         grid: 'storyblok/Grid',
         hero: 'storyblok/Hero',
         config: 'storyblok/Config',
-        liststack: 'storyblok/Liststack'
+        liststack: 'storyblok/Liststack',
+        rich_text: "storyblok/RichText",
+        listitem: 'storyblok/Listitem'
     }
   }), tailwind()],
   vite: {

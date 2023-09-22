@@ -14,10 +14,12 @@ export default defineConfig({
     },
     components: {
         page: 'storyblok/Page',
+        blog: 'storyblok/Blog',
         feature: 'storyblok/Feature',
         grid: 'storyblok/Grid',
         hero: 'storyblok/Hero',
-        config: 'storyblok/Config'
+        config: 'storyblok/Config',
+        liststack: 'storyblok/Liststack'
     }
   }), tailwind()],
   vite: {

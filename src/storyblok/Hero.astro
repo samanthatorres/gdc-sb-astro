@@ -2,24 +2,22 @@
 import { storyblokEditable } from '@storyblok/astro'
  
  const { blok } = Astro.props
- const cta = true
+ const testing = true
  ---
   
  <div {...storyblokEditable(blok)}>
-   <p class="text-3xl text-[#026670] italic text-left">
-      {blok.prehead} 
+   <p class="text-l text-[#026670] italic text-left">
+     {blok.prehead} 
    </p>   
-   <h1 class='py-10 text-6xl text-[#50b0ae] font-bold text-left'>
+   <h1 class='py-8 text-6xl text-[#50b0ae] font-bold text-left'>
      {blok.headline}
    </h1>
    <p class="text-left">
-      {blok.description}
+     {blok.description}
    </p>
-
-   {cta ? 
+   {testing ?
     <a href="/contact" title="Connect with an Expert from Gray Dot Co"><button class="rounded-full my-3 p-3 bg-[#026670]">Connect with an Expert</button></a> 
-    : <p>nope</p>
+    :
+    <p>nada</p> 
    }
-   
-
  </div>

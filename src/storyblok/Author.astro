@@ -1,0 +1,13 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
+ 
+ const { blok } = Astro.props
+ ---
+  
+ <div
+   {...storyblokEditable(blok)}
+   class='w-full p-12 bg-[#f7f6fd] rounded-[5px] text-center'
+ >
+   <h3 class='text-2xl text-[#000] font-bold'>{blok.Name}</h3>
+ </div>

@@ -21,7 +21,8 @@ export default defineConfig({
         config: 'storyblok/Config',
         liststack: 'storyblok/Liststack',
         rich_text: "storyblok/RichText",
-        listitem: 'storyblok/Listitem'
+        listitem: 'storyblok/Listitem',
+        author: 'storyblok/Author'
     }
   }), tailwind()],
   vite: {

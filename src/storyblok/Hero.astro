@@ -2,15 +2,16 @@
 import { storyblokEditable } from '@storyblok/astro'
  
  const { blok } = Astro.props
+ const TitleElement = blok.hierachy
  ---
   
  <div {...storyblokEditable(blok)}>
    <p class="text-l text-[#026670] italic text-left">
      {blok.prehead} 
    </p>   
-   <h1 class='py-8 text-6xl text-[#50b0ae] font-bold text-left'>
+   <TitleElement class='py-8 text-6xl text-[#50b0ae] font-bold text-left'>
      {blok.headline}
-   </h1>
+   </TitleElement>
    <p class="text-left">
      {blok.description}
    </p>

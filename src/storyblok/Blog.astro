@@ -8,9 +8,9 @@ import { storyblokEditable, renderRichText } from '@storyblok/astro'
   
  <article {...storyblokEditable(blok)}>
    <div class="container mx-auto mb-12">
-     <TitleElement class="text-4xl text-[#50b0ae] font-bold mt-12 mb-4 font-serif">
+     <h1 class="text-4xl text-[#50b0ae] font-bold mt-12 mb-4 font-serif">
        {blok.title}
-     </TitleElement>
+     </h1>
      <div class="prose" set:html={renderedRichText} />
    </div>
  </article>

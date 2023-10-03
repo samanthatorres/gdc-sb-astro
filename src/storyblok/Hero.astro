@@ -6,16 +6,18 @@ import { storyblokEditable } from '@storyblok/astro'
  ---
   
  <div {...storyblokEditable(blok)}>
-   <p class="text-l text-[#026670] italic text-left">
+  <div class='container mx-auto'>
+   <p class="text-l text-teal italic text-left">
      {blok.prehead} 
    </p>   
-   <TitleElement class='py-8 text-6xl text-[#50b0ae] font-bold text-left font-serif'>
+   <TitleElement class='py-8 text-6xl text-teal font-bold text-left font-serif'>
      {blok.headline}
    </TitleElement>
    <p class="text-left">
      {blok.description}
    </p>
    { blok.cta &&
-    <a href="/contact" title="Connect with an Expert from Gray Dot Co"><button class="rounded-full my-3 p-3 bg-[#026670]">Connect with an Expert</button></a> 
+    <a href="/contact" title="Connect with an Expert from Gray Dot Co"><button class="rounded-full my-3 p-3 bg-teal">Connect with an Expert</button></a> 
    }
+   </div>
  </div>

@@ -3,20 +3,21 @@ import { storyblokEditable } from '@storyblok/astro'
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
  
 const { blok } = Astro.props
+const TitleElement = blok.heading_level
 
  ---
   
  <div
    {...storyblokEditable(blok)}
-   class='w-full p-12 flex flex-row'>
-   <div class='basis-1/2 text-left'>
+   class='w-full p-12 md:flex md:flex-row'>
+   <div class='md:basis-1/2 text-left'>
     <img
       class='w-[60px] h-[65px] object-cover'
       src={`${blok.icon.filename}/m/60x0`}
     />
-    <h3 class='text-2xl text-[#1d243d] font-bold text-left'>{blok.heading}</h3>
+    <TitleElement class='text-2xl text-light-teal font-serif text-left'>{blok.heading}</TitleElement>
    </div>
-   <div class='basis-1/2 text-left'>
+   <div class='md:basis-1/2 text-left'>
     <ul class='list-disc list-inside px-8'>
       {
       blok.list?.map((blok) => {

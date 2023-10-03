@@ -3,7 +3,6 @@ import { storyblokEditable, renderRichText } from '@storyblok/astro'
  
  const { blok } = Astro.props
  const renderedRichText = renderRichText(blok.post)
- const TitleElement = blok.page_title_heading_level
  ---
   
  <article {...storyblokEditable(blok)}>

@@ -6,7 +6,39 @@ module.exports = {
 			'sans': ['Mont', 'Arial', 'sans-serif'],
 			'serif': ['DM Serif', 'Times New Roman', 'serif']
 		},
-		extend: {},
+		colors: {
+			'black': '#oc1b33',
+			'teal': '#026670',
+			'light-teal': '#30b9c1',
+			'grey': '#536776',
+			'mustard': '#FCB830',
+			'light-grey': '#F6F8F9',
+			'mint': '#9Fedd7',
+			'yellow': '#fce181',
+			'light-yellow': '#fef9c7',
+			'pink': '#e884a9',
+			'orange': '#e2784f',
+			'purple': '#8f5878',
+			'white': '#ffffff'
+		},
+		extend: {
+			typography: (theme) => ({
+				DEFAULT: {
+				  css: {
+					color: theme('colors.black'),
+					a: {
+						color: theme('colors.teal'),
+						'&:hover': {
+							color: theme('colors.mustard'),
+						},
+						'&:visited': {
+							color: theme('colors.purple'),
+						}
+					}
+				  },
+				},
+			  }),
+		},
 	},
 	plugins: [
 		require('@tailwindcss/typography'),

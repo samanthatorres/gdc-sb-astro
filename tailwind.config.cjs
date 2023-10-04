@@ -22,6 +22,9 @@ module.exports = {
 			'white': '#ffffff'
 		},
 		extend: {
+			backgroundImage: {
+				'hero-teal': "url('/hero-background.png')"
+			},
 			typography: (theme) => ({
 				DEFAULT: {
 				  css: {

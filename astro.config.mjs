@@ -5,13 +5,9 @@ import tailwind from "@astrojs/tailwind";
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
 const env = loadEnv("", process.cwd(), 'STORYBLOK');
-const redirects = await getRedirects()
-
-import getRedirects from './src/functions/getRedirects';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects,
   integrations: [storyblok({
     accessToken: env.STORYBLOK_TOKEN,
     apiOptions: {

@@ -1,5 +1,4 @@
 import StoryblokClient from 'storyblok-js-client'
-
  
 export default async function () {
   let Storyblok = new StoryblokClient({

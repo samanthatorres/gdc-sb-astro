@@ -1,11 +1,13 @@
 ---
 import { storyblokEditable, renderRichText } from "@storyblok/astro";
-
-const { blok } = Astro.props;
-const renderedRichText = renderRichText(blok.post);
-
 import { buildToc } from "../js/toc.js";
 import Toc from "../components/Toc.astro";
+import { addIdsToHeadings } from "../js/addIdsToHeadings";
+
+const { blok } = Astro.props;
+let renderedRichText = renderRichText(blok.post);
+renderedRichText = addIdsToHeadings(renderedRichText);
+
 const headings = buildToc(blok.post.content);
 ---
 

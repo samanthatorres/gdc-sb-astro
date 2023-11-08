@@ -23,7 +23,8 @@ export default defineConfig({
         rich_text: "storyblok/RichText",
         listitem: 'storyblok/Listitem',
         author: 'storyblok/Author',
-        banner: 'storyblok/Banner'
+        banner: 'storyblok/Banner',
+        video: 'storyblok/Video'
     }
   }), tailwind()],
   vite: {

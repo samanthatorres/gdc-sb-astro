@@ -1,0 +1,30 @@
+---
+const { content } = Astro.props;
+import {generateSlug} from '../js/addIdsToHeadings.js';
+---
+
+<div class="relative mt-3">
+  <ul role="list" class="">
+    {
+      content.map((heading) => (
+        <li class="relative">
+          <a href={'#' + generateSlug(heading.text)} class="flex justify-between gap-2 py-1 pr-3 hover:underline text-sm transition pl-4 text-zinc-900 ">
+            {heading.text}
+          </a>
+
+          {heading.children && (
+            <ul role="list" style="opacity:1">
+              {heading.children.map((child) => (
+                <li>
+                  <a href={'#' + generateSlug(child.text)} class="flex justify-between gap-2 py-1 pr-3 hover:underline text-sm transition pl-7 text-zinc-600 hover:text-zinc-900 ">
+                    {child.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>

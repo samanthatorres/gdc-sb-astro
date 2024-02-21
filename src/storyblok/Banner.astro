@@ -1,26 +1,26 @@
 ---
 import { storyblokEditable } from '@storyblok/astro'
  
- const { blok } = Astro.props
- const TitleElement = blok.heading_level
- const BannerLink = blok.link.url
- ---
-  
- <div
-   {...storyblokEditable(blok)}
-   class='max-w-full p-12 bg-light-grey text-left'
- >
-    <div class='container mx-auto w-full md:grid md:grid-cols-2 gap-5'>
-        <div>
-            <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
-            <TitleElement class='font-serif text-4xl text-light-teal py-6'>{blok.headline}</TitleElement>
-            <a href=BannerLink><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
-        </div>
-        <div class='justify-self-center'>
-            <img
-            class='object-contain object-center'
-            src={`${blok.image.filename}/m/`}
-            />
-        </div>
-    </div>
- </div>
+const { blok } = Astro.props
+const TitleElement = blok.heading_level
+const BannerLink = blok.link.url
+---
+
+<div
+  {...storyblokEditable(blok)}
+  class='max-w-full p-12 bg-light-grey text-left'
+>
+   <div class='container mx-auto w-full md:grid md:grid-cols-2 gap-5'>
+       <div>
+           <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
+           <TitleElement class='font-serif text-4xl text-light-teal py-6'>{blok.headline}</TitleElement>
+           <a href=BannerLink><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
+       </div>
+       <div class='justify-self-center'>
+           <img
+           class='object-contain object-center'
+           src={`${blok.image.filename}/m/`}
+           />
+       </div>
+   </div>
+</div>

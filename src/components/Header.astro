@@ -1,5 +1,6 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro'
+
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',

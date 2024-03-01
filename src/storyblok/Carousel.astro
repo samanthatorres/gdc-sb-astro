@@ -1,0 +1,29 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+ 
+ const { blok } = Astro.props
+ const TitleElement = blok.heading_level
+ const BannerLink = blok.link.url
+ ---
+  
+ <div
+   {...storyblokEditable(blok)}
+   class='max-w-full p-12 bg-light-grey text-center'
+ >
+    <div class='container mx-auto w-full'>
+        <div>
+            <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
+            <TitleElement class='font-sans font-bold text-lg text-grey py-6 uppercase'>{blok.headline}</TitleElement>
+            <div class='justify-self-center'>
+            <img
+            class='object-contain object-center'
+            src={`${blok.image.filename}/m/`}
+            />
+        </div>
+            { blok.button_text &&
+              (<a href=BannerLink><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>)
+            }
+        </div>
+        
+    </div>
+ </div>

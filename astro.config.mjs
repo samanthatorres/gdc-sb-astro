@@ -30,6 +30,7 @@ export default defineConfig({
         author: "storyblok/Author",
         banner: "storyblok/Banner",
         video: "storyblok/Video",
+        carousel: "storyblok/Carousel"
       },
     }),
     tailwind(),

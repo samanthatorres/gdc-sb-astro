@@ -13,7 +13,7 @@ export function addIdsToHeadings(htmlString) {
     const doc = dom.window.document;
     
     // Get all heading elements
-    const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    const headings = doc.querySelectorAll('h1, h2, h3');
     
     // Iterate over each heading and add an id attribute
     headings.forEach(heading => {

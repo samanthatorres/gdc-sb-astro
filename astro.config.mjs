@@ -31,7 +31,8 @@ export default defineConfig({
         banner: "storyblok/Banner",
         video: "storyblok/Video",
         carousel: "storyblok/Carousel",
-        textblock: "storyblok/Textblock"
+        textblock: "storyblok/Textblock",
+        leftright: "storyblok/LeftRight"
       },
     }),
     tailwind(),

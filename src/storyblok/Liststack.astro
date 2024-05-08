@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/astro'
 import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
  
 const { blok } = Astro.props
-const TitleElement = blok.heading_level
+const TitleElement = blok.heading_level || 'p'
 
 ---
 

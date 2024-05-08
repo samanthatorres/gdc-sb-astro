@@ -32,7 +32,8 @@ export default defineConfig({
         video: "storyblok/Video",
         carousel: "storyblok/Carousel",
         textblock: "storyblok/Textblock",
-        leftright: "storyblok/LeftRight"
+        leftright: "storyblok/LeftRight",
+        wysiwyg: "storyblok/Wysiwyg"
       },
     }),
     tailwind(),

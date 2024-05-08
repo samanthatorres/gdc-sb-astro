@@ -1,0 +1,15 @@
+---
+import { storyblokEditable, renderRichText } from '@storyblok/astro'
+ 
+ const { blok } = Astro.props
+ const renderedRichText = renderRichText(blok.words)
+ ---
+  
+ <div {...storyblokEditable(blok)}>
+   <div class="container mx-auto mb-12">
+    <div
+      class="prose prose-headings:font-serif max-w-none"
+      set:html={renderedRichText}
+    />
+   </div>
+ </div>

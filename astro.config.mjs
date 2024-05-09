@@ -17,6 +17,9 @@ export default defineConfig({
       apiOptions: {
         region: "us",
       },
+      bridge: {
+        resolveLinks: "url"
+      },
       components: {
         page: "storyblok/Page",
         blog: "storyblok/Blog",

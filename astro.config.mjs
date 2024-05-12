@@ -18,7 +18,7 @@ export default defineConfig({
         region: "us",
       },
       bridge: {
-        resolveLinks: "url"
+        resolveLinks: "url",
       },
       components: {
         page: "storyblok/Page",
@@ -36,7 +36,8 @@ export default defineConfig({
         carousel: "storyblok/Carousel",
         textblock: "storyblok/Textblock",
         leftright: "storyblok/LeftRight",
-        wysiwyg: "storyblok/Wysiwyg"
+        wysiwyg: "storyblok/Wysiwyg",
+        redirect_config: "components/Redirect",
       },
     }),
     tailwind(),

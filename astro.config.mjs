@@ -37,7 +37,7 @@ export default defineConfig({
         textblock: "storyblok/Textblock",
         leftright: "storyblok/LeftRight",
         wysiwyg: "storyblok/Wysiwyg",
-        redirect_config: "components/Redirect",
+        redirects_config: "storyblok/Redirect",
       },
     }),
     tailwind(),

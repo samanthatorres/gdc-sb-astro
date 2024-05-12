@@ -1,9 +1,9 @@
 ---
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const sbApi = useStoryblokApi();
+const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get('cdn/stories/redirects', {
   version: 'draft',
   resolve_relations: 'redirect_entry.destination',
@@ -20,7 +20,7 @@ for (const redirect of storyblockRedirects) {
 
 <BaseLayout>
   <code><pre>{
-    Object.entries(astroRedirects).map(([url, dest]) => `${url} => ${dest}`)
+    Object.entries(astroRedirects).map(([url, dest]) => `${url} => ${dest}\n`)
   }
   </code></pre>
 </BaseLayout>

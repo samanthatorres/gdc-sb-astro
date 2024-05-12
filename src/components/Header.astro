@@ -20,7 +20,7 @@ const nav_items = data.story.content.header_menu;
           {
             nav_items.map((menu) => (
               // This menu item has children
-              menu.children ? (
+              menu.children.length ? (
                 <div x-data x-popover class="relative">
                   <button x-popover:button type="button" class="flex items-center gap-2 rounded-md">
                     {menu.link.story.name}
@@ -34,7 +34,7 @@ const nav_items = data.story.content.header_menu;
                     class="absolute left-0 mt-4 w-40 bg-white rounded-md shadow-md">
                     {
                       menu.children.map((child) => ( 
-                        <a href={child.link.story.url} class="block w-full px-4 py-2.5 first-of-type:rounded-t-md last-of-type:rounded-b-md text-left text-sm hover:bg-gray-50 disabled:text-gray-500" >
+                        <a href={`/${child.link.story.url}`} class="block w-full px-4 py-2.5 first-of-type:rounded-t-md last-of-type:rounded-b-md text-left text-sm hover:bg-gray-50 disabled:text-gray-500" >
                           {child.link.story.name}
                         </a>
                       ))
@@ -43,7 +43,7 @@ const nav_items = data.story.content.header_menu;
               </div>
               ) : (
                 // This menu item does not have children
-                <a href={menu.link.story.url} class="flex items-center gap-2 rounded-md">{menu.link.story.name}</a>
+                <a href={`/${menu.link.story.url}`} class="flex items-center gap-2 rounded-md">{menu.link.story.name}</a>
               )
             ))
           }

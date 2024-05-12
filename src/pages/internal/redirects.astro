@@ -1,0 +1,26 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const sbApi = useStoryblokApi();
+const { data } = await storyblokApi.get('cdn/stories/redirects', {
+  version: 'draft',
+  resolve_relations: 'redirect_entry.destination',
+})
+
+const storyblockRedirects = data.story.content.redirect_entries
+const astroRedirects = {}
+for (const redirect of storyblockRedirects) {
+  const targetUrl = redirect.destination.full_slug === 'home' ? '/' : `/${redirect.destination.full_slug}`
+  astroRedirects[redirect.source_url] = targetUrl
+}
+
+---
+
+<BaseLayout>
+  <code><pre>{
+    Object.entries(astroRedirects).map(([url, dest]) => `${url} => ${dest}`)
+  }
+  </code></pre>
+</BaseLayout>

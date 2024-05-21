@@ -8,7 +8,7 @@ import { storyblokEditable, renderRichText } from '@storyblok/astro'
  <div {...storyblokEditable(blok)}>
    <div class="container mx-auto mb-12">
     <div
-      class="prose prose-headings:font-serif max-w-none"
+      class="prose prose-headings:font-serif prose-headings:italic prose-headings:text-light-teal max-w-none"
       set:html={renderedRichText}
     />
    </div>

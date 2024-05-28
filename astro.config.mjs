@@ -38,6 +38,7 @@ export default defineConfig({
         leftright: "storyblok/LeftRight",
         wysiwyg: "storyblok/Wysiwyg",
         redirects_config: "storyblok/Redirect",
+        childhero: "storyblok/ChildHero"
       },
     }),
     tailwind(),

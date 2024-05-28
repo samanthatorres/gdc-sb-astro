@@ -1,0 +1,25 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+ 
+const { blok } = Astro.props
+const TitleElement = blok.heading_level || 'p'
+---
+
+<div {...storyblokEditable(blok)}>
+ <div class='max-w-full pb-[12%]'>
+   <div class='container mx-auto'>
+   <p class="text-l text-grey italic text-left pt-20">
+     {blok.prehead}
+   </p>
+   <TitleElement class='py-8 text-6xl text-light-teal font-bold text-left font-serif'>
+     {blok.headline}
+   </TitleElement>
+   <p class="text-left text-grey">
+     {blok.description}
+   </p>
+   { blok.cta &&
+     <a href="/contact" title="Connect with an Expert from Gray Dot Co"><button class="rounded-full my-3 p-3 bg-teal text-white">Connect with an Expert</button></a>
+   }
+   </div>
+  </div>
+</div>

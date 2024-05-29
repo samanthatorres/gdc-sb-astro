@@ -1,7 +1,7 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro'
 import { Image } from "astro:assets";
-import fullLogo from "../images/white_logo.png";
+import fullLogo from "../images/full_logo.png";
 
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
@@ -12,9 +12,8 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 const nav_items = data.story.content.header_menu;
 ---
  
-<header class="w-full h-24 bg-[#f7f6fd]">
-  
-  <div class="container h-full mx-auto py-3">
+<header class="w-full bg-[#f7f6fd] pb-8">
+  <div class="container h-full mx-auto pt-3">
     <div class="flex items-center justify-end pb-3">
       <p class="text-grey text-sm font-extralight">
         <a href="/about" title="Learn About Gray Dot Co" class="text-grey pr-3">About</a>
@@ -26,7 +25,7 @@ const nav_items = data.story.content.header_menu;
     </div>
     <div class="mx-auto flex items-center justify-between">
     <a href="/">
-      <Image src={fullLogo} alt="Gray Dot Co Logo" />
+      <Image src={fullLogo} alt="Gray Dot Co Logo" height="40"/>
     </a>
     <nav>
       <div x-popover:group class="flex items-center justify-center gap-10">

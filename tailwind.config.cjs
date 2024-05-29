@@ -2,10 +2,6 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		fontFamily: {
-			'sans': ['Mont', 'Arial', 'sans-serif'],
-			'serif': ['DM Serif', 'Times New Roman', 'serif']
-		},
 		colors: {
 			'black': '#oc1b33',
 			'teal': '#026670',
@@ -22,6 +18,10 @@ module.exports = {
 			'white': '#ffffff'
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Poppins', 'Arial', 'sans-serif'],
+				'serif': ['DM Serif Display', 'Times New Roman', 'serif']
+			},
 			backgroundImage: {
 				'hero-teal': "url('/hero-background.png')"
 			},

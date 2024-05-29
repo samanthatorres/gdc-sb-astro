@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
+    "@fontsource/dm-serif-display": "^5.0.20",
+    "@fontsource/poppins": "^5.0.14",
     "@storyblok/astro": "^3.0.0",
     "astro": "^3.0.13",
     "jsdom": "^22.1.0",

@@ -1,5 +1,7 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro'
+import { Image } from "astro:assets";
+import fullLogo from "../images/full_logo.png";
 
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
@@ -10,10 +12,20 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 const nav_items = data.story.content.header_menu;
 ---
  
-<header class="w-full h-24 bg-[#f7f6fd]">
-  <div class="container h-full mx-auto flex items-center justify-between">
+<header class="w-full bg-[#f7f6fd] pb-8">
+  <div class="container h-full mx-auto pt-3">
+    <div class="flex items-center justify-end pb-3">
+      <p class="text-grey text-sm font-extralight">
+        <a href="/about" title="Learn About Gray Dot Co" class="text-grey pr-3">About</a>
+        |
+        <a href="/resources" title="Gray Dot Co Free Resources" class="text-grey px-3">Resources</a>
+        |
+        <a href="/about" title="Contact Gray Dot Co" class="text-grey pl-3">Contact Us</a>
+      </p>
+    </div>
+    <div class="mx-auto flex items-center justify-between">
     <a href="/">
-      <h1 class="text-[#50b0ae] text-3xl font-bold">Gray Dot Co</h1>
+      <Image src={fullLogo} alt="Gray Dot Co Logo" height="40"/>
     </a>
     <nav>
       <div x-popover:group class="flex items-center justify-center gap-10">
@@ -22,7 +34,7 @@ const nav_items = data.story.content.header_menu;
               // This menu item has children
               menu.children.length ? (
                 <div x-data x-popover class="relative">
-                  <button x-popover:button type="button" class="flex items-center gap-2 rounded-md">
+                  <button x-popover:button type="button" class="flex items-center gap-2 rounded-md font-bold uppercase text-teal">
                     {menu.link.story.name}
                    <!--  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg> -->
                   </button>
@@ -34,7 +46,7 @@ const nav_items = data.story.content.header_menu;
                     class="absolute left-0 mt-4 w-40 bg-white rounded-md shadow-md">
                     {
                       menu.children.map((child) => ( 
-                        <a href={`/${child.link.story.url}`} class="block w-full px-4 py-2.5 first-of-type:rounded-t-md last-of-type:rounded-b-md text-left text-sm hover:bg-gray-50 disabled:text-gray-500" >
+                        <a href={`/${child.link.story.url}`} class="block w-full px-4 py-2.5 first-of-type:rounded-t-md last-of-type:rounded-b-md text-left text-sm hover:bg-gray-50 disabled:text-gray-500 font-bold uppercase" >
                           {child.link.story.name}
                         </a>
                       ))
@@ -43,11 +55,11 @@ const nav_items = data.story.content.header_menu;
               </div>
               ) : (
                 // This menu item does not have children
-                <a href={`/${menu.link.story.url}`} class="flex items-center gap-2 rounded-md">{menu.link.story.name}</a>
+                <a href={`/${menu.link.story.url}`} class="flex items-center gap-2 rounded-md font-bold uppercase">{menu.link.story.name}</a>
               )
             ))
           }
       </div>
     </nav>
-  </div>
+  </div></div>
 </header>

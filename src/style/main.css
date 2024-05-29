@@ -7,3 +7,31 @@
         @apply text-teal;
     }
 }
+@font-face {
+    font-family: 'Mont';
+    src: url('../../public/fonts/Mont-Regular.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Mont';
+    src: url('../../public/fonts/Mont-Bold.otf') format('otf');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Mont';
+    src: url('../../public/fonts/Mont-RegularItalic.otf') format('otf');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'DM Serif';
+    src: url('../../public/fonts/DMSerifDisplay.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }

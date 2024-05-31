@@ -8,6 +8,13 @@
     }
 }
 
+.hero {
+    background-image: url("/src/images/teal-paint-texture.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);   
+}
+
 footer {
     background-image: url("/src/images/teal-paint-texture.png");
     background-repeat: no-repeat;

@@ -22,9 +22,6 @@ module.exports = {
 				'sans': ['Poppins', 'Arial', 'sans-serif'],
 				'serif': ['DM Serif Display', 'Times New Roman', 'serif']
 			},
-			backgroundImage: {
-				'hero-teal': "url('/hero-background.png')"
-			},
 			typography: (theme) => ({
 				DEFAULT: {
 				  css: {

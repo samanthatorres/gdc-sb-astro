@@ -15,7 +15,8 @@ module.exports = {
 			'pink': '#e884a9',
 			'orange': '#e2784f',
 			'purple': '#8f5878',
-			'white': '#ffffff'
+			'white': '#ffffff',
+			'util-grey': '#d9d9d9'
 		},
 		extend: {
 			fontFamily: {

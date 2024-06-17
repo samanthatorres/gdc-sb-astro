@@ -4,12 +4,14 @@ import { loadEnv } from "vite";
 import tailwind from "@astrojs/tailwind";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { getRedirects } from "./src/functions/getRedirects";
+import netlify from "@astrojs/netlify/functions";
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 const redirects = await getRedirects();
 
 // https://astro.build/config
 export default defineConfig({
+  adapter: netlify(),
   redirects,
   integrations: [
     storyblok({

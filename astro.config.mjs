@@ -11,7 +11,6 @@ const redirects = await getRedirects();
 // https://astro.build/config
 export default defineConfig({
   redirects,
-  trailingSlash: "never",
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_TOKEN,

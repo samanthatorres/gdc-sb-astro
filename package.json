@@ -10,13 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^5.3.1",
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource/dm-serif-display": "^5.0.20",
     "@fontsource/poppins": "^5.0.14",
-    "@storyblok/astro": "^3.0.0",
-    "astro": "^3.0.13",
+    "@storyblok/astro": "^4.1.0",
+    "astro": "^4.10.3",
     "jsdom": "^22.1.0",
-    "storyblok-js-client": "^6.6.7",
+    "storyblok-js-client": "^6.7.3",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {

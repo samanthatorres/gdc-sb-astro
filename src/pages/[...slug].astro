@@ -30,7 +30,7 @@ const story = data.story;
 const storySEO = {
   title: story.content.page_title,
   description: story.content.meta_description,
-  ogImage: story.content.og_image.filename
+  ogImage: story.content.og_image?.filename
 };
 ---
 

@@ -1,0 +1,51 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import "../style/main.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description, ogImage } = Astro.props;
+
+const DEFAULT = {
+  TITLE: "Gray Dot Co is the Best",
+  DESCRIPTION:
+    "From high-growth brands to regulated industries, companies trust the Gray Dot Company to develop, accelerate, and scale their digital strategies.",
+};
+
+const _title = title ?? DEFAULT.TITLE;
+const _description = description ?? DEFAULT.DESCRIPTION;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={Astro.url} />
+
+<!-- Primary Meta Tags -->
+<title>{_title}</title>
+<meta name="author" content="Gray Dot Co" />
+<meta name="title" content={_title} />
+<meta name="description" content={_description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={_title} />
+<meta property="og:description" content={_description} />
+<meta property="og:image" content={new URL(ogImage, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={_title} />
+<meta property="twitter:description" content={_description} />
+<meta property="twitter:image" content={new URL(ogImage, Astro.url)} />

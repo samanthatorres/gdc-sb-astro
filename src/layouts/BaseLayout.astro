@@ -1,19 +1,25 @@
 ---
+import { useStoryblokApi } from "@storyblok/astro";
 import Header from "../components/Header.astro";
-import "../style/main.css";
 import Footer from "../components/Footer.astro";
+import BaseHead from "../components/BaseHead.astro";
 import '@fontsource/dm-serif-display/400-italic.css';
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/700.css';
+
+const { title, description, ogImage } = Astro.props;
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get("cdn/stories/config", {
+  version: import.meta.env.DEV ? "draft" : "published",
+  resolve_links: "url",
+});
 ---
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
-    <title>SEO Consulting: Strategy + Tech + Data | Gray Dot Co</title>
-
+    <BaseHead title={title} description={description} ogImage={ogImage} />
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.5-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.5/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>

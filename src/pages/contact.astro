@@ -9,9 +9,18 @@ const { data } = await sbApi.get("cdn/stories/contact", {
 });
 
 const story = data.story;
+const storySEO = {
+  title: story.content.page_title,
+  description: story.content.meta_description,
+  ogImage: story.content.og_image?.filename
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={storySEO.title}
+  description={storySEO.description}
+  ogImage={storySEO.ogImage}
+>
   <StoryblokComponent blok={story.content} />
   <div class="container mx-auto grid lg:grid-cols-12 gap-8 py-12">
     <div class="text-light-teal font-serif text-4xl px-4 lg:col-span-5 lg:pr-8">

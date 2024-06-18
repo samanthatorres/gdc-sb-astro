@@ -24,6 +24,7 @@ const storyblokApi = useStoryblokApi();
 const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
 	version: import.meta.env.DEV ? "draft" : "published",
 	resolve_links: "url",
+	resolve_relations: ['featured_blogs.blogs'],
 });
 
 const story = data.story;

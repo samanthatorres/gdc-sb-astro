@@ -11,8 +11,12 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 
 const nav_items = data.story.content.header_menu;
 ---
- 
-<header class="w-full bg-[#f7f6fd] pb-8" x-data="{ openMenu : false }">
+
+<header class="w-full bg-[#f7f6fd] pb-8" x-data="{
+  openMenu : false,
+  visibleStyle : 'visible lg:flex',
+  hiddenStyle : 'hidden lg:flex lg:items-center lg:justify-center lg:gap-10'
+}">
   <div class="container h-full mx-auto pt-3">
     <div class="flex items-center justify-end pb-3">
       <p class="text-grey text-sm font-extralight">
@@ -28,34 +32,23 @@ const nav_items = data.story.content.header_menu;
       <a href="/">
         <Image src={fullLogo} alt="Gray Dot Co Logo" height="40"/>
       </a>
+
       <nav>
-        <button @click="openMenu = !openMenu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+        <button @click="openMenu = !openMenu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  fill="none" viewBox="0 0 24 20">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4992 17.1432C23.3281 17.1432 23.999 17.7822 23.999 18.5716C23.999 19.3597 23.3281 20 22.4992 20L1.4996 20C0.670683 20 -0.000276566 19.3597 -0.000276566 18.5716C-0.000276566 17.7822 0.670683 17.1432 1.4996 17.1432L22.4992 17.1432ZM22.4992 8.57138C23.3281 8.57138 23.999 9.21038 23.999 9.9998C23.999 10.7892 23.3281 11.4282 22.4992 11.4282L10.4988 11.4282C9.67126 11.4282 8.99895 10.7892 8.99895 9.9998C8.99895 9.21038 9.67126 8.57138 10.4988 8.57138L22.4992 8.57138ZM22.4992 -0.000400543C23.3281 -0.000400543 23.999 0.639881 23.999 1.42802C23.999 2.21744 23.3281 2.85772 22.4992 2.85772L1.4996 2.85772C0.670683 2.85772 -0.000276566 2.21744 -0.000276566 1.42802C-0.000276566 0.639881 0.670683 -0.000400543 1.4996 -0.000400543L22.4992 -0.000400543Z" fill="#026670"/>
           </svg>
         </button>
 
-        <div class="w-full" :class="openMenu ? 'visible md:hidden' : 'hidden'">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          {
-            nav_items.map((menu) => (
-
-                <li><a href={`/${menu.link.story.url}`} class="flex items-center gap-2 rounded-md font-bold uppercase">{menu.link.story.name}</a></li>
-
-            ))
-          }
-          </ul>
-        </div>
-
-        <div x-popover:group class="hidden md:flex items-center justify-center gap-10">
+        <div x-popover:group :class="openMenu ? visibleStyle : hiddenStyle" class="">
             {
               nav_items.map((menu) => (
                 // This menu item has children
                 menu.children.length ? (
                   <div x-data x-popover class="relative">
                     <button x-popover:button type="button" class="flex items-center gap-2 rounded-md font-bold uppercase text-teal">
-                      {menu.link.story.name} ▼
+                      {menu.link.story.name}&nbsp;▼
                     </button>
 
                     <div

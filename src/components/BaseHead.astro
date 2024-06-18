@@ -7,24 +7,27 @@ export interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  metaRobots?: boolean;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, metaRobots } = Astro.props;
 
 const DEFAULT = {
   TITLE: "Gray Dot Co is the Best",
   DESCRIPTION:
     "From high-growth brands to regulated industries, companies trust the Gray Dot Company to develop, accelerate, and scale their digital strategies.",
+  OGIMAGE: "/og_placeholder.png"
 };
 
 const _title = title ?? DEFAULT.TITLE;
 const _description = description ?? DEFAULT.DESCRIPTION;
+const _image = ogImage ?? DEFAULT.OGIMAGE;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="" />
+<link rel="icon" type="image/x-icon" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
@@ -35,17 +38,20 @@ const _description = description ?? DEFAULT.DESCRIPTION;
 <meta name="author" content="Gray Dot Co" />
 <meta name="title" content={_title} />
 <meta name="description" content={_description} />
+{ metaRobots && (
+    <meta name="robots" content="noindex">
+)}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={_title} />
 <meta property="og:description" content={_description} />
-<meta property="og:image" content={new URL(ogImage, Astro.url)} />
+<meta property="og:image" content={_image} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={_title} />
 <meta property="twitter:description" content={_description} />
-<meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+<meta property="twitter:image" content={_image} />

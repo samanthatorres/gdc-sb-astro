@@ -12,7 +12,8 @@ const story = data.story;
 const storySEO = {
   title: story.content.page_title,
   description: story.content.meta_description,
-  ogImage: story.content.og_image?.filename
+  ogImage: story.content.og_image?.filename,
+  metaRobots: story.content.noindex
 };
 ---
 
@@ -20,6 +21,7 @@ const storySEO = {
   title={storySEO.title}
   description={storySEO.description}
   ogImage={storySEO.ogImage}
+  metaRobots={storySEO.metaRobots}
 >
   <StoryblokComponent blok={story.content} />
   <div class="container mx-auto grid lg:grid-cols-12 gap-8 py-12">

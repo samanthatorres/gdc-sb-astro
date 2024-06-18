@@ -26,8 +26,19 @@ const { data } = await storyblokApi.get(`cdn/stories/blog/${slug}`, {
 });
 
 const story = data.story;
+const storySEO = {
+  title: story.content.page_title,
+  description: story.content.meta_description,
+  ogImage: story.content.og_image?.filename,
+  metaRobots: story.content.noindex
+};
 ---
 
-<BaseLayout>
+<BaseLayout
+	title={storySEO.title}
+	description={storySEO.description}
+	ogImage={storySEO.ogImage}
+	metaRobots={storySEO.metaRobots}
+>
 	<StoryblokComponent blok={story.content} />
 </BaseLayout>

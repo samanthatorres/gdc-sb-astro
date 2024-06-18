@@ -40,7 +40,9 @@ export default defineConfig({
         leftright: "storyblok/LeftRight",
         wysiwyg: "storyblok/Wysiwyg",
         redirects_config: "storyblok/Redirect",
-        childhero: "storyblok/ChildHero"
+        childhero: "storyblok/ChildHero",
+        featured_blogs: "storyblok/FeaturedBlogs",
+        bloglist: "storyblok/BlogList"
       },
     }),
     tailwind(),

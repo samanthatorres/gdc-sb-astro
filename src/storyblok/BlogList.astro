@@ -1,0 +1,33 @@
+---
+import { storyblokEditable, useStoryblokApi } from '@storyblok/astro'
+import ArticleCard from '../components/ArticleCard.astro'
+ 
+const { blok } = Astro.props
+ 
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get(`cdn/stories`, {
+  version: 'draft', // or 'published'
+  starts_with: 'blog/',
+  is_startpage: 0,
+  sort_by: 'content.publish_date:desc',
+  per_page: '100'
+})
+ 
+const blogs = data.stories
+---
+ 
+<section class="container mx-auto my-12" {...storyblokEditable(blok)}>
+  <ul class="grid grid-cols-1 gap-6 md:grid-cols-3">
+    {
+      blogs?.length &&
+        blogs.map((blog) => {
+          blog.content.slug = blog.slug
+          return (
+            <li>
+              <ArticleCard blog={blog.content} />
+            </li>
+          )
+        })
+    }
+  </ul>
+</section>

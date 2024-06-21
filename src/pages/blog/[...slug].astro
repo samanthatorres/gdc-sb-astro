@@ -2,6 +2,7 @@
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro"
 
 export async function getStaticPaths() {
 	const storyblokApi = useStoryblokApi();
@@ -41,4 +42,5 @@ const storySEO = {
 	metaRobots={storySEO.metaRobots}
 >
 	<StoryblokComponent blok={story.content} />
+	<NewsletterSignup />
 </BaseLayout>

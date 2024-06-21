@@ -10,6 +10,7 @@ export async function getStaticPaths() {
 	const data = await storyblokApi.getAll("cdn/stories", {
 		content_type: "blog",
 		version: import.meta.env.DEV ? "draft" : "published",
+		resolve_links: 'story',
 	});
 
 	return data.map((story) => {

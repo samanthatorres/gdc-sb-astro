@@ -12,24 +12,33 @@ const headings = buildToc(blok.post.content);
 ---
 
 <article {...storyblokEditable(blok)}>
-  <div class="container mx-auto mb-12 lg:grid lg:grid-cols-12 lg:gap-10">
-    <h1
-      class="text-4xl text-light-teal font-bold mt-12 mb-4 font-serif col-span-8"
-    >
-      {blok.title}
-    </h1>
 
-    <div
+    <div class='hero bg-cover max-w-full pb-[12%]'>
+      <div class='container mx-auto'>
+      <h1 class='py-16 text-6xl text-white font-bold text-left font-serif w-3/4'>
+        {blok.title}
+      </h1>
+      <p class="text-left text-white">
+        <strong>Published on:</strong> {blok.publish_date}
+      </p>
+      { blok.update_date &&
+        <p class="text-left text-white"><strong>Updated on:</strong> {blok.update_date}</p>
+      }
+      </div>
+     </div>
+     <div class="container mx-auto mb-12 lg:grid lg:grid-cols-12 lg:gap-10">
+      <div class="col-span-4">
+        <div class="sticky top-4">
+          <h2 class="text-2xl text-light-teal font-bold mb-4 font-serif">
+            In this article
+          </h2>
+          <Toc content={headings} />
+        </div>
+      </div>
+      <div
       class="prose prose-headings:font-serif max-w-none col-span-8"
       set:html={renderedRichText}
     />
-    <div class="col-span-4">
-      <div class="sticky top-4">
-        <h2 class="text-2xl text-light-teal font-bold mb-4 font-serif">
-          In this article
-        </h2>
-        <Toc content={headings} />
-      </div>
-    </div>
+    
   </div>
 </article>

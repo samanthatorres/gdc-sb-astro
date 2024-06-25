@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import traph from "../images/traph.png";
 ---
 
 <div class="container mx-auto grid grid-cols-2 gap-10 items-center py-8">
   <div class="sm:col-span-2 md:col-span-1 flex justify-center">
     <Image
-      src="https://a-us.storyblok.com/f/1016570/297x212/0b07a94d55/traph.png"
+      src={traph}
       alt="decorative shape"
       width="297"
       height="212"
@@ -13,7 +14,7 @@ import { Image } from "astro:assets";
     />
   </div>
   <div class="sm:col-span-2 md:col-span-1 sm:px-4 md:px-1">
-    <h4 class="text-2xl text-light-teal font-serif font-bold">Stay in the Know</h4>
+    <h4 class="text-2xl text-light-teal font-serif font-bold">Stay In the Know</h4>
     <div id="mc_embed_shell">
       <div id="mc_embed_signup">
         <form

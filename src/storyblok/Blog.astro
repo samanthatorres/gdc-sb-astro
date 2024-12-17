@@ -18,12 +18,12 @@ const headings = buildToc(blok.post.content);
       <h1 class='py-16 text-6xl text-white font-bold text-left font-serif w-3/4'>
         {blok.title}
       </h1>
-      <p class="text-left text-white">
-        <strong>Published on:</strong> {blok.publish_date}
-      </p>
-      { blok.update_date &&
-        <p class="text-left text-white"><strong>Updated on:</strong> {blok.update_date}</p>
-      }
+      { blok.update_date ? (
+        <p class="text-left text-white"><strong>Updated on:</strong> {new Date(blok.update_date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
+      ) : (
+        <p class="text-left text-white"><strong>Published on:</strong> {new Date(blok.publish_date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
+      )}
+      
       </div>
      </div>
      <div class="container mx-auto mb-12 lg:grid lg:grid-cols-12 lg:gap-10">

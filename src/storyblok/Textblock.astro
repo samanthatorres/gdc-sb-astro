@@ -3,6 +3,15 @@ import { storyblokEditable } from '@storyblok/astro'
  
 const { blok } = Astro.props
 const TitleElement = blok.heading_level || 'p'
+
+let href = null
+if (blok.link) {
+    if (blok.link.linktype === 'url') {
+        href = blok.link.url;
+    } else if (blok.link.linktype === 'story' && blok.link.story) {
+        href = '/' + blok.link.story.full_slug;
+    }
+}
 ---
 
 <div
@@ -17,7 +26,7 @@ const TitleElement = blok.heading_level || 'p'
                 <p class='font-sans text-grey'>{blok.description}</p>
             )}
             {blok.button_text && (
-                <a href={blok.link.url}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
+                <a href={href}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
             )}
         </div>
     </div>

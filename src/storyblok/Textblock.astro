@@ -3,24 +3,22 @@ import { storyblokEditable } from '@storyblok/astro'
  
 const { blok } = Astro.props
 const TitleElement = blok.heading_level || 'p'
-const Alignment = blok.alignment
 ---
 
 <div
   {...storyblokEditable(blok)}
   class='max-w-full p-12 bg-white'
 >
-   <div class='container mx-auto w-full'> 
-    <div>
-        <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
-        <TitleElement class='font-serif text-4xl text-light-teal py-6'>{blok.headline}</TitleElement>
-        { blok.description && (
-            <p class='font-sans text-grey'>{blok.description}</p>
-        )}
-        { blok.button_text && (
-            <a href=BannerLink><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
-        )}
+    <div class='container mx-auto w-full'>
+        <div>
+            <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
+            <TitleElement class='font-serif text-4xl text-light-teal py-6'>{blok.headline}</TitleElement>
+            {blok.description && (
+                <p class='font-sans text-grey'>{blok.description}</p>
+            )}
+            {blok.button_text && (
+                <a href={blok.link.url}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
+            )}
+        </div>
     </div>
-
-   </div>
 </div>

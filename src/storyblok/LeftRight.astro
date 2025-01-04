@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/astro'
  
 const { blok } = Astro.props
 const TitleElement = blok.heading_level || 'p'
-const BannerLink = blok.link.url
+const banner_link = blok.link.url
 ---
 
 <div
@@ -23,7 +23,7 @@ const BannerLink = blok.link.url
         { blok.description && (
             <p class='font-sans text-grey'>{blok.description}</p>
         )}
-        <a href=BannerLink><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
+        <a href={banner_link}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
     </div>
 
    </div>

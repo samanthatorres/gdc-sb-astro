@@ -19,10 +19,10 @@ const TitleElement = blok.heading_level || 'p'
     <div>
         <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
         <TitleElement class='font-serif text-4xl text-light-teal py-6'>{blok.headline}</TitleElement>
-        { blok.description && (
+        {blok.description && (
             <p class='font-sans text-grey'>{blok.description}</p>
         )}
-        <a href={`${blok.link.url}`}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
+        <a href={blok.link.url}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
     </div>
 
    </div>

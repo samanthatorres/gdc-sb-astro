@@ -1,5 +1,5 @@
 ---
-const { blog } = Astro.props
+const { blog, slug } = Astro.props
 ---
  
 <article class="column feature bg-gray-100 rounded">
@@ -16,7 +16,7 @@ const { blog } = Astro.props
       {blog.teaser}
     </p>
     <a
-      href={`/blog/${blog.slug}`}
+      href={`/blog/${slug}`}
       class="font-semibold text-blue-600 hover:underline"
       title="read more"
     >

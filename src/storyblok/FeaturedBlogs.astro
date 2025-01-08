@@ -3,7 +3,7 @@ import ArticleCard from '../components/ArticleCard.astro'
 import { storyblokEditable } from '@storyblok/astro'
  
 const { blok } = Astro.props
-let blogs = blok.blogs
+const blogs = blok.blogs;
 ---
  
 <section class="mx-6 my-12" {...storyblokEditable(blok)}>
@@ -12,15 +12,13 @@ let blogs = blok.blogs
   </h2>
   <ul class="grid grid-cols-1 gap-6 md:grid-cols-3">
     {
-      blogs?.length &&
-        blogs.map((blog) => {
-          blog.content.slug = blog.slug
-          return (
-            <li>
-              <ArticleCard blog={blog.content} />
-            </li>
-          )
-        })
+      blogs?.map((blog) => {
+        return (
+          <li>
+            <ArticleCard blog={blog.content} slug={blog.slug} />
+          </li>
+        )
+      })
     }
   </ul>
 </section>

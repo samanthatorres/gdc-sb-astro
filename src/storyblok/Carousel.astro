@@ -6,32 +6,31 @@ const TitleElement = blok.heading_level || 'p'
 
 let href = null
 if (blok.link) {
-    if (blok.link.linktype === 'url') {
-        href = blok.link.url;
-    } else if (blok.link.linktype === 'story' && blok.link.story) {
-        href = '/' + blok.link.story.full_slug;
-    }
+  if (blok.link.linktype === 'url') {
+    href = blok.link.url;
+  } else if (blok.link.linktype === 'story' && blok.link.story) {
+    href = '/' + blok.link.story.full_slug;
+  }
 }
 ---
 
 <div
-  {...storyblokEditable(blok)}
-  class='max-w-full p-12 bg-light-grey text-center'
+   {...storyblokEditable(blok)}
+   class='max-w-full p-12 bg-light-grey text-center'
 >
-   <div class='container mx-auto w-full'>
-       <div>
-           <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
-           <TitleElement class='font-sans font-bold text-lg text-grey py-6 uppercase'>{blok.headline}</TitleElement>
-           <div class='justify-self-center'>
-           <img
-           class='object-contain object-center'
-           src={`${blok.image.filename}/m/`}
-           />
-       </div>
-           {blok.button_text &&
-             (<a href={href}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>)
-           }
-       </div>
-
-   </div>
+  <div class='container mx-auto w-full'>
+    <div>
+      <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
+      <TitleElement class='font-sans font-bold text-lg text-grey py-6 uppercase'>{blok.headline}</TitleElement>
+      <div class='justify-self-center'>
+      <img
+      class='object-contain object-center'
+      src={`${blok.image.filename}/m/`}
+      />
+    </div>
+      {blok.button_text &&
+        (<a href={href}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>)
+      }
+    </div>
+  </div>
 </div>

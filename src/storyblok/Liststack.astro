@@ -19,11 +19,11 @@ const TitleElement = blok.heading_level || 'p'
   </div>
   <div class='md:basis-1/2 text-left'>
    <ul class='list-disc list-inside px-8'>
-     {
-     blok.list?.map((blok) => {
-       return <StoryblokComponent blok={blok} />
-     })
-   }
+      {
+        blok.list?.map((blok) => {
+          return <StoryblokComponent blok={blok} />
+        })
+      }
    </ul>
   </div>
 </div>

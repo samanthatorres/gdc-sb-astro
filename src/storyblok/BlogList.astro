@@ -13,21 +13,19 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
   per_page: '100'
 })
  
-const blogs = data.stories
+const blogs = data.stories;
 ---
  
 <section class="container mx-auto my-12" {...storyblokEditable(blok)}>
   <ul class="grid grid-cols-1 gap-6 md:grid-cols-3">
     {
-      blogs?.length &&
-        blogs.map((blog) => {
-          blog.content.slug = blog.slug
-          return (
-            <li>
-              <ArticleCard blog={blog.content} />
-            </li>
-          )
-        })
+      blogs?.map((blog) => {
+        return (
+          <li>
+            <ArticleCard blog={blog.content} slug={blog.slug} />
+          </li>
+        )
+      })
     }
   </ul>
 </section>

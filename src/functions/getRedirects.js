@@ -24,11 +24,14 @@ export async function getRedirects() {
     let targetUrl;
     if (redirect.external_destination) {
       targetUrl = redirect.external_destination;
-    } else {
+    } else if (redirect.destination.full_slug) {
       targetUrl =
         redirect.destination.full_slug === "home"
           ? "/"
           : `/${redirect.destination.full_slug}`;
+    } else {
+      console.warn("[!] No destination found for redirect", redirect);
+      targetUrl = "/";
     }
     astroRedirects[redirect.source_url] = targetUrl;
   }

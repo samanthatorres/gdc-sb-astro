@@ -1,20 +1,8 @@
 ---
-import { useStoryblokApi } from "@storyblok/astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getRedirects } from "../../functions/getRedirects";
 
-const storyblokApi = useStoryblokApi();
-const { data } = await storyblokApi.get('cdn/stories/redirects', {
-  version: 'draft',
-  resolve_relations: 'redirect_entry.destination',
-})
-
-const storyblockRedirects = data.story.content.redirect_entries
-const astroRedirects = {}
-for (const redirect of storyblockRedirects) {
-  const targetUrl = redirect.destination.full_slug === 'home' ? '/' : `/${redirect.destination.full_slug}`
-  astroRedirects[redirect.source_url] = targetUrl
-}
-
+const astroRedirects = await getRedirects();
 ---
 
 <BaseLayout>

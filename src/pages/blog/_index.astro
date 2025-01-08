@@ -5,7 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const sbApi = useStoryblokApi();
 const { data } = await sbApi.get("cdn/stories/blog", {
-	version: "draft",
+  version: "draft",
 });
 
 const story = data.story;
@@ -18,10 +18,10 @@ const storySEO = {
 ---
 
 <BaseLayout
-	title={storySEO.title}
-	description={storySEO.description}
-	ogImage={storySEO.ogImage}
-	metaRobots={storySEO.metaRobots}
+  title={storySEO.title}
+  description={storySEO.description}
+  ogImage={storySEO.ogImage}
+  metaRobots={storySEO.metaRobots}
 >
-	<StoryblokComponent blok={story.content} />
+  <StoryblokComponent blok={story.content} />
 </BaseLayout>

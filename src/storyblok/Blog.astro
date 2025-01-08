@@ -12,9 +12,8 @@ const headings = buildToc(blok.post.content);
 ---
 
 <article {...storyblokEditable(blok)}>
-
-    <div class='hero bg-cover max-w-full pb-[12%]'>
-      <div class='container mx-auto'>
+  <div class='hero bg-cover max-w-full pb-[12%]'>
+    <div class='container mx-auto'>
       <h1 class='py-16 text-6xl text-white font-bold text-left font-serif w-3/4'>
         {blok.title}
       </h1>
@@ -23,22 +22,21 @@ const headings = buildToc(blok.post.content);
       ) : (
         <p class="text-left text-white"><strong>Published on:</strong> {new Date(blok.publish_date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
       )}
-      
+    </div>
+   </div>
+
+   <div class="container mx-auto mb-12 lg:grid lg:grid-cols-12 lg:gap-10">
+    <div class="col-span-4">
+      <div class="sticky top-4 h-screen overflow-y-auto overscroll-contain">
+        <h2 class="text-2xl text-light-teal font-bold mb-4 font-serif">
+          In this article
+        </h2>
+        <Toc content={headings} />
       </div>
-     </div>
-     <div class="container mx-auto mb-12 lg:grid lg:grid-cols-12 lg:gap-10">
-      <div class="col-span-4">
-        <div class="sticky top-4 h-screen overflow-y-auto overscroll-contain">
-          <h2 class="text-2xl text-light-teal font-bold mb-4 font-serif">
-            In this article
-          </h2>
-          <Toc content={headings} />
-        </div>
-      </div>
-      <div
+    </div>
+    <div
       class="prose prose-headings:font-serif max-w-none col-span-8"
       set:html={renderedRichText}
     />
-    
   </div>
 </article>

@@ -5,26 +5,26 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro"
 
 export async function getStaticPaths() {
-	const storyblokApi = useStoryblokApi();
+  const storyblokApi = useStoryblokApi();
 
-	const data = await storyblokApi.getAll("cdn/stories", {
-		content_type: "blog",
-		version: import.meta.env.DEV ? "draft" : "published",
-		resolve_links: 'story',
-	});
+  const data = await storyblokApi.getAll("cdn/stories", {
+    content_type: "blog",
+    version: import.meta.env.DEV ? "draft" : "published",
+    resolve_links: 'story',
+  });
 
-	return data.map((story) => {
-		return {
-			params: { slug: story.slug },
-		};
-	});
+  return data.map((story) => {
+    return {
+      params: { slug: story.slug },
+    };
+  });
 }
 
 const storyblokApi = useStoryblokApi();
 const { slug } = Astro.params;
 
 const { data } = await storyblokApi.get(`cdn/stories/blog/${slug}`, {
-	version: import.meta.env.DEV ? "draft" : "published",
+  version: import.meta.env.DEV ? "draft" : "published",
 });
 
 const story = data.story;
@@ -37,11 +37,11 @@ const storySEO = {
 ---
 
 <BaseLayout
-	title={storySEO.title}
-	description={storySEO.description}
-	ogImage={storySEO.ogImage}
-	metaRobots={storySEO.metaRobots}
+  title={storySEO.title}
+  description={storySEO.description}
+  ogImage={storySEO.ogImage}
+  metaRobots={storySEO.metaRobots}
 >
-	<StoryblokComponent blok={story.content} />
-	<NewsletterSignup />
+  <StoryblokComponent blok={story.content} />
+  <NewsletterSignup />
 </BaseLayout>

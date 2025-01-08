@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import whiteLogo from "../images/white_logo.png";
+
+const year = new Date().getFullYear();
+
 ---
 
 <footer>
@@ -23,15 +26,11 @@ import whiteLogo from "../images/white_logo.png";
         >
         <div class="mt-6 lg:max-w-sm">
           <p class="text-sm text-white pt-3">
-            <a href="/sitemap" title="Gray Dot Co Sitemap" class="text-white"
-              >Sitemap</a
-            >&nbsp;&nbsp;&nbsp;<a
-              href="/privacy"
-              title="Click to See the Gray Dot Co Privacy Policy"
-              class="text-white">Privacy Policy</a
-            >
+            <a href="/sitemap" title="Gray Dot Co Sitemap" class="text-white">Sitemap</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="/privacy" title="Click to See the Gray Dot Co Privacy Policy" class="text-white">Privacy Policy</a>
             <br />
-            &copy; 2024 Gray Dot Co
+            &copy; {year} Gray Dot Co
           </p>
         </div>
       </div>

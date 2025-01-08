@@ -32,7 +32,6 @@ export default defineConfig({
         config: "storyblok/Config",
         feature: "storyblok/Feature",
         featured_blogs: "storyblok/FeaturedBlogs",
-        four_up: "storyblok/FourUp",
         grid: "storyblok/Grid",
         hero: "storyblok/Hero",
         leftright: "storyblok/LeftRight",

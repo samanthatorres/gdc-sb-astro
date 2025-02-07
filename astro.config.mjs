@@ -1,5 +1,4 @@
-import { defineConfig } from "astro/config";
-import storyblok from "@storyblok/astro";
+import { storyblok } from "@storyblok/astro";
 import { loadEnv } from "vite";
 import tailwind from "@astrojs/tailwind";
 import basicSsl from "@vitejs/plugin-basic-ssl";
@@ -10,7 +9,7 @@ const env = loadEnv("", process.cwd(), "STORYBLOK");
 const redirects = await getRedirects();
 
 // https://astro.build/config
-export default defineConfig({
+export default {
   adapter: netlify(),
   redirects,
   integrations: [
@@ -44,7 +43,7 @@ export default defineConfig({
         textblock: "storyblok/Textblock",
         video: "storyblok/Video",
         wysiwyg: "storyblok/Wysiwyg",
-      },
+      }
     }),
     tailwind(),
   ],
@@ -58,4 +57,4 @@ export default defineConfig({
   build: {
     format: "file",
   },
-});
+};

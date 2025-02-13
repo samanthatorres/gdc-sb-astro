@@ -6,20 +6,18 @@ const TitleElement = blok.heading_level || 'p'
 ---
 
 <div {...storyblokEditable(blok)}>
-  <div class='hero bg-cover max-w-full pb-[12%]'>
-    <div class='container mx-auto'>
-    <p class="text-l text-white italic text-left pt-20">
-      {blok.prehead}
-    </p>
-    <TitleElement class='py-8 text-6xl text-white font-bold text-left font-serif'>
-      {blok.headline}
-    </TitleElement>
-    <p class="text-left text-white">
-      {blok.description}
-    </p>
-    {blok.cta &&
-      <a href="/contact" title="Connect with an Expert from Gray Dot Co"><button class="rounded-full my-3 p-3 bg-white">Connect with an Expert</button></a>
-    }
+  <section class='hero-child'>
+    <div class="column">
+      {blok.prehead &&
+        <p class="prehead">{blok.prehead}</p>
+      }
+      <TitleElement class='headline'>
+        {blok.headline}
+      </TitleElement>
+      <p>{blok.description}</p>
+      {blok.cta &&
+        <a href="/contact" title="Connect with an Expert from Gray Dot Co" class="btnPrimary">Connect with an Expert</a>
+      }
     </div>
-  </div>
+  </section>
 </div>

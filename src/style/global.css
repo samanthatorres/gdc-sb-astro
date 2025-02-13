@@ -13,6 +13,14 @@
   src: url('/fonts/MrsEavesBoldItalic.otf');
 }
 
+@font-face {
+    font-family: 'DM Serif';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/DMSerifDisplay.ttf');
+  }
+
 .poppins-regular {
   font-family: "Poppins", serif;
   font-weight: 400;
@@ -41,7 +49,7 @@ html {
   --white: #ffffff;
   --util-grey: #d9d9d9;
 
-  --font-Headings: italic 600 80px/1 "Mrs Eaves XL Serif Nar OT Bold Italic", serif;
+  --font-Headings: italic 600 80px/1 "DM Serif", serif;
 
   --font-H1P: 7.8rem;
   --font-H1C: 5rem;

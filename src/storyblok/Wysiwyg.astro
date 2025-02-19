@@ -1,15 +1,37 @@
 ---
-import { storyblokEditable, renderRichText } from '@storyblok/astro'
- 
-const { blok } = Astro.props
-const renderedRichText = renderRichText(blok.words)
+import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
+import { type RichTextType } from "storyblok-rich-text-astro-renderer";
+import { storyblokEditable } from '@storyblok/astro'
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
+import { generateSlugFromContent } from "../js/addIdsToHeadings"
+
+export interface Props {
+  blok: {
+    words: RichTextType;
+  };
+}
+
+let { blok, content, class: klass } = Astro.props;
+content = content ?? blok.words;
 ---
-  
-<div {...storyblokEditable(blok)}>
-  <div class="container mx-auto mb-12">
-    <div
-      class="prose prose-headings:font-serif prose-headings:italic prose-headings:text-light-teal max-w-none"
-      set:html={renderedRichText}
-    />
-  </div>
-</div>
+
+<RichTextRenderer
+  class={klass}
+  content={content}
+  {...storyblokEditable(blok)}
+  schema={{
+    nodes: {
+      heading: ({ attrs: { level }, content }) => ({
+        component: `h${level}`,
+        props: { id: generateSlugFromContent(content) },
+      }),
+    },
+  }}
+  resolver={(blok) => {
+    return {
+      component: StoryblokComponent,
+      props: { blok },
+    };
+  }}
+  />

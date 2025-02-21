@@ -267,6 +267,13 @@ img {
   border-radius: 10px;
 }
 
+img.newsletter {
+  width: 70%;
+  height:auto;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
 img.illustration {
   width: 4rem;
   height: 4rem;

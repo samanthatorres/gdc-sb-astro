@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import traph from "../images/traph.png";
 ---
 
-<section class="align-middle img-left">
+<section class="align-middle img-left newsletter">
   <div class="ipu">
     <div>
       <h4>Stay In the Know</h4>
@@ -72,12 +72,13 @@ import traph from "../images/traph.png";
       </div>
     </div>
     <div>
-      <img
-        src="/public/img/illustrations/il_gdc-7.png"
-        alt=""
-        width="480"
-        height="280"
-      />
+        <Image
+        src={traph}
+        alt="decorative shape"
+        width="297"
+        height="212"
+        class="newsletter"
+    />
     </div>
   </div>
 </section>

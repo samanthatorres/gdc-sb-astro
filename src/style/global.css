@@ -793,10 +793,13 @@ main section:last-child .ipu{
   margin-bottom: 2rem;
 }
 
-
 .ipu > div, .ipu .inner-div > div, .ipu .col-flex-row > div, .ipu .col-flex-row > a {
   flex: 1; 
   width: 100%;
+}
+
+.hero h1 + p {
+  margin-top: 2rem;
 }
 
 .hero-child {

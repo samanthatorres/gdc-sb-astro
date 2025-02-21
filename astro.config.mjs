@@ -1,6 +1,5 @@
 import { storyblok } from "@storyblok/astro";
 import { loadEnv } from "vite";
-import tailwind from "@astrojs/tailwind";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { getRedirects } from "./src/functions/getRedirects";
 import netlify from "@astrojs/netlify";
@@ -44,7 +43,6 @@ export default {
         wysiwyg: "storyblok/Wysiwyg",
       }
     }),
-    tailwind(),
   ],
   vite: {
     optimizeDeps: { exclude: ["fsevents"] },

@@ -273,7 +273,7 @@ img.newsletter {
   margin: 0 auto;
 }
 
-img.illustration {
+img.illustration, img.icon {
   width: 4rem;
   height: 4rem;
 }
@@ -854,6 +854,7 @@ main section:last-child .ipu{
 .step-content img {
   width: 80px;
   height: 80px;
+  display: inline !important;
 }
 
 .step-content p {

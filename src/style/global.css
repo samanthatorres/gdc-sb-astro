@@ -1197,7 +1197,6 @@ footer .ipu > div p {
 footer .logo img{
   height: 36px;
   width: auto;
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(351deg) brightness(104%) contrast(102%);
 }
 
 footer a, footer p {

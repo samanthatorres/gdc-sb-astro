@@ -10,7 +10,7 @@
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: url(font/MrsEavesBoldItalic.otf);
+  src: url('/fonts/MrsEavesBoldItalic.otf');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     font-weight: 600;
     font-display: swap;
     src: url('/fonts/DMSerifDisplay.ttf');
-}
+  }
 
 .poppins-regular {
   font-family: "Poppins", serif;
@@ -154,7 +154,7 @@ a {
 }
 
 a:hover {
-  color: var(--light-teal);
+  color:var(--light-teal);
 }
 
 p a {
@@ -163,6 +163,7 @@ p a {
   text-decoration-color: var(--light-teal);
   text-decoration-thickness: 1px;
 }
+
 
 .menu-button-container {
   display: none;
@@ -266,7 +267,7 @@ img {
   border-radius: 10px;
 }
 
-img.icon {
+img.illustration {
   width: 4rem;
   height: 4rem;
 }
@@ -457,7 +458,7 @@ textarea {
 
 .btnTertiary {
   font-size: var(--font-Body3);
-  color: var(--teal) !important;
+  color: var(--teal !important);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -473,11 +474,11 @@ textarea {
 }
 
 .btnSecondary:hover {
-  color: var(--light-teal);
+  background: var(--light-teal);
 }
 
-.bg-grey {
-  background: var(--light-grey);
+.bg-grey, .bg-lt-grey {
+  background: var(--light-grey) !important;
 }
 
 .bg-teal {
@@ -496,7 +497,7 @@ textarea {
   text-align: center;
 }
 
-.align-middle .container{
+.align-middle .ipu {
   align-items: center;
 }
 
@@ -660,7 +661,7 @@ nav ul li {
     }
 
     .dropdown > a:after{
-      content: url('img/ic_arrow-down.svg');
+      content: url('/img/ic_arrow-down.svg');
       position: absolute;
       right: -.75rem;
       top: 14px;
@@ -720,7 +721,7 @@ nav ul li {
 
 /* SECTION STYLES */
 
-.container, .inner-section .container {
+.ipu, .inner-section .ipu {
   position: relative;
   padding: 6rem 7%;
   display: flex;
@@ -729,17 +730,17 @@ nav ul li {
   width: 100%;
 }
 
-main section:last-child .container{
+main section:last-child .ipu{
   padding-bottom: 9rem;
 }
 
-.container {
+.ipu {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.inner-section .container div:first-child {
+.inner-section .ipu div:first-child {
   margin-bottom: 2rem;
 }
 
@@ -747,7 +748,7 @@ main section:last-child .container{
   max-width: 780px;
 }
 
-.no-padding .container {
+.no-padding .ipu {
   padding: 1rem;
 }
 
@@ -755,25 +756,25 @@ main section:last-child .container{
   padding: 2rem;
 }
 
-.no-h-padding .container {
+.no-h-padding .ipu {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.no-v-padding .container {
+.no-v-padding .ipu{
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.no-t-padding .container {
+.no-t-padding .ipu {
   padding-top: 1rem;
 }
 
-.no-b-padding .container {
+.no-b-padding .ipu{
   padding-bottom: 1rem;
 }
 
-.half-padding .container {
+.half-padding .ipu {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
@@ -786,9 +787,10 @@ main section:last-child .container{
   margin-bottom: 2rem;
 }
 
-.container > div, .container .inner-div > div, .container .col-flex-row > div, .container .col-flex-row > a {
-    flex: 1; 
-    width: 100%;
+
+.ipu > div, .ipu .inner-div > div, .ipu .col-flex-row > div, .ipu .col-flex-row > a {
+  flex: 1; 
+  width: 100%;
 }
 
 .hero-child {
@@ -811,7 +813,7 @@ main section:last-child .container{
   max-width: 30rem;
 }
 
-.inner-section .container {
+.inner-section .ipu {
   flex-direction: column;
 }
 
@@ -832,7 +834,7 @@ main section:last-child .container{
 }
 
 .step:before {
-  content: url(img/ic_step-arrow.svg);
+  content: url('/img/ic_step-arrow.svg');
   width:103px;
   height: 53px;
   position: absolute;
@@ -1021,7 +1023,6 @@ iframe {
   gap:.25rem;
 }
 
-
 .card-img-text img {
   margin-bottom: 1rem;
 }
@@ -1174,21 +1175,21 @@ p.quote {
 
 footer {
   background: var(--teal);
-  background-image: url(img/bg_section.webp);
+  background-image: url(img/bg_footer.png);
   background-size: cover;
   clip-path: polygon(0 0%, 100% 15%, 100% 100%, 0 100%);
   margin-top: -3.5rem;
   z-index: 5;
 }
 
-footer .container {
+footer .ipu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 7rem 5vw 5rem;
 }
 
-footer .container > div p {
+footer .ipu > div p {
   margin: 0;
   display: block;
 }
@@ -1208,8 +1209,8 @@ footer a, footer p {
 }
 
 footer a:hover {
- color: var(--light-teal);
-}
+  color: var(--light-teal);
+ }
 
 footer ul li {
   margin: .5rem 0;
@@ -1229,7 +1230,7 @@ footer ul li a {
   padding: .5rem;
 }
 
-footer .container > div:last-child {
+footer .ipu div:last-child {
   justify-content: flex-end;
   gap: 2rem;
 }
@@ -1306,7 +1307,7 @@ footer .container > div:last-child a {
     }
 
     .dropdown > a:after{
-        content: url('img/ic_arrow-down.svg');
+        content: url('/img/ic_arrow-down.svg');
         position: absolute;
         right: -.75rem;
         top: 14px;
@@ -1322,7 +1323,7 @@ footer .container > div:last-child a {
       width: calc(100vw - 4rem);
     }
 
-    .hero-child {
+  .hero-child {
       clip-path: polygon(0 0%, 100% 0%, 100% 85%, 0 100%);
       margin-bottom: -3rem;
     }
@@ -1331,8 +1332,7 @@ footer .container > div:last-child a {
       clip-path: polygon(0 0%, 100% 10%, 100% 100%, 0 100%);
     }
 
-
-    footer .container {
+    footer .ipu {
       flex-direction: column-reverse;
       padding: 7rem 1.5rem 1rem;
       text-align: center;
@@ -1344,7 +1344,7 @@ footer .container > div:last-child a {
       margin-left: -1rem;
     }
 
-    footer .container > div:last-child {
+    footer .ipu > div:last-child {
       justify-content: center;
       gap: 3rem;
     }
@@ -1412,7 +1412,7 @@ footer .container > div:last-child a {
 
 @media (max-width: 768px) {
 
-    section .container {
+    section .ipu {
       align-items: flex-start;
     }
       
@@ -1421,7 +1421,7 @@ footer .container > div:last-child a {
       position: relative;
     }
 
-    section .container, .inner-div {
+    section .ipu, .inner-div {
       flex-direction: column;
     }
 

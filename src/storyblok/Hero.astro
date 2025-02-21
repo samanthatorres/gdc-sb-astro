@@ -7,7 +7,8 @@ const TitleElement = blok.heading_level || 'p'
 
 <div {...storyblokEditable(blok)}>
   <section class='hero-child'>
-    <div class="column">
+    <div class='ipu'>
+      <div>
       {blok.prehead &&
         <p class="prehead">{blok.prehead}</p>
       }
@@ -16,8 +17,8 @@ const TitleElement = blok.heading_level || 'p'
       </TitleElement>
       <p>{blok.description}</p>
       {blok.cta &&
-        <a href="/contact" title="Connect with an Expert from Gray Dot Co" class="btnPrimary">Connect with an Expert</a>
+        <a href="/contact" title="Connect with an Expert from Gray Dot Co" class="btnSecondary">Connect with an Expert</a>
       }
-    </div>
+    </div></div>
   </section>
 </div>

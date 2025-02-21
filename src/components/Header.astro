@@ -1,7 +1,7 @@
 ---
 import { useStoryblokApi } from '@storyblok/astro'
 import { Image } from "astro:assets";
-import fullLogo from "../images/full_logo.png";
+import fullLogo from "../images/color_logo.svg";
 
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
@@ -12,67 +12,59 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 const nav_items = data.story.content.header_menu;
 ---
 
-<header class="w-full bg-[#f7f6fd] pb-8" x-data="{
-  openMenu : false,
-  visibleStyle : 'visible lg:flex',
-  hiddenStyle : 'hidden lg:flex lg:items-center lg:justify-center lg:gap-10'
-}">
-  <div class="container h-full mx-auto pt-3">
-    <div class="flex items-center justify-end pb-3">
-      <p class="text-grey text-sm font-extralight">
-        <a href="/about" title="Learn About Gray Dot Co" class="text-grey pr-3">About</a>
-        |
-        <a href="/resources" title="Gray Dot Co Free Resources" class="text-grey px-3">Resources</a>
-        |
-        <a href="/contact" title="Contact Gray Dot Co" class="text-grey pl-3">Contact Us</a>
-      </p>
+<header>
+  <a class="logo" href="/">
+    <Image src={fullLogo} alt="Gray Dot Co Logo"  height="34" />
+  </a>
+    
+  <nav>
+    <div class="menu-button" href="#">
+      <img class="menu-open" src="img/ic_menu_open.svg" width="48" height="48" />
+      <img class="menu-close" src="img/ic_menu_close.svg" width="48" height="48" />
     </div>
 
-    <div class="mx-auto flex items-center justify-between">
-      <a href="/">
-        <Image src={fullLogo} alt="Gray Dot Co Logo" height="40"/>
-      </a>
+    <div class="menu-container">
 
-      <nav>
-        <button @click="openMenu = !openMenu" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  fill="none" viewBox="0 0 24 20">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4992 17.1432C23.3281 17.1432 23.999 17.7822 23.999 18.5716C23.999 19.3597 23.3281 20 22.4992 20L1.4996 20C0.670683 20 -0.000276566 19.3597 -0.000276566 18.5716C-0.000276566 17.7822 0.670683 17.1432 1.4996 17.1432L22.4992 17.1432ZM22.4992 8.57138C23.3281 8.57138 23.999 9.21038 23.999 9.9998C23.999 10.7892 23.3281 11.4282 22.4992 11.4282L10.4988 11.4282C9.67126 11.4282 8.99895 10.7892 8.99895 9.9998C8.99895 9.21038 9.67126 8.57138 10.4988 8.57138L22.4992 8.57138ZM22.4992 -0.000400543C23.3281 -0.000400543 23.999 0.639881 23.999 1.42802C23.999 2.21744 23.3281 2.85772 22.4992 2.85772L1.4996 2.85772C0.670683 2.85772 -0.000276566 2.21744 -0.000276566 1.42802C-0.000276566 0.639881 0.670683 -0.000400543 1.4996 -0.000400543L22.4992 -0.000400543Z" fill="#026670"/>
-          </svg>
-        </button>
+        <ul class="co-menu">
+        <li><a href="/team">About</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
 
-        <div x-popover:group :class="openMenu ? visibleStyle : hiddenStyle" class="">
-            {
-              nav_items.map((menu) => (
-                // This menu item has children
-                menu.children.length ? (
-                  <div x-data x-popover class="relative">
-                    <button x-popover:button type="button" class="flex items-center gap-2 rounded-md font-bold uppercase text-teal">
-                      {menu.link.story.name}&nbsp;▼
-                    </button>
+      <hr />
 
-                    <div
-                      x-popover:panel
-                      x-cloak
-                      x-transition.origin.top.left
-                      class="absolute left-0 mt-4 w-40 bg-white rounded-md shadow-md">
-                      {
-                        menu.children.map((child) => (
-                          <a href={`/${child.link.story.url}`} class="block w-full px-4 py-2.5 first-of-type:rounded-t-md last-of-type:rounded-b-md text-left text-sm hover:bg-gray-50 disabled:text-gray-500 font-bold uppercase" >
-                            {child.link.story.name}
-                          </a>
-                        ))
-                      }
+      <div class="primary-menu">
+        <ul class="nav-links">
+            <li class="dropdown">
+              <a href="/services">Consulting</a>
+              <div class="dropdown-content">
+                    <div class="column">
+                        <a href="/services/discovery" class="subcat">Discovery</a>
+                        <a href="/services/seo-product-management">Roadmap Strategy</a>
+                    </div>
+                    <hr />
+                    <div class="column">
+                        <a href="/services/data" class="subcat">Data</a>
+                        <a href="/services/analytics-audits">Auditing</a>
+                        <a href="/services/dashboarding-storytelling">Storytelling</a>
+                    </div>
+                    <hr />
+                    <div class="column">
+                        <a href="/services/search" class="subcat">Search Marketing</a>
+                        <a href="/services/seo-strategy">SEO Strategy</a>
+                        <a href="/services/technical-seo">Technical SEO</a>
+                        <a href="/services/content-marketing-strategy">Content Marketing Strategy</a>
+                        <a href="/services/seo-copywriting">SEO Copywriting</a>
+                        <a href="/services/ppc-paid-search-consulting">PPC Consulting</a>
                     </div>
                 </div>
-                ) : (
-                  // This menu item does not have children
-                  <a href={`/${menu.link.story.url}`} class="flex items-center gap-2 rounded-md font-bold uppercase">{menu.link.story.name}</a>
-                )
-              ))
-            }
-        </div>
-      </nav>
+            </li>
+            <li><a href="/digital-market-intelligence">Market intelligence</a></li>
+            <li><a href="/approach">Approach</a></li>
+            <li><a href="/results">Results</a></li>
+            <li><a href="/blog">Perspective</a></li>
+        </ul>
     </div>
-  </div>
+</div>
+</nav>
 </header>

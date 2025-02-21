@@ -6,6 +6,7 @@ import BaseHead from "../components/BaseHead.astro";
 import '@fontsource/dm-serif-display/400-italic.css';
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/700.css';
+import "../style/global.css";
 
 const { title, description, ogImage, metaRobots } = Astro.props;
 
@@ -24,9 +25,9 @@ const { data } = await storyblokApi.get("cdn/stories/config", {
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.5/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>
   </head>
-  <body class="max-w-full container mx-auto">
+  <body>
     <Header />
-    <main class="max-w-full container mx-auto">
+    <main>
       <slot />
     </main>
     <Footer />

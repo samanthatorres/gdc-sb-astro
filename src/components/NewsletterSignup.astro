@@ -3,78 +3,82 @@ import { Image } from "astro:assets";
 import traph from "../images/traph.png";
 ---
 
-<div class="container mx-auto grid grid-cols-2 gap-10 items-center py-8">
-  <div class="sm:col-span-2 md:col-span-1 flex justify-center">
-    <Image
-      src={traph}
-      alt="decorative shape"
-      width="297"
-      height="212"
-      class="mx-auto"
-    />
-  </div>
-  <div class="sm:col-span-2 md:col-span-1 sm:px-4 md:px-1">
-    <h4 class="text-2xl text-light-teal font-serif font-bold">Stay In the Know</h4>
-    <div id="mc_embed_shell">
-      <div id="mc_embed_signup">
-        <form
-          action="https://company.us1.list-manage.com/subscribe/post?u=855adde0ea19b41028f9c3595&id=2a74a6b875&f_id=003f93e5f0"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
-          class="validate"
-          target="_self"
-          novalidate=""
-        >
-          <div id="mc_embed_signup_scroll">
-            <div class="mc-field-group">
-              <label for="mce-EMAIL" class="block uppercase text-base font-bold py-3"
-                >Email</label
-              ><input
-                type="email"
-                name="EMAIL"
-                class="required email border border-util-grey rounded w-5/6 h-10 px-4""
-                id="mce-EMAIL"
-                required=""
-                value=""
-              />
-            </div>
-            <div id="mce-responses" class="clear">
-              <div
-                class="response"
-                id="mce-error-response"
-                style="display: none;"
-              >
+<section class="align-middle img-left newsletter">
+  <div class="ipu">
+    <div>
+      <h4>Stay In the Know</h4>
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form
+            action="https://company.us1.list-manage.com/subscribe/post?u=855adde0ea19b41028f9c3595&id=2a74a6b875&f_id=003f93e5f0"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            class="validate"
+            target="_self"
+            novalidate=""
+          >
+            <div id="mc_embed_signup_scroll">
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email</label><input
+                  type="email"
+                  name="EMAIL"
+                  class="required email"
+                  id="mce-EMAIL"
+                  required=""
+                  value=""
+                />
               </div>
-              <div
-                class="response"
-                id="mce-success-response"
-                style="display: none;"
+              <div id="mce-responses" class="clear">
+                <div
+                  class="response"
+                  id="mce-error-response"
+                  style="display: none;"
+                >
+                </div>
+                <div
+                  class="response"
+                  id="mce-success-response"
+                  style="display: none;"
+                >
+                </div>
+              </div><div
+                aria-hidden="true"
+                style="position: absolute; left: -5000px;"
               >
+                <input
+                  type="text"
+                  name="b_855adde0ea19b41028f9c3595_2a74a6b875"
+                  tabindex="-1"
+                  value=""
+                />
+              </div><div class="clear">
+                <input
+                  type="submit"
+                  name="subscribe"
+                  id="mc-embedded-subscribe"
+                  class="btnPrimary"
+                  value="Join the Mailing List"
+                />
               </div>
-            </div><div
-              aria-hidden="true"
-              style="position: absolute; left: -5000px;"
-            >
-              <input
-                type="text"
-                name="b_855adde0ea19b41028f9c3595_2a74a6b875"
-                tabindex="-1"
-                value=""
-              />
-            </div><div class="clear">
-              <input
-                type="submit"
-                name="subscribe"
-                id="mc-embedded-subscribe"
-                class="button rounded-full my-3 px-8 p-3 bg-teal text-white font-bold uppercase"
-                value="Join the Mailing List"
-              />
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        <p class="footnote">
+          You can unsubscribe at any time using the link in our emails. For more
+          details, review our <a href="/privacy" target="_blank"
+            >privacy policy.</a>
+        </p>
       </div>
-      <p class="text-[#acacac] text-xs w-5/6">You can unsubscribe at any time using the link in our emails. For more details, review our privacy policy.</p>
+    </div>
+    <div>
+        <Image
+        src={traph}
+        alt="decorative shape"
+        width="297"
+        height="212"
+        class="newsletter"
+    />
     </div>
   </div>
-</div>
+</section>

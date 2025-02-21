@@ -3,6 +3,7 @@ import { storyblokEditable } from '@storyblok/astro'
  
 const { blok } = Astro.props
 const TitleElement = blok.heading_level || 'p'
+const bgcolor = blok.bgcolor || 'white'
 
 let href = null
 if (blok.link) {
@@ -16,9 +17,9 @@ if (blok.link) {
 
 <div
   {...storyblokEditable(blok)}
-  class='max-w-full p-12 bg-white text-left'
 >
-  <div class='container mx-auto w-full md:grid md:grid-cols-2 gap-5'>
+<section class={`align-middle img-left bg-${bgcolor}`}>
+  <div class='ipu'>
     <div class='justify-self-center'>
       <img
       class='object-contain object-center'
@@ -35,4 +36,5 @@ if (blok.link) {
       <a href={href}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>
     </div>
   </div>
+  </section>
 </div>

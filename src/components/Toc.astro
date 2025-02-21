@@ -1,12 +1,17 @@
 ---
-const { content } = Astro.props;
 import {generateSlug} from '../js/addIdsToHeadings.js';
+import { buildToc } from "../js/toc.js";
+
+
+const { content } = Astro.props;
+const headings = buildToc(content);
+
 ---
 
 <div class="relative mt-3">
   <ul role="list" class="sm:pb-6 lg:pb-0">
     {
-      content.map((heading) => (
+      headings.map((heading) => (
         <li class="relative">
           <a href={'#' + generateSlug(heading.text)} class="flex justify-between gap-2 py-1 pr-3 hover:underline text-sm transition pl-0 text-zinc-900 ">
             {heading.text}

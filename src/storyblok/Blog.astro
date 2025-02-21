@@ -1,14 +1,12 @@
 ---
-import { storyblokEditable, renderRichText } from "@storyblok/astro";
-import { buildToc } from "../js/toc.js";
+import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
+import { storyblokEditable } from "@storyblok/astro";
+
 import Toc from "../components/Toc.astro";
-import { addIdsToHeadings } from "../js/addIdsToHeadings";
+import Wysiwyg from "./Wysiwyg.astro";
 
 const { blok } = Astro.props;
-let renderedRichText = renderRichText(blok.post);
-renderedRichText = addIdsToHeadings(renderedRichText);
 
-const headings = buildToc(blok.post.content);
 ---
 
 <article {...storyblokEditable(blok)}>
@@ -31,12 +29,11 @@ const headings = buildToc(blok.post.content);
         <h2 class="text-2xl text-light-teal font-bold mb-4 font-serif">
           In this article
         </h2>
-        <Toc content={headings} />
+        <Toc content={blok.post.content} />
       </div>
     </div>
-    <div
-      class="prose prose-headings:font-serif max-w-none col-span-8"
-      set:html={renderedRichText}
-    />
+    <Wysiwyg
+      class="prose prose-headings:font-serif max-w-none col-span-8" 
+      blok={blok} content={blok.post} />
   </div>
 </article>

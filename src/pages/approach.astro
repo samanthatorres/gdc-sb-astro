@@ -1,0 +1,235 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../style/global.css";
+
+const sbApi = useStoryblokApi();
+const { data } = await sbApi.get("cdn/stories/approach", {
+  version: "draft",
+});
+
+const story = data.story;
+const storySEO = {
+  title: story.content.page_title,
+  description: story.content.meta_description,
+  ogImage: story.content.og_image?.filename,
+  metaRobots: story.content.noindex,
+};
+---
+
+<BaseLayout
+  title={storySEO.title}
+  description={storySEO.description}
+  ogImage={storySEO.ogImage}
+  metaRobots={storySEO.metaRobots}
+>
+  <!--  <StoryblokComponent blok={story.content} /> -->
+  <section class="align-middle">
+		<div class="ipu">
+	        <div>
+	            <h1><s>Fit the mold</s><br/>Break the mold</h1>
+	            <p>Our approach is a little different. <br/>After all, your business is too.</p>
+	            <a href="/contact" class="btnPrimary">Connect with an expert</a>
+	        </div>
+	        <div>
+	        	<img src="img/illustrations/il_gdc-10.png" alt="Gray Dot Company" title="" width="480" height="280" />
+	        </div>
+	    </div>
+    </section>
+
+
+	<section class="inner-section align-center no-padding">
+		<div class="ipu">
+	        <div>
+	            <h2>Crafting custom strategies <br/>(because context is everything)</h2>
+	            <p>Our process pairs dynamic data and tech abilities with an agile, human approach to collaboration. We help businesses move the bottom line by tailoring strategy around the real differentiator... you.</p>
+	        </div>
+
+	        <div class="approach">
+
+		        	<div class="step step-one">
+		        		<div class="step-content">
+			        		<img class="illustration" src="img/icons/ic_listen.svg" alt="" width="64" height="64" />
+			        		<h4>Listen</h4>
+			        		<p>Our team of experts will work with you to assess your goals and leverage what makes your business unique.</p>
+		        		</div>
+		        	</div>
+
+	        	<div class="step step-two">
+	        		<div class="step-content">
+		        		<img class="illustration" src="img/icons/ic_discover.svg" alt="" width="64" height="64" />
+		        		<h4>Discover</h4>
+		        		<p>Digital Market Intelligence assesses your market, answers your most pressing questions, and pinpoints untapped opportunities specific to your brand.</p>
+	        		</div>
+	        	</div>
+	        	<div class="step step-three">
+	        		<div class="step-content">
+		        		<img class="illustration" src="img/icons/ic_tailor.svg" alt="" width="64" height="64" />
+		        		<h4>Tailor</h4>
+		        		<p>We’ll craft a precise strategy & data-based execution catered to your needs.</p>
+	        		</div>
+	        	</div>
+	        	<div class="step step-four">
+	        		<div class="step-content">
+		        		<img class="illustration" src="img/icons/ic_implement.svg" alt="" width="64" height="64" />
+		        		<h4>Implement</h4>
+		        		<p>From consulting services to hands-on training, we’ll provide the right level of digital marketing assistance to help your business get tangible results.</p>
+	        		</div>
+	        	</div>
+	        	<div class="step step-five">
+	        		<div class="step-content">
+		        		<img class="illustration" src="img/icons/ic_iterate.svg" alt="" width="64" height="64" />
+		        		<h4>Iterate</h4>
+		        		<p>As your business grows and evolves, so should your strategy. We’ll be right by your side, monitoring progress and providing expert recommendations that move the needle every day.</p>
+	        		</div>
+	        	</div>
+	        </div>
+	    </div>
+    </section>
+
+
+	<section class="no-t-padding">
+		<div class="ipu">
+	        <div>
+	            <h2>Deep knowledge,<br />diverse applications</h2>
+	            <p>Brands deserve an agency that moves the needle by understanding the nuances. Our deep knowledge and diverse experience power insights that aren’t simply adapted for your industry, they’re optimized for it.</p>
+	        </div>
+
+	        <div class="card-teal li-arrow">
+				<h4>Industries & verticals</h4>
+				<ul>
+					<li>SaaS</li>
+					<li>eCommerce & DTC</li>
+					<li>Funded tech startups</li>
+					<li>Regulated industries</li>
+					<li>Nonprofit organizations</li>
+					<li>GovTech</li>
+				</ul>
+			</div>
+
+			<div class="card-teal li-arrow">
+				<h4>Core services</h4>
+				<ul>
+					<li>Technical SEO</li>
+					<li><a href="seo-traffic-investigation.html">SEO Audits & Investigations</a></li>
+					<li><a href="digital-market-intelligence.html">Digital Marketing Intelligence</a></li>
+					<li>Data Automation & Analysis</li>
+					<li>Product Management</li>
+					<li>Content Marketing</li>
+				</ul>
+			</div>
+		</div>
+    </section>
+
+
+    <section class="bg-grey align-middle img-left">
+    	<div class="ipu">
+	        <div>
+	            <h2>But first, data...</h2>
+	            <p>DMI is a game-changing approach to market intelligence (aka your new competitive advantage). In the discovery phase, we leverage first- and third-party data sources to distill compelling insights about your audience, fast. Then we use those learnings to shape the strategies that inspire them to action.</p>
+	            <a href="#" class="btnPrimary">Learn more</a>
+	        </div>
+	        <div>
+	        	<img src="img/illustrations/il_gdc-5.png" alt=" " width="480" height="280" />
+	        </div>
+	    </div>
+    </section>
+
+
+	<section>
+		<div class="ipu">
+	        <div>
+	        	<img class="illustration" src="img/icons/ic_category-marketing_strategy.svg" alt="" width="64" height="64" />
+	            <h2>Bringing tech to the marketing party</h2>
+	        </div>
+
+	        <div class="col-flex">
+		        <div class="card-grey">
+					<h5>Cutting edge digital capabilities</h5>
+					<p>We’ve got your back from data to dev support. BigQuery setup? No big deal. Headless CMS migration? Happy to. JavaScript? In a jiffy.</p>
+				</div>
+				<div class="card-grey">
+					<h5>Advanced technical expertise</h5>
+					<p>The tricky and niche is our technical specialty. Think: advanced tracking, internationalization, and most things in between.</p>
+				</div>
+				<div class="card-grey">
+					<h5>Product mindset & methodology</h5>
+					<p>Agile-inspired planning keeps strategic focus on impactful work, while consistently delivering value within the constraints of time and budget.</p>
+				</div>
+			</div>
+        </div>
+    </section>
+
+
+	<section class="inner-section align-center no-t-padding">
+        <div class="ipu">
+	        <div>
+	            <h2>Looks like an agency,<br/>leads like a partner</h2>
+	            <p>We’re flexible in how we work together and firm on our goals.</p>
+	        </div>
+
+	        <div class="inner-div">
+		        <div class="col-flex-row">
+		        	<div>
+		        		<img class="illustration" src="img/icons/ic_category-marketing_strategy.svg" alt="" width="64" height="64" />
+			            <h4>
+			            	Integrate
+			        	</h4>
+			            <p>
+			            	We’re a partner, not an agency: here to break down walls, become a part of your team, and plug seamlessly into planning and processes.
+			           	</p>
+		        	</div>
+		        	<div>
+		        		<img class="illustration" src="img/icons/ic_category-marketing_strategy.svg" alt="" width="64" height="64" />
+			            <h4>
+			            	Educate
+			        	</h4>
+			            <p>
+			            	We teach in the spirit of transparency — resources build trust by giving clients points of reference for powerful collaboration.
+			           	</p>
+		        	</div>
+		        	<div>
+		        		<img class="illustration" src="img/icons/ic_category-marketing_strategy.svg" alt="" width="64" height="64" />
+			            <h4>
+			            	Empower
+			        	</h4>
+			            <p>
+			            	We’re focused on launching you forward with the tools to keep momentum (and flexible contracts for when you’ve “got it from here.”)
+			           	</p>
+		        	</div>
+		        </div>
+	    	</div>
+		</div>
+    </section>
+
+
+    <section class="bg-grey align-middle">
+    	<div class="ipu">
+	        <div>
+	        	<p class="prehead">RESPONSIBLE AI</p>
+	            <h2>Some thoughts on using bots</h2>
+	            <p>Real value comes from unique and accurate insights, informed by human context. Generative AI repackages what it scrapes from the internet, so the output is never unique — and often, it’s not all that accurate.
+
+				<br/><br/>At Gray Dot Co, we use generative AI to expedite while we write, aggregate while we analyze, and catalyze while we strategize. It’s a vehicle that can help us get there faster, but it’s up to us to do the driving.</p>
+	            <a href="responsible-ai.html" class="btnPrimary">SEE OUR GUIDELINES</a>
+	        </div>
+	        <div>
+	        	<img src="img/illustrations/il_gdc-2.png" alt=" " width="480" height="280" />
+	        </div>
+	    </div>
+    </section>
+
+
+    <section class="align-middle img-left">
+    	<div class="ipu">
+	        <div>
+	            <h2>In a world of rinse and repeat, rise and redefine</h2>
+	            <a href="/contact" class="btnPrimary">CONNECT WITH AN EXPERT</a>
+	        </div>
+	        <div>
+	        	<img src="img/illustrations/il_gdc-4.png" alt=" " width="480" height="280" />
+	        </div>
+	    </div>
+    </section>
+</BaseLayout>

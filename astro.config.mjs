@@ -28,7 +28,6 @@ export default {
         carousel: "storyblok/Carousel",
         childhero: "storyblok/ChildHero",
         config: "storyblok/Config",
-        feature: "storyblok/Feature",
         featured_blogs: "storyblok/FeaturedBlogs",
         fourup: "storyblok/FourUp",
         grid: "storyblok/Grid",

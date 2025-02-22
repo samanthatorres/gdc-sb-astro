@@ -106,7 +106,7 @@ h1, h2, h3, .title {
 }
 
 h1, .title {
-  font-size: clamp(4rem, 9vw, 7.8rem);
+  font-size: clamp(4rem, 9vw, 6.8rem);
   line-height: .85;
   letter-spacing: -0.02em;
   max-width: 720px;

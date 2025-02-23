@@ -10,6 +10,8 @@ export interface Props {
   blok: {
     words: RichTextType;
   };
+  content: any;
+  class?: string;
 }
 
 let { blok, content, class: klass } = Astro.props;

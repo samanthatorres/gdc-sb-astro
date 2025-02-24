@@ -1,68 +1,68 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
- 
- const { blok } = Astro.props
- const TitleElement = blok.heading_level || 'p'
+import { storyblokEditable } from "@storyblok/astro";
 
- ---
- 
-<div
-  {...storyblokEditable(blok)}
-  class='max-w-full p-12 bg-white'
->
-  <div class='container mx-auto w-full'>
-    <div class="relative z-20">
-      <TitleElement 
-        class="font-serif text-left text-pretty text-light-teal text-5xl lg:w-2/3 w-full"
-      >
-        {blok.headline}
-      </TitleElement>
-    </div>
-    <div class="grid mr-0 mb-0 ml-0 grid-cols-1 gap-14 lg:grid-cols-2 mt-8">
-      <div class="flex flex-col md:flex-row text-white">
-        <p class="font-serif text-light-teal text-6xl md:text-8xl">01</p>
-        <div class="relative space-y-2 md:pl-8 md:pt-4">
-          <p class="font-bold text-grey leading-relaxed text-pretty">
-            {blok.highlight_1}
-          </p>
-          <p class="text-grey">
-            {blok.description_1}
-          </p>
-        </div>
+const { blok } = Astro.props;
+const TitleElement = blok.heading_level || "p";
+---
+
+<div {...storyblokEditable(blok)}>
+  <section class="inner-section">
+    <div class="ipu">
+      <div>
+        <TitleElement class="inner-headline">
+          {blok.headline}
+        </TitleElement>
       </div>
-      <div class="text-black flex flex-col md:flex-row">
-        <p class="font-serif text-light-teal text-6xl md:text-8xl">02</p>
-        <div class="relative space-y-2 md:pl-8 md:pt-4">
-          <p class="font-bold leading-relaxed text-grey text-pretty">
-            {blok.highlight_2}
-          </p>
-          <p class="text-grey">
-            {blok.description_2}
-          </p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row text-black">
-        <p class="font-serif text-light-teal text-6xl md:text-8xl">03</p>
-        <div class="relative space-y-2 md:pl-8 md:pt-4">
-          <p class="font-bold text-grey leading-relaxed text-pretty">
-            {blok.highlight_3}
-          </p>
-          <p class="text-grey">
-            {blok.description_3}
+
+      <div class="flex-wrap wrap-two">
+        <div class="col-flex-row">
+          <p class="title">01</p>
+          <div>
+            <p class="inner-highlight">
+              {blok.highlight_1}
             </p>
+            <p>
+              {blok.description_1}
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="flex flex-col md:flex-row text-black">
-        <p class="font-serif text-light-teal text-6xl md:text-8xl">04</p>
-        <div class="relative space-y-2 md:pl-8 md:pt-4">
-          <p class="font-bold leading-relaxed text-grey text-pretty">
-            {blok.highlight_4}
-          </p>
-          <p class="text-grey">
-            {blok.description_4}
-          </p>
+
+        <div class="col-flex-row">
+          <p class="title">02</p>
+          <div>
+            <p class="inner-highlight">
+              {blok.highlight_2}
+            </p>
+            <p>
+              {blok.description_2}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-flex-row">
+          <p class="title">03</p>
+          <div>
+            <p class="inner-highlight">
+              {blok.highlight_3}
+            </p>
+            <p>
+              {blok.description_3}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-flex-row">
+          <p class="title">04</p>
+          <div>
+            <p class="inner-highlight">
+              {blok.highlight_4}
+            </p>
+            <p>
+              {blok.description_4}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>

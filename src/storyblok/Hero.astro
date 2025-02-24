@@ -3,10 +3,11 @@ import { storyblokEditable } from '@storyblok/astro'
  
 const { blok } = Astro.props
 const TitleElement = blok.heading_level || 'p'
+const heroColor = blok.color || 'hero-teal'
 ---
 
 <div {...storyblokEditable(blok)}>
-  <section class='hero-child'>
+  <section class={`hero-color ${heroColor}`}>
     <div class='ipu'>
       <div>
       {blok.prehead &&

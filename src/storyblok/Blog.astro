@@ -1,12 +1,21 @@
 ---
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import { storyblokEditable } from "@storyblok/astro";
+import { useStoryblokApi } from '@storyblok/astro';
 
 import Toc from "../components/Toc.astro";
 import Wysiwyg from "./Wysiwyg.astro";
 
 const { blok } = Astro.props;
 
+// Fetch the full author data
+const storyblokApi = useStoryblokApi();
+const { data } = await storyblokApi.get('cdn/stories', {
+  by_uuids: blok.authors.join(','),
+  version: 'published'
+});
+
+const authors = data.stories;
 ---
 
 <article {...storyblokEditable(blok)}>
@@ -15,10 +24,32 @@ const { blok } = Astro.props;
       <h1 class='py-16 text-6xl text-white font-bold text-left font-serif w-3/4'>
         {blok.title}
       </h1>
-      { blok.update_date ? (
+      {blok.update_date ? (
         <p class="text-left text-white"><strong>Updated on:</strong> {new Date(blok.update_date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
       ) : (
         <p class="text-left text-white"><strong>Published on:</strong> {new Date(blok.publish_date).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})}</p>
+      )}
+      {authors?.length > 0 && (
+        <div class="text-left text-white mt-2 flex items-center gap-3">
+          <strong>By:</strong>
+          <div class="flex items-center gap-2">
+            {authors.map((author, index) => (
+              <>
+                <div class="flex items-center gap-2">
+                  {author.content.Headshot?.filename && (
+                    <img
+                      src={`${author.content.Headshot.filename}/m/40x40`}
+                      alt={author.content.Name}
+                      class="rounded-full w-8 h-8 object-cover"
+                    />
+                  )}
+                  <span>{author.content.Name}</span>
+                </div>
+                {index < authors.length - 1 ? ', ' : ''}
+              </>
+            ))}
+          </div>
+        </div>
       )}
     </div>
    </div>

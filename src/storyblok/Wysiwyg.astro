@@ -17,7 +17,7 @@ export interface Props {
 let { blok, content, class: klass } = Astro.props;
 content = content ?? blok.words;
 ---
-
+<div class="ipu">
 <RichTextRenderer
   class={klass}
   content={content}
@@ -37,3 +37,4 @@ content = content ?? blok.words;
     };
   }}
   />
+</div>

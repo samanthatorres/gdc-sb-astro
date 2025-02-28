@@ -164,6 +164,13 @@ p a {
   text-decoration-thickness: 1px;
 }
 
+.blok-title {
+  font-size: var(--font-H2);
+  font-family: 'DM Serif', serif;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--light-teal);
+}
 
 .menu-button-container {
   display: none;
@@ -183,7 +190,7 @@ ul li:before {
   left:-1.5rem;
 }
 
-.li-check li, .li-arrow li, .li-check-no li, .li-arrow h5 {
+.li-check li, .li-arrow li, .li-check-no li, .li-arrow p {
   margin-left: 1.5rem;
 }
 
@@ -197,16 +204,18 @@ ul li:before {
   margin-right: .75rem;
 }
 
-.li-arrow h5 {
+.li-arrow p {
   position: relative;
+  font-size: var(--font-H5);
+  font-weight: 600;
 }
 
-.li-arrow h5:before {
+.li-arrow p:before {
   position: absolute;
   left: 0.5rem;
 }
 
-.li-arrow li:before, .li-arrow h5:before {
+.li-arrow li:before, .li-arrow p:before {
   content: "→";
   margin-right: .75rem;
 }
@@ -501,6 +510,14 @@ textarea {
 
 .align-center {
   text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 
 .align-middle .ipu {
@@ -868,6 +885,10 @@ main section:last-child .ipu{
 
 .hero-turquoise {
   background-color: var(--light-teal);
+}
+
+article section.hero-color h1.headline {
+  max-width: 720px;
 }
 
 .inner-section .ipu {

@@ -1,0 +1,30 @@
+---
+import { useStoryblokApi } from '@storyblok/astro'
+
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url',
+})
+
+const articleName = data.story.content.title;
+---
+
+<section id="spread-the-word" class="bg-grey align-middle">
+    <div class="ipu">
+        <div>
+            <p class="blok-title">Spread the Word</p>
+        </div>
+        <div>
+            <ul class="li-share">
+                <li><a href={`mailto:?subject=I'd%20like%20to%20share%20an%20article%20with%20you&body=Check%20out%20this%20article%20from%20Gray%20Dot%20Co%3A%20${Astro.url}`} target="_blank"><img src="/img/social/ic_social-email.svg" alt="share via email" title="share via email" width="32" height="32" /></a></li>
+                <li><a href={`https://twitter.com/intent/tweet?url=${Astro.url}&text=Check%20this%20out%20from%20%40GrayDotCo`} target="_blank"><img src="/img/social/ic_social-x-twitter.svg" alt="share via x/twitter" title="share via x/twitter" width="32" height="32" /></a></li>
+                <li><a href={`https://bsky.app/profile/graydot.co/post/${articleName}`} target="_blank"><img src="/img/social/ic_social-bluesky.svg" alt="share via bluesky" title="share via bluesky" width="32" height="32" /></a></li>
+                <li><a href={`https://www.linkedin.com/shareArticle?mini=true&url=${Astro.url}`} target="_blank"><img src="/img/social/ic_social-linkedin.svg" alt="share via linkedin" title="share via linkedin" width="32" height="32" /></a></li>
+                <li><a href={`https://www.reddit.com/submit?url=${Astro.url}`} target="_blank"><img src="/img/social/ic_social-reddit.svg" alt="share via reddit" title="share via reddit" width="32" height="32" /></a></li>
+                <li><a href={`https://www.facebook.com/sharer/sharer.php?u=${Astro.url}`} target="_blank"><img src="/img/social/ic_social-facebook.svg" alt="share via facebook" title="share via facebook" width="32" height="32" /></a></li>
+                <li><a href={`https://pinterest.com/pin/create/button/?url=${Astro.url}`} target="_blank"><img src="/img/social/ic_social-pinterest.svg" alt="share via pinterest" title="share via pinterest" width="32" height="32" /></a></li>
+            </ul>
+        </div>
+    </div>
+</section>

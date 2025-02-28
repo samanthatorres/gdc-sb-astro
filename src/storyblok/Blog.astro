@@ -70,8 +70,9 @@ const authors = data.stories;
         <Toc content={blok.post.content} />
       </div>
     </div>
-    <Wysiwyg
-      class="prose prose-headings:font-serif max-w-none col-span-8" 
-      blok={blok} content={blok.post} />
+    <section id="article" class="max-width720">
+      <Wysiwyg 
+        blok={blok} content={blok.post} />
+    </section>
   </div>
 </article>

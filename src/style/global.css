@@ -1589,3 +1589,31 @@ footer .container > div:last-child a {
     }
 
 }
+
+.logo-carousel {
+  display: flex;
+  flex-wrap: wrap;
+}
+.logo-carousel__item {
+  align-self: center;
+  height: 150px;
+  flex-basis: 50%;
+  text-align: center;
+}
+@media all and (min-width: 450px) {
+  .logo-carousel__item {
+    flex-basis: 33%;
+  }
+}
+@media all and (min-width: 900px) {
+  .logo-carousel__item {
+    flex-basis: 20%;
+  }
+}
+.logo-carousel img {
+  max-height: 100px;
+  max-width: 200px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

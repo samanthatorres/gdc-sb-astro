@@ -1,6 +1,7 @@
 ---
 import { storyblokEditable } from '@storyblok/astro'
- 
+import Wysiwyg from './Wysiwyg.astro'
+
 const { blok } = Astro.props
 const TitleElement = blok.heading_level || 'p'
 const Alignment = blok.alignment || 'align-center'
@@ -22,7 +23,7 @@ if (blok.link) {
             <p class="prehead">{blok.prehead}</p>
             <TitleElement class="blok-title">{blok.headline}</TitleElement>
             {blok.description && (
-              <p>{blok.description}</p>
+              <Wysiwyg blok={blok} content={blok.description} />
             )}
             {blok.button_text && (
               <a href={href}><button class="btnPrimary">{blok.button_text}</button></a>

@@ -1,5 +1,6 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
+import Wysiwyg from "./Wysiwyg.astro";
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
@@ -21,9 +22,7 @@ const TitleElement = blok.heading_level || "p";
             <p class="inner-highlight">
               {blok.highlight_1}
             </p>
-            <p>
-              {blok.description_1}
-            </p>
+            <Wysiwyg blok={blok} content={blok.description_1} />
           </div>
         </div>
 
@@ -33,9 +32,7 @@ const TitleElement = blok.heading_level || "p";
             <p class="inner-highlight">
               {blok.highlight_2}
             </p>
-            <p>
-              {blok.description_2}
-            </p>
+            <Wysiwyg blok={blok} content={blok.description_2} />
           </div>
         </div>
 
@@ -45,9 +42,7 @@ const TitleElement = blok.heading_level || "p";
             <p class="inner-highlight">
               {blok.highlight_3}
             </p>
-            <p>
-              {blok.description_3}
-            </p>
+              <Wysiwyg blok={blok} content={blok.description_3} />
           </div>
         </div>
 
@@ -57,9 +52,7 @@ const TitleElement = blok.heading_level || "p";
             <p class="inner-highlight">
               {blok.highlight_4}
             </p>
-            <p>
-              {blok.description_4}
-            </p>
+            <Wysiwyg blok={blok} content={blok.description_4} />
           </div>
         </div>
       </div>

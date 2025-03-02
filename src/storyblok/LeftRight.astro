@@ -1,6 +1,6 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
-
+import Wysiwyg from "./Wysiwyg.astro";
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
 const ImagePlacement = blok.image_placement ? "img-left" : "img-right";
@@ -21,7 +21,7 @@ if (blok.link) {
       <div>
         <p class="prehead">{blok.prehead}</p>
         <TitleElement class="blok-title">{blok.headline}</TitleElement>
-        {blok.description && <p>{blok.description}</p>}
+        {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
         {blok.button_text && <a href={href} class="btnPrimary">{blok.button_text}</a>}
       </div>
       <div>

@@ -177,7 +177,11 @@ p a {
   vertical-align: middle;
 }
 
-ul li {
+li {
+  color: var(--grey);
+}
+
+div.menu-container ul li, .footer-menu li, .services-list li {
   list-style: none;
   font-weight: 300;
   margin: 1rem 0;
@@ -185,12 +189,12 @@ ul li {
   position: relative;
 }
 
-ul li:before {
+div.menu-container ul li:before, .footer-menu li:before, .services-list li:before {
   position: absolute;
   left:-1.5rem;
 }
 
-.li-check li, .li-arrow li, .li-check-no li, .li-arrow p {
+li, .li-check li, .li-arrow li, .li-check-no li, .li-arrow p {
   margin-left: 1.5rem;
 }
 
@@ -1277,6 +1281,46 @@ p.quote {
 
 .card-text-on-img p {
   margin: 0;
+}
+
+.byline {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.profile {
+  border-radius: calc(infinity * 1px);
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+.author-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.author-names {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0;
+}
+
+.comma {
+  margin-right: 0.5rem;
+}
+
+.ampersand {
+  margin: 0 0.5rem;
+}
+
+.author-headshots {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
 }
 
 /* FOOTER STYLE */

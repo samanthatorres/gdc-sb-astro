@@ -194,7 +194,7 @@ div.menu-container ul li:before, .footer-menu li:before, .services-list li:befor
   left:-1.5rem;
 }
 
-li, .li-check li, .li-arrow li, .li-check-no li, .li-arrow p {
+li, .li-check li, .li-arrow li, .li-check-no li {
   margin-left: 1.5rem;
 }
 
@@ -219,7 +219,7 @@ li, .li-check li, .li-arrow li, .li-check-no li, .li-arrow p {
   left: 0.5rem;
 }
 
-.li-arrow li:before, .li-arrow p:before {
+.li-arrow li:before {
   content: "→";
   margin-right: .75rem;
 }
@@ -1188,6 +1188,10 @@ p.meta span {
   border-radius: var(--brd-radius);
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.card-teal li {
+  color: var(--white);
 }
 
 .card-teal > *, .card-grey > * {

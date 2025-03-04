@@ -38,6 +38,7 @@ export default {
         liststack: "storyblok/Liststack",
         page: "storyblok/Page",
         redirects_config: "storyblok/Redirect",
+        sidebyside: "storyblok/SideBySide",
         textblock: "storyblok/Textblock",
         threecolumn: "storyblok/ThreeColumn",
         video: "storyblok/Video",

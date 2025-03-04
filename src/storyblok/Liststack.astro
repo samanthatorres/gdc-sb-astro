@@ -1,6 +1,7 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import Wysiwyg from './Wysiwyg.astro'
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
@@ -17,6 +18,9 @@ const TitleElement = blok.heading_level || "p";
           height="64"
         />
         <TitleElement class="blok-title">{blok.heading}</TitleElement>
+        {blok.description && (
+          <Wysiwyg blok={blok} content={blok.description} />
+        )}
       </div>
 
       <div class="col-flex li-arrow">

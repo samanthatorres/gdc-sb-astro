@@ -1,0 +1,39 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+import IconCard from './IconCard.astro'
+import Wysiwyg from './Wysiwyg.astro'
+
+const { blok } = Astro.props
+const TitleElement = blok.heading_level || 'p'
+const Alignment = blok.alignment || 'align-center'
+
+let href = null
+if (blok.link) {
+  if (blok.link.linktype === 'url') {
+    href = blok.link.url;
+  } else if (blok.link.linktype === 'story' && blok.link.story) {
+    href = '/' + blok.link.story.full_slug;
+  }
+}
+---
+
+<div {...storyblokEditable(blok)} >
+  <section class={`inner-section ${Alignment}`}>
+    <div class="ipu">
+        <div>
+            {blok.prehead && <p class="prehead">{blok.prehead}</p>}
+            {blok.headline && <TitleElement class="blok-title">{blok.headline}</TitleElement>}
+            {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+        </div>
+        <div>
+          <div class="card-grid">
+            {
+              blok.cards?.map((blok) => {
+                return <IconCard blok={blok} />;
+              })
+            }
+          </div>
+        </div>
+    </div>
+  </section>
+</div>

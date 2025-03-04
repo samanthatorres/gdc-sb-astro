@@ -204,7 +204,7 @@ ul li:before {
   margin-right: .75rem;
 }
 
-.li-arrow p {
+.li-arrow p, .inner-highlight {
   position: relative;
   font-size: var(--font-H5);
   font-weight: 600;
@@ -813,6 +813,12 @@ main section:last-child .ipu{
 .ipu > div, .ipu .inner-div > div, .ipu .col-flex-row > div, .ipu .col-flex-row > a {
   flex: 1; 
   width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
 }
 
 .hero h1 + p {

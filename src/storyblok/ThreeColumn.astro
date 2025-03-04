@@ -17,8 +17,7 @@ if (blok.link) {
 }
 ---
 
-<div {...storyblokEditable(blok)} >
-  <section class={`inner-section ${Alignment}`}>
+  <section {...storyblokEditable(blok)} class={`inner-section ${Alignment}`}>
     <div class="ipu">
         <div>
             {blok.prehead && <p class="prehead">{blok.prehead}</p>}
@@ -36,4 +35,3 @@ if (blok.link) {
         </div>
     </div>
   </section>
-</div>

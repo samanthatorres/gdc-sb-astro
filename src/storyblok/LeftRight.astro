@@ -15,18 +15,22 @@ if (blok.link) {
 }
 ---
 
-<div {...storyblokEditable(blok)}>
-  <section class={`align-middle ${ImagePlacement}`}>
-    <div class="ipu">
-      <div>
-        <p class="prehead">{blok.prehead}</p>
-        <TitleElement class="blok-title">{blok.headline}</TitleElement>
-        {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
-        {blok.button_text && <a href={href} class="btnPrimary">{blok.button_text}</a>}
-      </div>
-      <div>
-        <img src={`${blok.image.filename}/m/`} width="480" height="280" />
-      </div>
+<section {...storyblokEditable(blok)} class={`align-middle ${ImagePlacement}`}>
+  <div class="ipu">
+    <div>
+      <p class="prehead">{blok.prehead}</p>
+      <TitleElement class="blok-title">{blok.headline}</TitleElement>
+      {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+      {
+        blok.button_text && (
+          <a href={href} class="btnPrimary">
+            {blok.button_text}
+          </a>
+        )
+      }
     </div>
-  </section>
-</div>
+    <div>
+      <img src={`${blok.image.filename}/m/`} width="480" height="280" />
+    </div>
+  </div>
+</section>

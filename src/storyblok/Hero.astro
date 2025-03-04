@@ -1,25 +1,30 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
- 
-const { blok } = Astro.props
-const TitleElement = blok.heading_level || 'p'
-const heroColor = blok.color || 'hero-teal'
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+const TitleElement = blok.heading_level || "p";
+const heroColor = blok.color || "hero-teal";
 ---
 
-<div {...storyblokEditable(blok)}>
-  <section class={`hero-color ${heroColor}`}>
-    <div class='ipu'>
-      <div>
-      {blok.prehead &&
-        <p class="prehead">{blok.prehead}</p>
-      }
-      <TitleElement class='headline'>
+<section {...storyblokEditable(blok)} class={`hero-color ${heroColor}`}>
+  <div class="ipu">
+    <div>
+      {blok.prehead && <p class="prehead">{blok.prehead}</p>}
+      <TitleElement class="headline">
         {blok.headline}
       </TitleElement>
       <p>{blok.description}</p>
-      {blok.cta &&
-        <a href="/contact" title="Connect with an Expert from Gray Dot Co" class="btnSecondary">Connect with an Expert</a>
+      {
+        blok.cta && (
+          <a
+            href="/contact"
+            title="Connect with an Expert from Gray Dot Co"
+            class="btnSecondary"
+          >
+            Connect with an Expert
+          </a>
+        )
       }
-    </div></div>
-  </section>
-</div>
+    </div>
+  </div>
+</section>

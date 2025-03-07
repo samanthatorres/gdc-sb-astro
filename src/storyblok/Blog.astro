@@ -50,7 +50,7 @@ const authors = data.stories;
     </div>
   </section>
 
-  <div class="ipu">
+  <div class="ipu" id="byline">
     <strong>By:</strong>
     <div class="author-grid">
       {/* Names row */}
@@ -81,17 +81,16 @@ const authors = data.stories;
     </div>
   </div>
 
-  <div class="container mx-auto mb-12 lg:grid lg:grid-cols-12 lg:gap-10">
-    <div class="col-span-4">
-      <div class="sticky top-4 h-screen overflow-y-auto overscroll-contain">
-        <h2 class="text-2xl text-light-teal font-bold mb-4 font-serif">
-          In this article
-        </h2>
+  <div class="ipu no-v-padding">
+  <div class="blog-container">
+    <div class="toc">
+      <div class="toc-sticky">
+        <h2 class="toc-title">In this article</h2>
         <Toc content={blok.post.content} />
       </div>
     </div>
-    <section id="article" class="max-width720">
+    <section id="article" class="post-body">
       <Wysiwyg blok={blok} content={blok.post} />
     </section>
-  </div>
+  </div></div>
 </article>

@@ -39,6 +39,8 @@ export default {
         page: "storyblok/Page",
         redirects_config: "storyblok/Redirect",
         sidebyside: "storyblok/SideBySide",
+        testimonial: "storyblok/Testimonial",
+        testimonials: "storyblok/Testimonials",
         textblock: "storyblok/Textblock",
         threecolumn: "storyblok/ThreeColumn",
         video: "storyblok/Video",

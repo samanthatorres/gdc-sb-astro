@@ -1,0 +1,22 @@
+---
+import CardTestimonial from "../components/CardTestimonial.astro";
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+const TitleElement = blok.heading_level || "p";
+const testimonials = blok.testimonials;
+---
+
+<section {...storyblokEditable(blok)} class="no-h-padding testimonials">
+  <div class="ipu">
+    <p class="prehead">{blok.prehead}</p>
+    <TitleElement class="blok-title">{blok.headline}</TitleElement>
+    <div class="col-flex-row y-scroll align-center">
+      {
+        testimonials?.map((testimonial) => {
+          return <CardTestimonial testimonial={testimonial.content} />;
+        })
+      }
+    </div>
+  </div>
+</section>

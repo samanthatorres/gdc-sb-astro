@@ -214,12 +214,12 @@ li, .li-check li, .li-arrow li, .li-check-no li {
   font-weight: 600;
 }
 
-.li-arrow p:before {
+.li-arrow p:before, .toc ul li ul li:before {
   position: absolute;
   left: 0.5rem;
 }
 
-.li-arrow li:before {
+.li-arrow p:before, .toc ul li ul li:before {
   content: "→";
   margin-right: .75rem;
 }
@@ -1220,7 +1220,11 @@ section .card-teal ul li {
   padding: 5rem 3rem 3rem;
   min-width: 40%;
   margin: 5rem auto 2rem;
-  max-width: 720px;
+  max-width: 320px;
+}
+
+.testimonials {
+  display: block;
 }
 
 .bg-grey .card-testimonial {
@@ -1521,6 +1525,7 @@ footer .container > div:last-child a {
     .card-testimonial {
       padding: 3rem 2rem 1rem;
       min-width: 80vw;
+      max-width: 320px;
       margin: 5rem 0;
       line-height: 1.5;
     }
@@ -1679,7 +1684,7 @@ footer .container > div:last-child a {
 .blog-container {
   width: 100%;
   margin: 0 auto 3rem;
-  padding: 0 1rem;
+  padding: 0;
   display: grid;
   grid-template-areas:
     "toc"
@@ -1689,6 +1694,22 @@ footer .container > div:last-child a {
 
 .toc {
   grid-area: toc;
+}
+
+.toc ul {
+  list-style: none;
+}
+
+.toc ul li {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.toc ul li ul li {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
 }
 
 .post-body {

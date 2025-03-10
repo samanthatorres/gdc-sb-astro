@@ -1,24 +1,20 @@
 ---
-import ArticleCard from '../components/ArticleCard.astro'
-import { storyblokEditable } from '@storyblok/astro'
- 
-const { blok } = Astro.props
+import ArticleCard from "../components/ArticleCard.astro";
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+const TitleElement = blok.heading_level || "p";
 const blogs = blok.blogs;
 ---
- 
-<section class="mx-6 my-12" {...storyblokEditable(blok)}>
-  <h2 class="text-6xl text-[#50b0ae] font-bold text-center mb-12">
-    {blok.headline}
-  </h2>
-  <ul class="grid grid-cols-1 gap-6 md:grid-cols-3">
+
+<section {...storyblokEditable(blok)} class="ipu featured-blogs">
+  <p class="prehead">{blok.prehead}</p>
+  <TitleElement class="blok-title">{blok.headline}</TitleElement>
+  <div class="articles-grid">
     {
       blogs?.map((blog) => {
-        return (
-          <li>
-            <ArticleCard blog={blog.content} slug={blog.slug} />
-          </li>
-        )
+        return <ArticleCard blog={blog.content} slug={blog.slug} />;
       })
     }
-  </ul>
+  </div>
 </section>

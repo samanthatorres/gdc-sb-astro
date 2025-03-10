@@ -1,9 +1,13 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
 import Wysiwyg from "./Wysiwyg.astro";
+
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
-const ImagePlacement = blok.image_placement ? "img-left" : "img-right";
+const LeftBullets = blok.left_bullets || "li-arrow";
+const LeftColor = blok.left_color || "card-teal";
+const RightBullets = blok.right_bullets || "li-arrow";
+const RightColor = blok.right_color || "card-teal";
 
 let href = null;
 if (blok.link) {
@@ -15,7 +19,7 @@ if (blok.link) {
 }
 ---
 
-<section {...storyblokEditable(blok)} class={`align-middle ${ImagePlacement}`}>
+<section {...storyblokEditable(blok)}>
   <div class="ipu">
     <div>
       <p class="prehead">{blok.prehead}</p>
@@ -23,14 +27,21 @@ if (blok.link) {
       {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
       {
         blok.button_text && (
-          <a href={href} class="btnPrimary">
-            {blok.button_text}
+          <a href={href}>
+            <button class="btnPrimary">{blok.button_text}</button>
           </a>
         )
       }
     </div>
-    <div>
-      <img src={`${blok.image.filename}/m/`} width="480" height="280" />
+    <div class={`${LeftColor} ${LeftBullets} services-list `}>
+      {blok.left_content && <Wysiwyg blok={blok} content={blok.left_content} />}
+    </div>
+    <div class={`${RightColor} ${RightBullets} services-list`}>
+      {
+        blok.right_content && (
+          <Wysiwyg blok={blok} content={blok.right_content} />
+        )
+      }
     </div>
   </div>
 </section>

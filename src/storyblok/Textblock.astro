@@ -1,33 +1,35 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
- 
-const { blok } = Astro.props
-const TitleElement = blok.heading_level || 'p'
-const Alignment = blok.alignment || 'align-center'
+import { storyblokEditable } from "@storyblok/astro";
+import Wysiwyg from "./Wysiwyg.astro";
 
-let href = null
+const { blok } = Astro.props;
+const TitleElement = blok.heading_level || "p";
+const Alignment = blok.alignment || "align-center";
+const bgcolor = blok.bgcolor || "white";
+
+let href = null;
 if (blok.link) {
-  if (blok.link.linktype === 'url') {
+  if (blok.link.linktype === "url") {
     href = blok.link.url;
-  } else if (blok.link.linktype === 'story' && blok.link.story) {
-    href = '/' + blok.link.story.full_slug;
+  } else if (blok.link.linktype === "story" && blok.link.story) {
+    href = "/" + blok.link.story.full_slug;
   }
 }
 ---
 
-<div {...storyblokEditable(blok)} >
-  <section class={Alignment}>
-    <div class="ipu">
-        <div>
-            <p class="prehead">{blok.prehead}</p>
-            <TitleElement class="blok-title">{blok.headline}</TitleElement>
-            {blok.description && (
-              <p>{blok.description}</p>
-            )}
-            {blok.button_text && (
-              <a href={href}><button class="btnPrimary">{blok.button_text}</button></a>
-            )}
-        </div>
+<section {...storyblokEditable(blok)} class={`${Alignment} bg-${bgcolor}`}>
+  <div class="ipu">
+    <div>
+      <p class="prehead">{blok.prehead}</p>
+      <TitleElement class="blok-title">{blok.headline}</TitleElement>
+      {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+      {
+        blok.button_text && (
+          <a href={href}>
+            <button class="btnPrimary">{blok.button_text}</button>
+          </a>
+        )
+      }
     </div>
-  </section>
-</div>
+  </div>
+</section>

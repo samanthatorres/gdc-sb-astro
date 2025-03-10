@@ -177,7 +177,11 @@ p a {
   vertical-align: middle;
 }
 
-ul li {
+li {
+  color: var(--grey);
+}
+
+div.menu-container ul li, .footer-menu li, .services-list li {
   list-style: none;
   font-weight: 300;
   margin: 1rem 0;
@@ -185,12 +189,12 @@ ul li {
   position: relative;
 }
 
-ul li:before {
+div.menu-container ul li:before, .footer-menu li:before, .services-list li:before {
   position: absolute;
   left:-1.5rem;
 }
 
-.li-check li, .li-arrow li, .li-check-no li, .li-arrow p {
+li, .li-check li, .li-arrow li, .li-check-no li {
   margin-left: 1.5rem;
 }
 
@@ -204,18 +208,18 @@ ul li:before {
   margin-right: .75rem;
 }
 
-.li-arrow p {
+.li-arrow p, .inner-highlight {
   position: relative;
   font-size: var(--font-H5);
   font-weight: 600;
 }
 
-.li-arrow p:before {
+.li-arrow p:before, .toc ul li ul li:before {
   position: absolute;
   left: 0.5rem;
 }
 
-.li-arrow li:before, .li-arrow p:before {
+.li-arrow p:before, .toc ul li ul li:before {
   content: "→";
   margin-right: .75rem;
 }
@@ -784,7 +788,7 @@ main section:last-child .ipu{
   padding-right: 1rem;
 }
 
-.no-v-padding .ipu{
+.no-v-padding .ipu, .no-v-padding.ipu {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -813,6 +817,12 @@ main section:last-child .ipu{
 .ipu > div, .ipu .inner-div > div, .ipu .col-flex-row > div, .ipu .col-flex-row > a {
   flex: 1; 
   width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
 }
 
 .hero h1 + p {
@@ -1180,6 +1190,10 @@ p.meta span {
   margin-bottom: 1rem;
 }
 
+.card-teal li {
+  color: var(--white);
+}
+
 .card-teal > *, .card-grey > * {
   padding: 0 2.5rem;
 }
@@ -1206,7 +1220,11 @@ section .card-teal ul li {
   padding: 5rem 3rem 3rem;
   min-width: 40%;
   margin: 5rem auto 2rem;
-  max-width: 720px;
+  max-width: 320px;
+}
+
+.testimonials {
+  display: block;
 }
 
 .bg-grey .card-testimonial {
@@ -1271,6 +1289,50 @@ p.quote {
 
 .card-text-on-img p {
   margin: 0;
+}
+
+.byline {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.profile {
+  border-radius: calc(infinity * 1px);
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+#byline {
+  padding: 4rem 7% 2rem;
+}
+
+.author-grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.author-names {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 0;
+}
+
+.comma {
+  margin-right: 0.5rem;
+}
+
+.ampersand {
+  margin: 0 0.5rem;
+}
+
+.author-headshots {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
 }
 
 /* FOOTER STYLE */
@@ -1463,6 +1525,7 @@ footer .container > div:last-child a {
     .card-testimonial {
       padding: 3rem 2rem 1rem;
       min-width: 80vw;
+      max-width: 320px;
       margin: 5rem 0;
       line-height: 1.5;
     }
@@ -1588,4 +1651,111 @@ footer .container > div:last-child a {
       flex-wrap: wrap;
     }
 
+}
+
+.logo-carousel {
+  display: flex;
+  flex-wrap: wrap;
+}
+.logo-carousel__item {
+  align-self: center;
+  height: 150px;
+  flex-basis: 50%;
+  text-align: center;
+}
+@media all and (min-width: 450px) {
+  .logo-carousel__item {
+    flex-basis: 33%;
+  }
+}
+@media all and (min-width: 900px) {
+  .logo-carousel__item {
+    flex-basis: 20%;
+  }
+}
+.logo-carousel img {
+  max-height: 100px;
+  max-width: 200px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.blog-container {
+  width: 100%;
+  margin: 0 auto 3rem;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "toc"
+    "post-body";
+  gap: 4rem;
+}
+
+.toc {
+  grid-area: toc;
+}
+
+.toc ul {
+  list-style: none;
+}
+
+.toc ul li {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.toc ul li ul li {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+
+.post-body {
+  grid-area: post-body;
+  max-width: 720px;
+}
+
+.toc-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--teal);
+}
+
+ /* Desktop layout */
+ @media (min-width: 1024px) {
+  .blog-container {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "toc post-body";
+  }
+
+  .toc-sticky {
+    position: sticky;
+    top: 1rem;
+    max-height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+
+.featured-blogs {
+  display: flex;
+  flex-direction: column;
+}
+
+.articles-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .articles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

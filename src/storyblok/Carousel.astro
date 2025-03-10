@@ -1,36 +1,41 @@
 ---
-import { storyblokEditable } from '@storyblok/astro'
+import { storyblokEditable } from "@storyblok/astro";
 
-const { blok } = Astro.props
-const TitleElement = blok.heading_level || 'p'
+const { blok } = Astro.props;
+const TitleElement = blok.heading_level || "p";
+const bgcolor = blok.bgcolor || "white";
 
-let href = null
+let href = null;
 if (blok.link) {
-  if (blok.link.linktype === 'url') {
+  if (blok.link.linktype === "url") {
     href = blok.link.url;
-  } else if (blok.link.linktype === 'story' && blok.link.story) {
-    href = '/' + blok.link.story.full_slug;
+  } else if (blok.link.linktype === "story" && blok.link.story) {
+    href = "/" + blok.link.story.full_slug;
   }
 }
 ---
 
-<div
-   {...storyblokEditable(blok)}
-   class='max-w-full p-12 bg-light-grey text-center'
->
-  <div class='container mx-auto w-full'>
-    <div>
-      <p class='font-sans font-bold uppercase text-lg text-black'>{blok.prehead}</p>
-      <TitleElement class='font-sans font-bold text-lg text-grey py-6 uppercase'>{blok.headline}</TitleElement>
-      <div class='justify-self-center'>
-      <img
-      class='object-contain object-center'
-      src={`${blok.image.filename}/m/`}
-      />
-    </div>
-      {blok.button_text &&
-        (<a href={href}><button class="rounded-full my-3 p-3 bg-teal text-white">{blok.button_text}</button></a>)
+<section {...storyblokEditable(blok)} class={`bg-${bgcolor}`}>
+  <div class="ipu">
+    <div class="align-center">
+      <p class="prehead">{blok.prehead}</p>
+      <TitleElement class="blok-title">{blok.headline}</TitleElement>
+      <div class="flex-wrap margin-l logo-carousel">
+        {
+          blok.images?.map((image) => (
+            <div class="logo-carousel__item">
+              <img src={`${image.filename}/m/`} alt={`${image.alt}`} />
+            </div>
+          ))
+        }
+      </div>
+      {
+        blok.button_text && (
+          <a href={href} class="btnPrimary">
+            {blok.button_text}
+          </a>
+        )
       }
     </div>
   </div>
-</div>
+</section>

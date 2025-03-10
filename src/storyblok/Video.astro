@@ -5,9 +5,8 @@ import StoryblokComponent from '@storyblok/astro/StoryblokComponent.astro'
 const { blok } = Astro.props
 ---
 
-<div class="container mx-auto py-10">
+<div class="ipu">
   <iframe
-    class="aspect-video w-full md:w-3/4 mx-auto"
     src={`https://www.youtube.com/embed/${blok.videoId}?autoplay=0&rel=0&color=white`}
     frameborder="0"
     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,31 +1,31 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import Wysiwyg from "./Wysiwyg.astro";
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
 ---
 
-<div {...storyblokEditable(blok)}>
-  <section>
-    <div class="ipu">
-      <div>
-        <img
-          class="icon"
-          src={`${blok.icon.filename}/m/60x0`}
-          width="64"
-          height="64"
-        />
-        <TitleElement class="blok-title">{blok.heading}</TitleElement>
-      </div>
-
-      <div class="col-flex li-arrow">
-        {
-          blok.list?.map((blok) => {
-            return <StoryblokComponent blok={blok} />;
-          })
-        }
-      </div>
+<section {...storyblokEditable(blok)}>
+  <div class="ipu">
+    <div>
+      <img
+        class="icon"
+        src={`${blok.icon.filename}/m/60x0`}
+        width="64"
+        height="64"
+      />
+      <TitleElement class="blok-title">{blok.heading}</TitleElement>
+      {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
     </div>
-  </section>
-</div>
+
+    <div class="col-flex li-arrow">
+      {
+        blok.list?.map((blok) => {
+          return <StoryblokComponent blok={blok} />;
+        })
+      }
+    </div>
+  </div>
+</section>

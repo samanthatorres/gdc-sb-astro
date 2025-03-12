@@ -181,7 +181,7 @@ li {
   color: var(--grey);
 }
 
-div.menu-container ul li, .footer-menu li, .services-list li {
+div.menu-container ul li, .footer-menu li, .services-list li, .left-right ul li {
   list-style: none;
   font-weight: 300;
   margin: 1rem 0;
@@ -219,7 +219,7 @@ li, .li-check li, .li-arrow li, .li-check-no li {
   left: 0.5rem;
 }
 
-.li-arrow p:before, .toc ul li ul li:before {
+.li-arrow ul p:before, .li-arrow ul li:before, .toc ul li ul li:before, .left-right ul li:before {
   content: "→";
   margin-right: .75rem;
 }
@@ -750,7 +750,7 @@ nav ul li {
 
 .ipu, .inner-section .ipu {
   position: relative;
-  padding: 6rem 7%;
+  padding: 4rem 7%;
   display: flex;
   gap: 3%;
   flex-direction: row;
@@ -1758,4 +1758,12 @@ footer .container > div:last-child a {
   .articles-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.left-right a {
+  text-decoration: underline;
+}
+
+.left-right a.btnPrimary {
+  text-decoration: none;
 }

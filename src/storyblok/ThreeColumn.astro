@@ -19,11 +19,13 @@ if (blok.link) {
 
   <section {...storyblokEditable(blok)} class={`inner-section ${Alignment}`}>
     <div class="ipu">
-        <div>
-            {blok.prehead && <p class="prehead">{blok.prehead}</p>}
-            {blok.headline && <TitleElement class="blok-title">{blok.headline}</TitleElement>}
-            {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
-        </div>
+        {(blok.prehead || blok.headline) && (
+            <div>
+                {blok.prehead && <p class="prehead">{blok.prehead}</p>}
+                {blok.headline && <TitleElement class="blok-title">{blok.headline}</TitleElement>}
+                {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+            </div>
+        )}
         <div>
           <div class="card-grid">
             {

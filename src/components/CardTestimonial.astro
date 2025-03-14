@@ -5,7 +5,7 @@ const { testimonial } = Astro.props;
 <div class="card-testimonial">
   <img src={`${testimonial.headshot.filename}/m/120x120`} alt={testimonial.headshot.alt} width="120" height="120" />
   <p class="quote">
-    {testimonial.short_quip}
+    {testimonial.quip_length ? testimonial.short_quip : testimonial.long_quip}
   </p>
-  <p>{testimonial.author} · {testimonial.title}</p>
+  <p>{testimonial.name} · {testimonial.title}</p>
 </div>

@@ -16,7 +16,7 @@ const { data } = await storyblokApi.get("cdn/stories", {
 const testimonials = data.stories;
 ---
 
-<section {...storyblokEditable(blok)} class="no-h-padding ipu testimonials">
+<section {...storyblokEditable(blok)} class="no-padding ipu testimonials">
   <p class="prehead">{blok.prehead}</p>
   <TitleElement class="blok-title">{blok.headline}</TitleElement>
 

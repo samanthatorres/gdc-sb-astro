@@ -4,6 +4,7 @@ import Wysiwyg from "./Wysiwyg.astro";
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
 const ImagePlacement = blok.image_placement ? "img-left" : "img-right";
+const bgcolor = blok.bgcolor || "white";
 
 let href = null;
 if (blok.link) {
@@ -15,10 +16,10 @@ if (blok.link) {
 }
 ---
 
-<section {...storyblokEditable(blok)} class={`align-middle ${ImagePlacement}`}>
-  <div class="ipu">
+<section {...storyblokEditable(blok)} class={`align-middle ${ImagePlacement} bg-${bgcolor}`}>
+  <div class="ipu left-right">
     <div>
-      <p class="prehead">{blok.prehead}</p>
+      {blok.prehead && <p class="prehead">{blok.prehead}</p>}
       <TitleElement class="blok-title">{blok.headline}</TitleElement>
       {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
       {

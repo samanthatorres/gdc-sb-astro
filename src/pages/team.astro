@@ -1,0 +1,149 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../style/global.css";
+
+const sbApi = useStoryblokApi();
+const { data } = await sbApi.get("cdn/stories/team", {
+  version: "draft",
+});
+
+const story = data.story;
+const storySEO = {
+  title: story.content.page_title,
+  description: story.content.meta_description,
+  ogImage: story.content.og_image?.filename,
+  metaRobots: story.content.noindex,
+};
+---
+
+<BaseLayout
+  title={storySEO.title}
+  description={storySEO.description}
+  ogImage={storySEO.ogImage}
+  metaRobots={storySEO.metaRobots}
+>
+  <StoryblokComponent blok={story.content} />
+
+  <section id="our-leadership" class="inner-section no-t-padding">
+    <div class="ipu">
+      <div>
+        <h2>Our leadership</h2>
+      </div>
+
+      <div class="flex-wrap wrap-two">
+        <a class="card-text-on-img" href="team-member.html" title=" ">
+          <img
+            src="https://a-us.storyblok.com/f/1016570/1600x2000/a1f79dbb85/sam-_-tory-008.jpg"
+            alt="Tory Gray, CEO of Gray Dot Co"
+            width="480"
+            height="600"
+          />
+          <div>
+            <h3>Tory Gray</h3>
+            <p>
+              <strong>CEO, Principal SEO Consultant</strong><br />Toronto,
+              Ontario, Canada
+            </p>
+          </div>
+        </a>
+        <a class="card-text-on-img" href="team-member.html" title=" ">
+          <img
+            src="https://a-us.storyblok.com/f/1016570/1600x2000/49af8a6226/sam-_-tory-007.jpg"
+            alt="Sam Torres, Chief Digital Officer of Gray Dot Co"
+            width="480"
+            height="600"
+          />
+          <div>
+            <h3>Sam Torres</h3>
+            <p>
+              <strong>Chief Digital Officer</strong><br />Atlanta, Georgia,
+              United States
+            </p>
+          </div>
+        </a>
+        <a class="card-text-on-img" href="team-member.html" title=" ">
+          <img
+            src="https://a-us.storyblok.com/f/1016570/500x500/b1345251b5/elias-grouhi-headshot.jpeg"
+            alt="Elias Grouhi, Director of Brand & Content Strategy of Gray Dot Co"
+            width="480"
+            height="334"
+          />
+          <div>
+            <h3>Elias Grouhi</h3>
+            <p>
+              <strong>Director of Brand & Content Strategy</strong><br
+              />Denver, Colorado, United States
+            </p>
+          </div>
+        </a>
+        <a class="card-text-on-img" href="team-member.html" title=" ">
+          <img
+            src="https://a-us.storyblok.com/f/1016570/2003x3000/f1f65a988d/heather-kaeowicien.jpg"
+            alt="Heather Kaeowichien, Director of Product Management of Gray Dot Co"
+            width="480"
+            height="480"
+          />
+          <div>
+            <h3>Heather Kaeowichien</h3>
+            <p>
+              <strong>Director of Product Management</strong><br />Tampa,
+              Florida, United States
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-experts" class="inner-section no-t-padding">
+    <div class="ipu">
+      <div>
+        <h2>Our experts</h2>
+      </div>
+
+      <div class="flex-wrap wrap-three">
+        <div>
+          <img
+            src="img/team/img_caesar-barba-ppc-analytics-consultant.jpg"
+            alt=""
+            width="300"
+            height="300"
+          />
+          <h3>Caesar Barba</h3>
+          <p>
+            <strong>Principal PPC & Analytics Consultant</strong><br />Denver,
+            Colorado, USA
+          </p>
+        </div>
+        <div>
+          <img
+            src="img/team/img_colin-gray.jpg"
+            alt=""
+            width="300"
+            height="300"
+          />
+          <h3>Colin Gray</h3>
+          <p>
+            <strong>Co-Founder, Board Member</strong><br />Toronto, Ontario,
+            Canada
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-us" class="bg-grey align-center">
+    <div class="ipu">
+      <div>
+        <h2>Work with us</h2>
+        <p>
+          We’ll help craft, teach, and carry out SEO roadmaps that check all the
+          boxes.
+        </p>
+        <a href="/contact" class="btnPrimary">CONTACT AN EXPERT</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

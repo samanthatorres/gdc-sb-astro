@@ -15,11 +15,25 @@ if (blok.link) {
 ---
 
 <div {...storyblokEditable(blok)}>
-  {blok.icon?.filename && <img
-    class="illustration"
-    src={`${blok.icon.filename}/m/`}
-    alt={`${blok.icon.alt}`}
-  />}
-  <p class="inner-highlight">{blok.highlight}</p>
-  {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+  {href ? (
+    <a href={href}>
+      {blok.icon?.filename && <img
+        class="illustration"
+        src={`${blok.icon.filename}/m/`}
+        alt={`${blok.icon.alt}`}
+      />}
+      <p class="inner-highlight">{blok.highlight}</p>
+      {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+    </a>
+  ) : (
+    <>
+      {blok.icon?.filename && <img
+        class="illustration"
+        src={`${blok.icon.filename}/m/`}
+        alt={`${blok.icon.alt}`}
+      />}
+      <p class="inner-highlight">{blok.highlight}</p>
+      {blok.description && <Wysiwyg blok={blok} content={blok.description} class="li-copy"/>}
+    </>
+  )}
 </div>

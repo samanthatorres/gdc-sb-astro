@@ -1,0 +1,114 @@
+---
+import { useStoryblokApi } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../style/global.css";
+
+const sbApi = useStoryblokApi();
+const { data } = await sbApi.get("cdn/stories/opinionated-seo-opinions", {
+  version: "draft",
+});
+
+const story = data.story;
+const storySEO = {
+  title: story.content.page_title,
+  description: story.content.meta_description,
+  ogImage: story.content.og_image?.filename,
+  metaRobots: story.content.noindex,
+};
+---
+
+<BaseLayout
+  title={storySEO.title}
+  description={storySEO.description}
+  ogImage={storySEO.ogImage}
+  metaRobots={storySEO.metaRobots}
+>
+  <StoryblokComponent blok={story.content} />
+
+  <section class="align-center">
+    <div class="ipu">
+      <h2>Listen &amp; Subscribe</h2>
+      <div class="podcast-icons flex-wrap">
+        <a
+          href="https://podcasts.apple.com/us/podcast/opinionated-seo-opinions/id1606003617"
+          title="Listen to Opinionated SEO Opinions on Apple Podcasts"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://a-us.storyblok.com/f/1016570/150x150/86f496badb/apple-podcast.svg"
+            alt="Opinionated SEO Opinions on Apple Podcasts"
+            class="icon"
+          />
+        </a>
+        <a
+          href="https://open.spotify.com/show/6G2LDXn26gMd5Y7bUTBXY9?si=589a8937cb0e4e04"
+          title="Listen to Opinionated SEO Opinions on Spotify"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://a-us.storyblok.com/f/1016570/150x150/7a86ea48e5/spotify.svg"
+            alt="Opinionated SEO Opinions on Spotify"
+            class="icon"
+          />
+        </a>
+        <a
+          href="https://www.youtube.com/@GrayDotCo4"
+          title="Listen to Opinionated SEO Opinions on YouTube"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://a-us.storyblok.com/f/1016570/150x150/811109d108/youtube.svg"
+            alt="Opinionated SEO Opinions on YouTube"
+            class="icon"
+          />
+        </a>
+        <a
+          href="https://music.amazon.com/podcasts/006e60e0-ad58-480a-a2ac-218fa07126bb/opinionated-seo-opinions"
+          title="Listen to Opinionated SEO Opinions on Amazon Music"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://a-us.storyblok.com/f/1016570/150x150/4ffb1b812d/amazon-music.svg"
+            alt="Opinionated SEO Opinions on Spotify"
+            class="icon"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="align-center bg-grey">
+    <div class="ipu blocking">
+      <div>
+        <h2>Watch our latest episode</h2>
+      </div>
+      <div class="video-container">
+        <iframe
+          src="https://www.youtube.com/embed/PFjwSWmmzH4?autoplay=0&rel=0&color=white"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white align-middle img-left">
+    <div class="ipu left-right">
+      <div>
+        <h2>Want to ask an SEO question?</h2>
+        <a href="/contact" class="btnPrimary">Reach out today</a>
+      </div>
+      <div>
+        <img
+          src="https://a-us.storyblok.com/f/1016570/332x212/bd251098ed/nodege.png"
+          width="480"
+          height="280"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,9 +1,21 @@
 ---
 import { storyblokEditable } from '@storyblok/astro'
- 
+import Wysiwyg from "./Wysiwyg.astro"; 
+
 const { blok } = Astro.props
+
+let href = null;
+if (blok.link) {
+  if (blok.link.linktype === "url") {
+    href = blok.link.url;
+  } else if (blok.link.linktype === "story" && blok.link.story) {
+    href = "/" + blok.link.story.full_slug;
+  }
+}
 ---
 
 <div {...storyblokEditable(blok)} class="card-grey">
-  <p>{blok.content}</p>
+  {blok.highlight && <p class="inner-highlight">{blok.highlight}</p>}
+  {blok.content && <p>{blok.content}</p>}
+  {blok.description?.content?.[0] && <Wysiwyg blok={blok} content={blok.description} />}
 </div>

@@ -20,7 +20,7 @@ const TitleElement = blok.heading_level || "p";
       {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
     </div>
 
-    <div class="col-flex li-arrow">
+    <div class="col-flex">
       {
         blok.list?.map((blok) => {
           return <StoryblokComponent blok={blok} />;

@@ -22,7 +22,7 @@ if (blok.link) {
     <div>
       <p class="prehead">{blok.prehead}</p>
       <TitleElement class="blok-title">{blok.headline}</TitleElement>
-      {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
+      {blok.description && <Wysiwyg blok={blok} content={blok.description} class="li-copy"/>}
       {
         blok.button_text && (
           <a href={href}>

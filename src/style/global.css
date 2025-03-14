@@ -194,7 +194,7 @@ div.menu-container ul li:before, .footer-menu li:before, .services-list li:befor
   left:-1.5rem;
 }
 
-li, .li-check li, .li-arrow li, .li-check-no li {
+li, .li-check li, .li-arrow li, .li-check-no li, .li-copy li {
   margin-left: 1.5rem;
 }
 
@@ -214,12 +214,12 @@ li, .li-check li, .li-arrow li, .li-check-no li {
   font-weight: 600;
 }
 
-.li-arrow p:before, .toc ul li ul li:before {
+.li-arrow p:before, .toc ul li ul li:before, .li-copy p:before {
   position: absolute;
   left: 0.5rem;
 }
 
-.li-arrow ul p:before, .li-arrow ul li:before, .toc ul li ul li:before, .left-right ul li:before {
+.li-arrow ul p:before, .li-arrow ul li:before, .toc ul li ul li:before, .left-right ul li:before, .li-copy ul p:before, .li-copy ul li:before {
   content: "→";
   margin-right: .75rem;
 }
@@ -275,7 +275,7 @@ li, .li-check li, .li-arrow li, .li-check-no li {
 }
 
 img {
-  width:100%;
+  width:80%;
   height:auto;
   border-radius: 10px;
 }
@@ -838,6 +838,7 @@ main section:last-child .ipu{
   line-height: .85;
   max-width: 75%;
   margin-bottom: 2rem;
+  text-wrap: pretty;
 }
 
 .hero-color p {
@@ -1692,11 +1693,12 @@ footer .container > div:last-child a {
   gap: 4rem;
 }
 
+
 .toc {
   grid-area: toc;
 }
 
-.toc ul {
+.toc ul, .li-copy ul {
   list-style: none;
 }
 
@@ -1710,6 +1712,16 @@ footer .container > div:last-child a {
   margin-left: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
+}
+
+.li-copy ul li {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+
+.li-copy ul li ul li {
+  margin-left: 1.5rem; 
+  margin-bottom: 0.5rem;
 }
 
 .post-body {

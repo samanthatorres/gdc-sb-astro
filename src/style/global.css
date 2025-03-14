@@ -836,7 +836,7 @@ main section:last-child .ipu{
 .hero-color .headline {
   font-size: calc(1.5vw + 58.4px);
   line-height: .85;
-  max-width: 100%;
+  max-width: 75%;
   margin-bottom: 2rem;
 }
 
@@ -1223,7 +1223,7 @@ section .card-teal ul li {
   max-width: 320px;
 }
 
-.testimonials {
+.testimonials, .blocking {
   display: block;
 }
 
@@ -1766,4 +1766,29 @@ footer .container > div:last-child a {
 
 .left-right a.btnPrimary {
   text-decoration: none;
+}
+
+.podcast-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.podcast-icons a {
+  display: flex;
+  align-items: center;
+}
+
+.podcast-icons svg {
+  width:  60px !important;
+  height: 60px !important;
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }

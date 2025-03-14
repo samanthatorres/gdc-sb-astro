@@ -33,6 +33,7 @@ export default {
         grid: "storyblok/Grid",
         hero: "storyblok/Hero",
         iconcard: "storyblok/IconCard",
+        image: "storyblok/Image",
         leftright: "storyblok/LeftRight",
         listitem: "storyblok/Listitem",
         liststack: "storyblok/Liststack",

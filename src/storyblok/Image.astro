@@ -1,0 +1,19 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+---
+
+<section {...storyblokEditable(blok)}>
+  <div class="ipu no-v-padding">
+    <div class="flex-wrap margin-l">
+      {
+        blok.images?.map((image) => (
+          <div>
+            <img src={`${image.filename}/m/`} alt={`${image.alt}`} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

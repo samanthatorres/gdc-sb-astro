@@ -840,7 +840,6 @@ main section:last-child .ipu{
 .hero-color .headline {
   font-size: calc(1.5vw + 58.4px);
   line-height: .85;
-  max-width: 75%;
   margin-bottom: 2rem;
   text-wrap: pretty;
 }
@@ -1761,6 +1760,10 @@ footer .container > div:last-child a {
     max-height: 100vh;
     overflow-y: auto;
     overscroll-behavior: contain;
+  }
+
+  .headline {
+    max-width: 85%
   }
 }
 

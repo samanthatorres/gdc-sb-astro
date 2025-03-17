@@ -181,7 +181,7 @@ li {
   color: var(--grey);
 }
 
-div.menu-container ul li, .footer-menu li, .services-list li, .left-right ul li {
+.footer-menu li, .services-list li, .left-right ul li {
   list-style: none;
   font-weight: 300;
   margin: 1rem 0;
@@ -477,7 +477,7 @@ textarea {
 
 .btnTertiary {
   font-size: var(--font-Body3);
-  color: var(--teal !important);
+  color: var(--teal) !important;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -593,6 +593,7 @@ nav ul li {
   height: 48px;
   z-index: 999;
   position: relative;
+  cursor: pointer;
 }
 
 .co-menu {
@@ -624,12 +625,28 @@ nav ul li {
 }
 
 .menu-container {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  background: var(--light-grey);
+  padding: 6rem 2rem 2rem;
+  gap: 20px;
+  width: 100%;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
 }
 
-.menu-container hr {
-    display: none;
-  }
+.menu-container.hidden {
+  transform: translateX(100%);
+}
+
+.menu-container ul {
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 .primary-navigation {
   display: flex;
@@ -643,6 +660,10 @@ nav ul li {
   gap: 1.25rem;
   padding-left: 1rem;
 }
+
+ul.nav-links , ul.co-menu {
+  list-style-type: none !important;
+} 
 
 .nav-links a, .dropdown-content a.subcat {
         color: var(--teal);
@@ -1421,31 +1442,36 @@ footer .container > div:last-child a {
 /* RESPONSIVE STYLES */
 
 @media (max-width: 1024px) {
-
     header {
       align-items: center;
     }
 
-    .menu-button, .menu-container hr, nav:hover .menu-close {
+    .menu-button {
       display: block;
+      width: 48px;
+      height: 48px;
+      z-index: 999;
+      position: relative;
+      cursor: pointer;
     }
 
-    .menu-button .menu-close, .menu-container, nav:hover .menu-open {
-      display: none;
-    }
-
-    nav:hover .menu-container {
+    .menu-container {
       position: absolute;
-      top:0;
+      top: 0;
       right: 0;
       display: flex;
       flex-direction: column-reverse;
       justify-content: flex-end;
       background: var(--light-grey);
       padding: 6rem 2rem 2rem;
-      gap:20px;
+      gap: 20px;
       width: 100%;
       height: 100vh;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-container.hidden {
+      transform: translateX(100%);
     }
 
     .menu-container ul {
@@ -1470,24 +1496,24 @@ footer .container > div:last-child a {
       width: 100%;
     }
 
-    .dropdown > a:after{
-        content: url('/img/ic_arrow-down.svg');
-        position: absolute;
-        right: -.75rem;
-        top: 14px;
-        width: 12px;
-        height: 16px;
-        rotate: -90deg;
-      }
+    .dropdown > a:after {
+      content: url('/img/ic_arrow-down.svg');
+      position: absolute;
+      right: -.75rem;
+      top: 14px;
+      width: 12px;
+      height: 16px;
+      rotate: -90deg;
+    }
 
     .dropdown-content {
       flex-direction: column;
-      margin-left:0;
+      margin-left: 0;
       gap: 20px;
       width: calc(100vw - 4rem);
     }
 
-  .hero-color {
+    .hero-color {
       clip-path: polygon(0 0%, 100% 0%, 100% 85%, 0 100%);
       margin-bottom: -3rem;
     }

@@ -17,14 +17,13 @@ const nav_items = data.story.content.header_menu;
     <Image src={fullLogo} alt="Gray Dot Co Logo"  height="34" />
   </a>
     
-  <nav>
-    <div class="menu-button" href="#">
-      <img class="menu-open" src="img/ic_menu_open.svg" width="48" height="48" />
-      <img class="menu-close" src="img/ic_menu_close.svg" width="48" height="48" />
+  <nav x-data="{ isOpen: false }">
+    <div class="menu-button" @click="isOpen = !isOpen">
+      <img class="menu-open" x-show="!isOpen" src="img/ic_menu_open.svg" width="48" height="48" />
+      <img class="menu-close" x-show="isOpen" src="img/ic_menu_close.svg" width="48" height="48" />
     </div>
 
-    <div class="menu-container">
-
+    <div class="menu-container" :class="{ 'hidden': !isOpen }">
         <ul class="co-menu">
         <li><a href="/team">About</a></li>
         <li><a href="/resources">Resources</a></li>
@@ -40,7 +39,7 @@ const nav_items = data.story.content.header_menu;
               <div class="dropdown-content">
                     <div class="column">
                         <p class="subcat">Strategy</p>
-                        <a href="/services/discovery"">Discovery</a>
+                        <a href="/services/discovery">Discovery</a>
                         <a href="/services/seo-product-management">SEO Product Management</a>
                     </div>
                     <hr />
@@ -57,7 +56,6 @@ const nav_items = data.story.content.header_menu;
                         <a href="/services/technical-seo">Technical SEO</a>
                         <a href="/services/ppc-paid-search-consulting">PPC</a>
                         <a href="/services/content-marketing-strategy">Content Marketing</a>
-
                     </div>
                 </div>
             </li>

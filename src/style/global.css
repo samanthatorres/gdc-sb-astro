@@ -625,27 +625,11 @@ nav ul li {
 }
 
 .menu-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  background: var(--light-grey);
-  padding: 6rem 2rem 2rem;
-  gap: 20px;
-  width: 100%;
-  height: 100vh;
-  transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
-.menu-container.hidden {
-  transform: translateX(100%);
-}
-
-.menu-container ul {
-  flex-direction: column;
-  align-items: flex-start;
+.menu-container hr {
+  display: none;
 }
 
 .primary-navigation {
@@ -661,90 +645,89 @@ nav ul li {
   padding-left: 1rem;
 }
 
-ul.nav-links , ul.co-menu {
+ul.nav-links, ul.co-menu {
   list-style-type: none !important;
-} 
+}
 
 .nav-links a, .dropdown-content a.subcat {
-        color: var(--teal);
-        text-transform: uppercase;
-        padding: 1rem .5rem;
-        display: block;
-        font-size: var(--font-Body3);
-        letter-spacing: .05em;
-        font-weight: 600;
-        text-decoration:none;
-        text-align: center;
-        line-height: 1;
-    }
+  color: var(--teal);
+  text-transform: uppercase;
+  padding: 1rem .5rem;
+  display: block;
+  font-size: var(--font-Body3);
+  letter-spacing: .05em;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
+}
 
-    .nav-links a:hover {
-        color: #30B9C1;
-    }
+.nav-links a:hover {
+  color: #30B9C1;
+}
 
-    .nav-links li:last-child a {
-        padding-right: 0;
-    }
+.nav-links li:last-child a {
+  padding-right: 0;
+}
 
-    .dropdown-content {
-        display: none; 
-        position: absolute;
-        background-color: #fff;
-        min-width: 300px;
-        z-index: 1;
-        top: 100%; 
-        left: 0;
-        margin-left:-50%;
-        padding: 30px 40px;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 300px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  margin-left: -50%;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .dropdown a {
-      position: relative;
-    }
+.dropdown a {
+  position: relative;
+}
 
-    .dropdown {
-      margin-right: 1.25rem !important;
-    }
+.dropdown {
+  margin-right: 1.25rem !important;
+}
 
-    .dropdown > a:after{
-      content: url('/img/ic_arrow-down.svg');
-      position: absolute;
-      right: -.75rem;
-      top: 14px;
-      width: 12px;
-      height: 16px;
-    }
+.dropdown > a:after {
+  content: url('/img/ic_arrow-down.svg');
+  position: absolute;
+  right: -.75rem;
+  top: 14px;
+  width: 12px;
+  height: 16px;
+}
 
-    .dropdown:hover a:after{
-      filter: invert(56%) sepia(94%) saturate(329%) hue-rotate(135deg) brightness(93%) contrast(91%);
-    }
+.dropdown:hover a:after {
+  filter: invert(56%) sepia(94%) saturate(329%) hue-rotate(135deg) brightness(93%) contrast(91%);
+}
 
+.dropdown:hover .dropdown-content {
+  display: flex;
+  min-width: 300px;
+}
 
-    .dropdown:hover .dropdown-content {
-        display: flex;
-        min-width:300px;
-    }
+.dropdown:hover > a {
+  color: #30B9C1;
+}
 
-    .dropdown:hover > a {
-      color: #30B9C1;
-    }
+.dropdown-content a {
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 1rem;
+  font-weight: 400;
+  display: block;
+  min-width: 200px;
+  text-align: left;
+  line-height: 1.5;
+}
 
-    .dropdown-content a {
-        text-transform: none;
-        letter-spacing: 0;
-        padding: 1rem;
-        font-weight: 400;
-        display: block;
-        min-width: 200px;
-        text-align: left;
-        line-height: 1.5;
-    }
-
-    .dropdown-content a.subcat {
-      text-align: left;
-    }
+.dropdown-content a.subcat {
+  text-align: left;
+}
 
 .dropdown-content a:hover {
   background-color: #F6F8F9;
@@ -753,7 +736,7 @@ ul.nav-links , ul.co-menu {
 }
 
 .dropdown-content .column {
-  flex: 1; 
+  flex: 1;
 }
 
 .dropdown-content a.subcat {
@@ -1456,7 +1439,7 @@ footer .container > div:last-child a {
     }
 
     .menu-container {
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       display: flex;
@@ -1829,4 +1812,32 @@ footer .container > div:last-child a {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.left-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.left-right .align-center {
+  order: -1;
+}
+
+@media (min-width: 768px) {
+  .left-right {
+    flex-direction: row;
+  }
+  
+  .left-right .align-center {
+    order: 0;
+  }
+  
+  .img-left .align-center {
+    order: -1;
+  }
+
+  .img-right .align-center {
+    order: 1;
+  }
 }

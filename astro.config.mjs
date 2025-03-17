@@ -22,7 +22,6 @@ export default {
       },
       components: {
         author: "storyblok/Author",
-        banner: "storyblok/Banner",
         blog: "storyblok/Blog",
         bloglist: "storyblok/BlogList",
         carousel: "storyblok/Carousel",

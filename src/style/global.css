@@ -6,14 +6,6 @@
 }
 
 @font-face {
-  font-family: 'Mrs Eaves XL Serif Nar OT Bold Italic';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/MrsEavesBoldItalic.otf');
-}
-
-@font-face {
     font-family: 'DM Serif';
     font-style: italic;
     font-weight: 600;
@@ -833,15 +825,25 @@ main section:last-child .ipu{
   margin-top: 2rem;
 }
 
+.hero .prehead {
+  color: var(--grey);
+}
+
+.hero .headline {
+  color: var(--light-teal);
+  margin-top: 0;
+}
+
 .hero-color {
   clip-path: polygon(0 0%, 100% 0%, 100% 80%, 0 100%);
 }
 
-.hero-color .headline {
+.hero-color .headline, .hero .headline {
   font-size: calc(1.5vw + 58.4px);
   line-height: .85;
   margin-bottom: 2rem;
   text-wrap: pretty;
+  font: var(--font-Headings);
 }
 
 .hero-color p {
@@ -1760,10 +1762,6 @@ footer .container > div:last-child a {
     max-height: 100vh;
     overflow-y: auto;
     overscroll-behavior: contain;
-  }
-
-  .headline {
-    max-width: 85%
   }
 }
 

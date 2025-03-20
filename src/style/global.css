@@ -909,6 +909,7 @@ article section.hero-color h1.headline {
 
 .inner-section .ipu {
   flex-direction: column;
+  padding-bottom: 0;
 }
 
 .approach {

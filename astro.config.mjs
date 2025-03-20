@@ -29,7 +29,6 @@ export default {
         config: "storyblok/Config",
         featured_blogs: "storyblok/FeaturedBlogs",
         fourup: "storyblok/FourUp",
-        grid: "storyblok/Grid",
         hero: "storyblok/Hero",
         iconcard: "storyblok/IconCard",
         image: "storyblok/Image",

@@ -5,11 +5,15 @@ import Wysiwyg from "./Wysiwyg.astro";
 const { blok } = Astro.props;
 
 let href = null
+let target = null;
 if (blok.link) {
-  if (blok.link.linktype === 'url') {
+  if (blok.link.linktype === "url") {
     href = blok.link.url;
-  } else if (blok.link.linktype === 'story' && blok.link.story) {
-    href = '/' + blok.link.story.full_slug;
+  } else if (blok.link.linktype === "story" && blok.link.story) {
+    href = "/" + blok.link.story.full_slug;
+  }
+  if (blok.link.target) {
+    target = blok.link.target;
   }
 }
 ---

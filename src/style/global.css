@@ -1346,7 +1346,6 @@ p.quote {
 
 footer {
   background: var(--teal);
-  background-image: url(img/bg_footer.png);
   background-size: cover;
   clip-path: polygon(0 0%, 100% 15%, 100% 100%, 0 100%);
   margin-top: -3.5rem;

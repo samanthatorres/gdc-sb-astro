@@ -19,8 +19,8 @@ const nav_items = data.story.content.header_menu;
     
   <nav x-data="{ isOpen: false }">
     <div class="menu-button" @click="isOpen = !isOpen">
-      <img class="menu-open" x-show="!isOpen" src="img/ic_menu_open.svg" width="48" height="48" />
-      <img class="menu-close" x-show="isOpen" src="img/ic_menu_close.svg" width="48" height="48" />
+      <img class="menu-open" x-show="!isOpen" src="https://dev.thegray.company/img/ic_menu_open.svg" width="48" height="48" />
+      <img class="menu-close" x-show="isOpen" src="https://dev.thegray.company/img/ic_menu_close.svg" width="48" height="48" />
     </div>
 
     <div class="menu-container" :class="{ 'hidden': !isOpen }">
@@ -52,7 +52,7 @@ const nav_items = data.story.content.header_menu;
                     <hr />
                     <div class="column">
                         <p class="subcat">Marketing</p>
-                        <a href="/services/seo-strategy">SEO</a>
+                        <a href="/services/seo">SEO</a>
                         <a href="/services/ppc-paid-search-consulting">Paid Search</a>
                         <a href="/services/content-marketing-strategy">Content Marketing</a>
                     </div>

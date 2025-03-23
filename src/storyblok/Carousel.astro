@@ -6,11 +6,15 @@ const TitleElement = blok.heading_level || "p";
 const bgcolor = blok.bgcolor || "white";
 
 let href = null;
+let target = null;
 if (blok.link) {
   if (blok.link.linktype === "url") {
     href = blok.link.url;
   } else if (blok.link.linktype === "story" && blok.link.story) {
     href = "/" + blok.link.story.full_slug;
+  }
+  if (blok.link.target) {
+    target = blok.link.target;
   }
 }
 ---

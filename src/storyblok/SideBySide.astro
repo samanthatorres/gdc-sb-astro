@@ -10,11 +10,15 @@ const RightBullets = blok.right_bullets || "li-arrow";
 const RightColor = blok.right_color || "card-teal";
 
 let href = null;
+let target = null;
 if (blok.link) {
   if (blok.link.linktype === "url") {
     href = blok.link.url;
   } else if (blok.link.linktype === "story" && blok.link.story) {
     href = "/" + blok.link.story.full_slug;
+  }
+  if (blok.link.target) {
+    target = blok.link.target;
   }
 }
 ---

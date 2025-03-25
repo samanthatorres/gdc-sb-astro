@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Oops! This page has crawled away."
+  description="We couldn't find the page you were looking for. It might have been moved or deleted."
+>
+  <div class="error-page">
+    <h1>404</h1>
+    <p class="error-message">Oops! This page has crawled away.</p>
+    <p>We couldn't find the page you were looking for.<br />It might have been moved or deleted.</p>
+    
+    <div class="error-navigation">
+      <a href="/">Return to Homepage</a>
+      <a href="/services">Browse Our Services</a>
+      <a href="/blog">Learn About Our Perspective</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-page {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 6rem;
+    margin: 0;
+    color: var(--teal);
+  }
+
+  .error-message {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--text-color);
+  }
+
+  .error-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    text-decoration: underline;
+  }
+
+</style>

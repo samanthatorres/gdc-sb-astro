@@ -3,12 +3,14 @@ import { loadEnv } from "vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { getRedirects } from "./src/functions/getRedirects";
 import netlify from "@astrojs/netlify";
+import { defineConfig } from 'astro/config';
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 const redirects = await getRedirects();
 
 // https://astro.build/config
-export default {
+export default defineConfig({
+  site: process.env.SITE_URL || 'https://dev.thegray.company',
   adapter: netlify(),
   redirects,
   integrations: [
@@ -57,4 +59,4 @@ export default {
   build: {
     format: "file",
   },
-};
+});

@@ -15,6 +15,7 @@ const TitleElement = blok.heading_level || "p";
         src={`${blok.icon.filename}/m/60x0`}
         width="64"
         height="64"
+        alt={`${blok.icon.alt}`}
       />
       <TitleElement class="blok-title">{blok.heading}</TitleElement>
       {blok.description && <Wysiwyg blok={blok} content={blok.description} />}

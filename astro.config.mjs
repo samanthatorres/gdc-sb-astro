@@ -10,7 +10,7 @@ const redirects = await getRedirects();
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://dev.thegray.company',
+  site: 'https://dev.thegray.company',
   adapter: netlify(),
   redirects,
   integrations: [

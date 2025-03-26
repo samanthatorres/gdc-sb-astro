@@ -23,7 +23,7 @@ if (blok.link) {
 <section {...storyblokEditable(blok)} class={`align-middle ${ImagePlacement} bg-${bgcolor}`}>
   <div class="ipu left-right">
     <div class="align-center">
-      <img src={`${blok.image.filename}/m/`} width="480" height="280" />
+      <img src={`${blok.image.filename}/m/`} width="480" height="280" alt={`${blok.image.alt}`}/>
     </div>
     <div>
       {blok.prehead && <p class="prehead">{blok.prehead}</p>}

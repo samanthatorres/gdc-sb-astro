@@ -59,4 +59,5 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
+  trailingSlash: 'never',
 });

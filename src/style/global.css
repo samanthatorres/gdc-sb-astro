@@ -256,7 +256,8 @@ li, .li-check li, .li-arrow li, .li-check-no li, .li-copy li {
 
 .li-share li {
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .li-share li a {

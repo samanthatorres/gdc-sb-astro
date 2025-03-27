@@ -10,7 +10,13 @@ export interface Props {
   metaRobots?: boolean;
 }
 
+function removeTrailingSlash(str: string) {
+  return str.replace(/\/+$/, '');
+}
+
 const { title, description, ogImage, metaRobots } = Astro.props;
+
+const canonicalUrl = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString());
 
 const DEFAULT = {
   TITLE: "Gray Dot Co is the Best",
@@ -31,7 +37,7 @@ const _image = ogImage ?? DEFAULT.OGIMAGE;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={Astro.url} />
+<link rel="canonical" href={canonicalUrl} />
 
 <!-- Primary Meta Tags -->
 <title>{_title}</title>

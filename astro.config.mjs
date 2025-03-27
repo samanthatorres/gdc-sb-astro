@@ -58,6 +58,7 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
+  trailingSlash: 'never',
   output: 'static',
   adapter: vercelStatic()
 });

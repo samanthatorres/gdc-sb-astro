@@ -2,8 +2,8 @@ import { storyblok } from "@storyblok/astro";
 import { loadEnv } from "vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { getRedirects } from "./src/functions/getRedirects";
-import netlify from "@astrojs/netlify";
 import { defineConfig } from 'astro/config';
+import vercelStatic from '@astrojs/vercel/static';
 
 const env = loadEnv("", process.cwd(), "STORYBLOK");
 const redirects = await getRedirects();
@@ -11,7 +11,6 @@ const redirects = await getRedirects();
 // https://astro.build/config
 export default defineConfig({
   site: 'https://dev.thegray.company',
-  adapter: netlify(),
   redirects,
   integrations: [
     storyblok({
@@ -60,4 +59,6 @@ export default defineConfig({
     format: 'directory'
   },
   trailingSlash: 'never',
+  output: 'static',
+  adapter: vercelStatic()
 });

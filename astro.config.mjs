@@ -5,12 +5,13 @@ import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
 import vercelStatic from '@astrojs/vercel/static';
 
-const env = loadEnv("", process.cwd(), "STORYBLOK");
+const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
+const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
 const redirects = await getRedirects();
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dev.thegray.company',
+  site: isDevelopment ? 'https://dev.thegray.company' : 'https://thegray.company',
   redirects,
   integrations: [
     storyblok({

@@ -13,15 +13,15 @@ const headings = buildToc(content);
     {
       headings.map((heading) => (
         <li class="relative">
-          <a href={'#' + generateSlug(heading.text)} class="flex justify-between gap-2 py-1 pr-3 hover:underline text-sm transition pl-0 text-zinc-900 ">
+          <a href={'#' + generateSlug(heading.text)} class="primary-toc">
             {heading.text}
           </a>
 
           {heading.children && (
-            <ul role="list" style="opacity:1">
+            <ul role="list" style="opacity:1;" class="toc-children">
               {heading.children.map((child) => (
                 <li>
-                  <a href={'#' + generateSlug(child.text)} class="flex justify-between gap-2 py-1 pr-3 hover:underline text-sm transition pl-4 text-teal hover:text-zinc-900 ">
+                  <a href={'#' + generateSlug(child.text)} class="secondary-toc">
                     {child.text}
                   </a>
                 </li>

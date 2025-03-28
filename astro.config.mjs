@@ -49,15 +49,17 @@ export default defineConfig({
       wysiwyg: "storyblok/Wysiwyg",
     }
   }), 
-  robotsTxt(
+  robotsTxt({
     policy: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/cdn-cgi/*', '/privacy/*']
-      }
-    ]
-  )],
+      userAgent: '*',
+      allow: '/',
+      disallow: ['/cdn-cgi/*', '/privacy/*']
+    }
+  ]
+  })
+
+],
   vite: {
     optimizeDeps: { exclude: ["fsevents"] },
     plugins: [basicSsl()],

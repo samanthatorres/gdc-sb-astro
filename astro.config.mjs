@@ -48,7 +48,18 @@ export default defineConfig({
       video: "storyblok/Video",
       wysiwyg: "storyblok/Wysiwyg",
     }
-  }), robotsTxt()],
+  }), 
+  robotsTxt({
+    policy: [
+      {
+      userAgent: '*',
+      allow: '/',
+      disallow: ['/cdn-cgi/*', '/privacy/*']
+    }
+  ]
+  })
+
+],
   vite: {
     optimizeDeps: { exclude: ["fsevents"] },
     plugins: [basicSsl()],

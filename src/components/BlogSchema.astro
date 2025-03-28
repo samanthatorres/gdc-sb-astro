@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  publish_date: string;
+  update_date?: string;
+  featured_image?: {
+    filename: string;
+  };
+  authors: Array<{
+    content: {
+      Name: string;
+    };
+  }>;
+}
+
+const { title, description, publish_date, update_date, featured_image, authors } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "image": featured_image?.filename,
+  "author": authors.map(author => ({
+    "@type": "Person",
+    "name": author.content.Name
+  })),
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Gray Company",
+    "url": "https://thegray.company"
+  },
+  /* the schema expects Date or DateTime using ISO 8601 format. For Date that is yyyy-MM-dd */
+  "datePublished": new Date(publish_date).toISOString().substring(0, 10),
+  /* updateDate is optional frontmatter, so we conditionally add dateModified if it exists */
+  ...(update_date && { "dateModified": new Date(update_date).toISOString().substring(0, 10) }),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

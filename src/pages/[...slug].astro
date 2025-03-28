@@ -32,7 +32,8 @@ const storySEO = {
   title: story.content.page_title,
   description: story.content.meta_description,
   ogImage: story.content.og_image?.filename,
-  metaRobots: story.content.noindex
+  metaRobots: story.content.noindex,
+  schema: story.content.schema
 };
 ---
 
@@ -41,6 +42,7 @@ const storySEO = {
   description={storySEO.description}
   ogImage={storySEO.ogImage}
   metaRobots={storySEO.metaRobots}
+  schema={storySEO.schema}
 >
   <StoryblokComponent blok={story.content} />
 </BaseLayout>

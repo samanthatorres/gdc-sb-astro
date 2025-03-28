@@ -5,6 +5,7 @@ import { useStoryblokApi } from "@storyblok/astro";
 
 import Toc from "../components/Toc.astro";
 import Wysiwyg from "./Wysiwyg.astro";
+import BlogSchema from "../components/BlogSchema.astro";
 
 const { blok } = Astro.props;
 const category = blok.category || "hero-teal";
@@ -18,6 +19,15 @@ const { data } = await storyblokApi.get("cdn/stories", {
 
 const authors = data.stories;
 ---
+
+<BlogSchema 
+  title={blok.title}
+  description={blok.teaser}
+  publish_date={blok.publish_date}
+  update_date={blok.update_date}
+  featured_image={blok.featured_image}
+  authors={authors}
+/>
 
 <article {...storyblokEditable(blok)}>
   <section class={`hero-color ${category}`}>

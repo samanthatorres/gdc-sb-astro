@@ -25,7 +25,25 @@ content = content ?? blok.words;
     nodes: {
       heading: ({ attrs: { level }, content }) => ({
         component: `h${level}`,
-        props: { id: generateSlugFromContent(content) },
+        props: { id: generateSlugFromContent(content) }
+      }),
+      image: ({ attrs }) => ({
+        component: "figure",
+        props: {},
+        content: [
+          {
+            component: "img",
+            props: {
+              src: attrs.src,
+              alt: attrs.alt || "",
+            },
+          },
+          attrs.title && {
+            component: "figcaption",
+            props: {},
+            content: attrs.title,
+          },
+        ].filter(Boolean) // Remove null if no title
       }),
     },
   }}

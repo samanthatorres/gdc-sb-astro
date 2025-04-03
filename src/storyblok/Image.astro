@@ -11,6 +11,7 @@ const { blok } = Astro.props;
         blok.images?.map((image) => (
           <div>
             <img src={`${image.filename}/m/`} alt={`${image.alt}`} />
+            <figcaption>{image.title}</figcaption>
           </div>
         ))
       }

@@ -266,7 +266,7 @@ li, .li-check li, .li-arrow li, .li-check-no li, .li-copy li {
 }
 
 img {
-  width:80%;
+  width:90%;
   height:auto;
   border-radius: 10px;
 }
@@ -1487,6 +1487,21 @@ footer .container > div:last-child a {
   font-weight: bold;
   margin-bottom: 1rem;
   color: var(--teal);
+}
+
+section#article.post-body figure {
+  text-align: center;
+}
+
+figcaption {
+  color: var(--light-teal);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+section#article.post-body img {
+  max-width: 90%;
+  width: auto;
 }
 
 

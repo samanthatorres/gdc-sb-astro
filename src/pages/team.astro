@@ -3,6 +3,7 @@ import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../style/global.css";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const sbApi = useStoryblokApi();
 const { data } = await sbApi.get("cdn/stories/team", {
@@ -35,10 +36,10 @@ const storySEO = {
       <div class="flex-wrap wrap-two">
         <a class="card-text-on-img" href="#" title=" ">
           <img
-            src="https://a-us.storyblok.com/f/1016570/1600x2000/a1f79dbb85/sam-_-tory-008.jpg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/1600x2000/a1f79dbb85/sam-_-tory-008.jpg")}
             alt="Tory Gray, CEO of Gray Dot Co"
-            width="480"
-            height="600"
+            width="800"
+            height="1000"
           />
           <div>
             <h3>Tory Gray</h3>
@@ -50,10 +51,10 @@ const storySEO = {
         </a>
         <a class="card-text-on-img" href="#" title=" ">
           <img
-            src="https://a-us.storyblok.com/f/1016570/1600x2000/49af8a6226/sam-_-tory-007.jpg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/1600x2000/49af8a6226/sam-_-tory-007.jpg")}
             alt="Sam Torres, Chief Digital Officer of Gray Dot Co"
-            width="480"
-            height="600"
+            width="800"
+            height="1000"
           />
           <div>
             <h3>Sam Torres</h3>
@@ -65,10 +66,10 @@ const storySEO = {
         </a>
         <a class="card-text-on-img" href="#" title=" ">
           <img
-            src="https://a-us.storyblok.com/f/1016570/500x500/b1345251b5/elias-grouhi-headshot.jpeg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x500/b1345251b5/elias-grouhi-headshot.jpeg")}
             alt="Elias Grouhi, Director of Brand & Content Strategy of Gray Dot Co"
-            width="480"
-            height="334"
+            width="500"
+            height="500"
           />
           <div>
             <h3>Elias Grouhi</h3>
@@ -80,13 +81,13 @@ const storySEO = {
         </a>
         <a class="card-text-on-img" href="#" title=" ">
           <img
-            src="https://a-us.storyblok.com/f/1016570/2003x3000/f1f65a988d/heather-kaeowicien.jpg"
-            alt="Heather Kaeowichien, Director of Product Management of Gray Dot Co"
-            width="480"
-            height="480"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/2003x3000/f1f65a988d/heather-kaeowicien.jpg")}
+            alt="Heather Kaeowicien, Director of Product Management of Gray Dot Co"
+            width="668"
+            height="1000"
           />
           <div>
-            <h3>Heather Kaeowichien</h3>
+            <h3>Heather Kaeowicien</h3>
             <p>
               <strong>Director of Product Management</strong><br />Tampa,
               Florida, United States
@@ -213,7 +214,7 @@ const storySEO = {
       <div>
         <h2>Work with us</h2>
         <p>
-          We’ll help craft, teach, and carry out SEO roadmaps that check all the
+          We'll help craft, teach, and carry out SEO roadmaps that check all the
           boxes.
         </p>
         <a href="/contact" class="btnPrimary">CONTACT AN EXPERT</a>

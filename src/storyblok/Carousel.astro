@@ -1,5 +1,6 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
@@ -28,7 +29,7 @@ if (blok.link) {
         {
           blok.images?.map((image) => (
             <div class="logo-carousel__item">
-              <img src={`${image.filename}/m/`} alt={`${image.alt}`} />
+              <img src={transformImageSrc(`${image.filename}/m/`)} alt={`${image.alt}`} />
             </div>
           ))
         }

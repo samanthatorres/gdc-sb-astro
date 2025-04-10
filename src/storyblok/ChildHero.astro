@@ -1,5 +1,6 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
@@ -32,7 +33,7 @@ if (blok.link) {
       }
     </div>
     <div class="img-hero-home">
-      <img src={`${blok.image.filename}/m/`} width="200" alt="decorative shape"/>
+      <img src={transformImageSrc(`${blok.image.filename}/m/`)} width="200" alt="decorative shape"/>
     </div>
   </div>
 </section>

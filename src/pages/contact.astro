@@ -3,6 +3,7 @@ import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../style/global.css";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const sbApi = useStoryblokApi();
 const { data } = await sbApi.get("cdn/stories/contact", {
@@ -53,7 +54,7 @@ const storySEO = {
           <div class="footnote">
             <p>
               The Gray Dot Company is committed to protecting and respecting
-              your privacy, and we’ll only use your personal information to
+              your privacy, and we'll only use your personal information to
               administer your account and to provide the products and services
               you requested from us. From time to time, we would like to contact
               you about our products and services, as well as other content that
@@ -92,12 +93,12 @@ const storySEO = {
   "name":"Contact The Gray Dot Company & Tory Gray",
   "description":"Contact Tory at The Gray Dot Company to discuss your SEO & digital marketing strategy needs.",
   "url":"https://thegray.company/contact",
-  "image": "https://a-us.storyblok.com/f/1016570/581x126/f122951287/graydotco.png",
+  "image": transformImageSrc("https://a-us.storyblok.com/f/1016570/581x126/f122951287/graydotco.png"),
   "publisher": {
     "@type": "Organization",
     "name":"The Gray Dot Company",
     "@id":"https://thegray.company/#organization",
-    "image": "https://a-us.storyblok.com/f/1016570/581x126/f122951287/graydotco.png",
+    "image": transformImageSrc("https://a-us.storyblok.com/f/1016570/581x126/f122951287/graydotco.png"),
     "url": "https://thegray.company",
     "telephone": "+1 (720) 593-1855",
     "areaServed":"http://www.wikidata.org/entity/Q2",

@@ -1,6 +1,6 @@
 ---
-import ArticleCard from "../components/ArticleCard.astro";
 import { storyblokEditable } from "@storyblok/astro";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
@@ -13,7 +13,19 @@ const blogs = blok.blogs;
   <div class="articles-grid">
     {
       blogs?.map((blog) => {
-        return <ArticleCard blog={blog.content} slug={blog.slug} />;
+        return (
+          <a class="card-img-text" href={`/blog/${blog.slug}`}>
+            <img
+              class="img-aspect"
+              src={transformImageSrc(`${blog.content.featured_image.filename}/m/`)}
+              alt={blog.content.title}
+              width="450"
+              height="293"
+            />
+            <h4>{blog.content.title}</h4>
+            <p class="btnTertiary">Read the blog ></p>
+          </a>
+        );
       })
     }
   </div>

@@ -2,6 +2,7 @@
 import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const sbApi = useStoryblokApi();
 const { data } = await sbApi.get("cdn/stories/home", {
@@ -27,8 +28,8 @@ const storySEO = {
 <section class="hero">
   <div class="ipu">
         <div>
-            <h1>Tomorrow’s marketing, today.</h1>
-            <p>We’re a modern data and search marketing agency keeping brands two steps ahead in a landscape where flux is the only constant.</p>
+            <h1>Tomorrow's marketing, today.</h1>
+            <p>We're a modern data and search marketing agency keeping brands two steps ahead in a landscape where flux is the only constant.</p>
             <a href="/contact" class="btnPrimary">Connect with an expert</a>
         </div>
         <div class="img-hero img-hero-home">
@@ -43,7 +44,7 @@ const storySEO = {
         <div>
             <h2>The difference is in the data.</h2>
             <p>Cut-and-paste formulas are falling short, pay-to-play is getting pricey, and search has SEOs scratching their heads. Is digital marketing dead? Far from it.</p> 
-      <p><strong>Our intelligence-first approach taps into game-changing insights about your audience, brand, and market — making them the heart of meaningful strategies that break through the “meh.”</strong></p>
+      <p><strong>Our intelligence-first approach taps into game-changing insights about your audience, brand, and market — making them the heart of meaningful strategies that break through the "meh."</strong></p>
         </div>
     </div>
   </section>
@@ -54,7 +55,7 @@ const storySEO = {
         <div>
           <p class="prehead">WHAT WE DO</p>
             <h2>Building solutions. <br />Breaking silos.</h2>
-            <p>Data, market intelligence, and search marketing don’t live in a vacuum. <br />We connect the dots between disciplines to solve problems, find answers, and spark growth.</p>
+            <p>Data, market intelligence, and search marketing don't live in a vacuum. <br />We connect the dots between disciplines to solve problems, find answers, and spark growth.</p>
         </div>
 
         <div class="flex-wrap wrap-three services li-bold">
@@ -109,7 +110,7 @@ const storySEO = {
         <div>
           <p class="prehead">Our team</p>
             <h2>Powered by fresh <br/>perspective.</h2>
-            <p>Gray Dot Co is women-owned, value-driven, and reimagining what it means to work with a digital marketing agency. We’re familiar faces in the industry bringing new ideas to the table as collaborators, not just consultants.</p>
+            <p>Gray Dot Co is women-owned, value-driven, and reimagining what it means to work with a digital marketing agency. We're familiar faces in the industry bringing new ideas to the table as collaborators, not just consultants.</p>
             <a href="/team" class="btnPrimary">Get to know the Co</a>
         </div>
         <div class="add-margin-b">
@@ -126,11 +127,11 @@ const storySEO = {
             <h2>Lasting partnerships over logos.</h2>
         </div>
         <div class="flex-wrap logos">
-          <img src="https://a-us.storyblok.com/f/1016570/500x255/e9ff9489f3/vox.png" alt="Vox" title="Vox" width="224" height="114" />
-          <img src="https://a-us.storyblok.com/f/1016570/500x255/3754183f1d/polygon.png" alt="Polygon" title="Polygon" width="224" height="114" />
-          <img src="https://a-us.storyblok.com/f/1016570/500x255/b59ec93364/berkshire-hathaway.png" alt="Berkshire Hathaway Guard Insurance Companies" title="Berkshire Hathaway Guard Insurance Companies" width="224" height="114" />
-          <img src="https://a-us.storyblok.com/f/1016570/500x255/dfefa763be/the-hunger-project.png" alt="The Hunger Project" title="The Hunger Project" width="224" height="114" />
-          <img src="https://a-us.storyblok.com/f/1016570/500x255/153798f152/guittard.png" alt="Guittard" title="Guittard" width="224" height="114" />
+          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/e9ff9489f3/vox.png")} alt="Vox" title="Vox" width="224" height="114" />
+          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/3754183f1d/polygon.png")} alt="Polygon" title="Polygon" width="224" height="114" />
+          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/b59ec93364/berkshire-hathaway.png")} alt="Berkshire Hathaway Guard Insurance Companies" title="Berkshire Hathaway Guard Insurance Companies" width="224" height="114" />
+          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/dfefa763be/the-hunger-project.png")} alt="The Hunger Project" title="The Hunger Project" width="224" height="114" />
+          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/153798f152/guittard.png")} alt="Guittard" title="Guittard" width="224" height="114" />
         </div>
     </div>
   </section>
@@ -145,7 +146,7 @@ const storySEO = {
         <div class="size-two">
           <div class="add-margin-b">
             <p class="prehead">Our work</p>
-              <h2>If you’ve got it, flaunt it.</h2>
+              <h2>If you've got it, flaunt it.</h2>
           </div>
 
           <div class="col-flex-row">
@@ -155,8 +156,8 @@ const storySEO = {
               <p>A look back at turning post-migration challenges into ROI opportunities for a leading photo goods brand.</p>
               <p class="btnTertiary">READ THE CASE STUDY ></p>
           </a>
-          <a class="card-img-text" href="https://a-us.storyblok.com/f/1016570/x/94c8a8c55e/graydot-dmiexample-grillslandscapereport.pdf" target="_blank">
-              <img class="img-aspect" src="https://a-us.storyblok.com/f/1016570/746x452/e0ea6861ae/grill-report-preview-card.png" alt="2023 Grill Landscape: Market Insights Report" width="450" height="293" />
+          <a class="card-img-text" href={transformImageSrc("https://a-us.storyblok.com/f/1016570/x/94c8a8c55e/graydot-dmiexample-grillslandscapereport.pdf")} target="_blank">
+              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/746x452/e0ea6861ae/grill-report-preview-card.png")} alt="2023 Grill Landscape: Market Insights Report" width="450" height="293" />
               <h4>2023 Grill Landscape: Market Insights Report</h4>
               <p>A market analysis with data-driven insights that show the power of Digital Market Intelligence.</p>
               <p class="btnTertiary">READ THE REPORT ></p>
@@ -196,24 +197,24 @@ const storySEO = {
 
           <div class="flex-wrap wrap-four">
             <a class="card-img-text" href="/blog/dmi-turning-everyday-marketing-data-into-game-changing-market-insights">
-              <img class="img-aspect" src="https://a-us.storyblok.com/f/1016570/450x293/1a2a05c279/dmi-blog-teaser.png" alt="Digital Market Intelligence: Turning Everyday Marketing Data Into Game-Changing Market Insights" width="450" height="293" />
+              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/450x293/1a2a05c279/dmi-blog-teaser.png")} alt="Digital Market Intelligence: Turning Everyday Marketing Data Into Game-Changing Market Insights" width="450" height="293" />
               <h4>Digital Market Intelligence: Turning Everyday Marketing Data Into Game-Changing Market Insights</h4>
               <p class="btnTertiary">Read the blog ></p>
           </a>
           <a class="card-img-text" href="/blog/seo-guide-crawling-indexing-robots-txt-robots-meta-canonicals">
-              <img class="img-aspect" src="https://a-us.storyblok.com/f/1016570/450x293/baed2fdab3/crawling-indexing-teaser.png" alt="Crawling & Indexing in SEO: How to Use Robots.txt, Meta Robots, and Canonical Tags Correctly" width="450" height="293" />
+              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/450x293/baed2fdab3/crawling-indexing-teaser.png")} alt="Crawling & Indexing in SEO: How to Use Robots.txt, Meta Robots, and Canonical Tags Correctly" width="450" height="293" />
               <h4>Crawling & Indexing in SEO: How to Use Robots.txt, Meta Robots, and Canonical Tags Correctly</h4>
               <p class="btnTertiary">Read the blog ></p>
           </a>
           <a class="card-img-text" href="/blog/defining-your-websites-seo-quality-assurance-suite-qa-for-seo">
-              <img class="img-aspect" src="https://a-us.storyblok.com/f/1016570/450x293/6ca6723d92/01-seo-qa-goals.jpg" alt="Turn Quality Assurance Into SEO Insurance: Defining Your SEO QA Process & Checklist" width="450" height="293" />
+              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/450x293/6ca6723d92/01-seo-qa-goals.jpg")} alt="Turn Quality Assurance Into SEO Insurance: Defining Your SEO QA Process & Checklist" width="450" height="293" />
               <h4>Turn Quality Assurance Into SEO Insurance: Defining Your SEO QA Process & Checklist</h4>
               <p class="btnTertiary">Read the blog ></p>
           </a>
           <a class="card-img-text" href="/blog/website-traffic-down-what-to-do">
-              <img class="img-aspect" src="https://a-us.storyblok.com/f/1016570/1200x780/23852cf68f/seo-trafffic-drop-investigation-min.png" alt="Organic Traffic Down? Don’t Panic! Here’s How to Find & Diagnose the Real Issue" width="450" height="293" />
+              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/1200x780/23852cf68f/seo-trafffic-drop-investigation-min.png")} alt="Organic Traffic Down? Don't Panic! Here's How to Find & Diagnose the Real Issue" width="450" height="293" />
               <p class="meta">
-              <h4>Organic Traffic Down? Don’t Panic! Here’s How to Find & Diagnose the Real Issue</h4>
+              <h4>Organic Traffic Down? Don't Panic! Here's How to Find & Diagnose the Real Issue</h4>
               <p class="btnTertiary">Read the blog ></p>
           </a>
           </div>
@@ -226,9 +227,9 @@ const storySEO = {
       <div>
         <p class="prehead">RESPONSIBLE AI</p>
           <h2>Some thoughts on using bots.</h2>
-          <p>Real value comes from unique and accurate insights, informed by human context. Generative AI repackages what it scrapes from the internet, so the output is never unique — and often, it’s not all that accurate.
+          <p>Real value comes from unique and accurate insights, informed by human context. Generative AI repackages what it scrapes from the internet, so the output is never unique — and often, it's not all that accurate.
 
-    <br/><br/>At Gray Dot Co, we use generative AI to expedite while we write, aggregate while we analyze, and catalyze while we strategize. It’s a vehicle that can help us get there faster, but it’s up to us to do the driving.</p>
+    <br/><br/>At Gray Dot Co, we use generative AI to expedite while we write, aggregate while we analyze, and catalyze while we strategize. It's a vehicle that can help us get there faster, but it's up to us to do the driving.</p>
           <a href="/ai-impact-seo" class="btnPrimary">See AI tips & ideas</a>
       </div>
       <div>
@@ -242,33 +243,33 @@ const storySEO = {
   <div class="ipu">
       <div class="col-flex-row y-scroll align-center">
             <div class="card-testimonial">
-              <img src="https://a-us.storyblok.com/f/1016570/120x120/9b1e90b1f2/naresh-venkat.jpeg" alt="Naresh Venkat, Co-Founder, Osmos" width="120" height="120" />
+              <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/120x120/9b1e90b1f2/naresh-venkat.jpeg")} alt="Naresh Venkat, Co-Founder, Osmos" width="120" height="120" />
               <p class="quote">
                 Gray Dot Co really knocked it out of the park for us at Osmos. Their approach to SEO and content marketing helped us cut through the noise. They didn't just deliver a cookie-cutter solution - they dug deep, crafted a roadmap that fit us like a glove, and created content that really spoke to our unique selling points. But what really sets them apart is how they've become true partners in our journey. They're not just another vendor - they're an extension of our team, fully invested in our success in this competitive space.              </p>
               <p>Naresh Venkat  ·  Co-Founder, Osmos</p>
             </div>
             <div class="card-testimonial">
-              <img src="https://a-us.storyblok.com/f/1016570/120x120/59cec8c56a/melanie-almeida.jpeg" alt="Mélanie Almeida, Growth Manager, Strapi" width="120" height="120" />
+              <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/120x120/59cec8c56a/melanie-almeida.jpeg")} alt="Mélanie Almeida, Growth Manager, Strapi" width="120" height="120" />
               <p class="quote">
                 I had the pleasure of hiring the Gray Dot Company twice. Both times, they demonstrated their strong knowledge of technical SEO and amazed my team and me. They don't sugarcoat results. They takes the time to explain, build reports and write best practices for us.<br />
                 The communication between my team and Sam was smooth since they both spoke the same language. I recommend hiring the Gray Dot Company for your next technical SEO projects.</p>
               <p>Mélanie Almeida  ·  Growth Manager, Strapi</p>
             </div>
             <div class="card-testimonial">
-              <img src="https://a-us.storyblok.com/f/1016570/120x120/cab2031148/alex-johnson.jpeg" alt="Alex Johnson, Director of Consumer Experience, Cherry Creek Mortgage" width="120" height="120" />
+              <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/120x120/cab2031148/alex-johnson.jpeg")} alt="Alex Johnson, Director of Consumer Experience, Cherry Creek Mortgage" width="120" height="120" />
               <p class="quote">
-                Gray Dot Company provides ongoing SEO strategy and execution regarding content and technical, on-page development. They are now spearheading a nationally focused keyword campaign. Website visibility has increased markedly since the new site launched thanks to The Gray Dot Company’s regular communication and holistic approach. Rather than solely focusing on immediate tasks, they also drive long-term planning and growth efforts. Customers can expect wide-ranging benefits.</p>
+                Gray Dot Company provides ongoing SEO strategy and execution regarding content and technical, on-page development. They are now spearheading a nationally focused keyword campaign. Website visibility has increased markedly since the new site launched thanks to The Gray Dot Company's regular communication and holistic approach. Rather than solely focusing on immediate tasks, they also drive long-term planning and growth efforts. Customers can expect wide-ranging benefits.</p>
               <p>Alex Johnson  ·  Director of Consumer Experience, Cherry Creek Mortgage</p>
             </div>
             <div class="card-testimonial">
-              <img src="https://a-us.storyblok.com/f/1016570/120x120/365fc08580/kristen-edgerton.jpeg" alt="Kristen Edgerton, Head of Merchandising, Artifact Uprising" width="120" height="120" />
+              <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/120x120/365fc08580/kristen-edgerton.jpeg")} alt="Kristen Edgerton, Head of Merchandising, Artifact Uprising" width="120" height="120" />
               <p class="quote">
                 We hired the Gray Dot Company to conduct an audit of our site and help us identify key optimization opportunities following a larger site migration initiative.             
                 Aside from the expertise they brought to the table, I was really wowed by the way in which they took that expertise and mapped it to the unique nuances of our site and business. Gray Dot took the time to understand the inherent opportunities and limitations that were distinct to our business, crafting their recommendations and approach accordingly.</p>
               <p>Kristen Edgerton  ·  Head of Merchandising, Artifact Uprising</p>
             </div>
             <div class="card-testimonial">
-              <img src="https://a-us.storyblok.com/f/1016570/200x200/cae25c74b2/julia-taylor-brown.jpg" alt="Julia Taylor-Brown, Head of Content, Culinary & Engagement" width="120" height="120" />
+              <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/200x200/cae25c74b2/julia-taylor-brown.jpg")} alt="Julia Taylor-Brown, Head of Content, Culinary & Engagement" width="120" height="120" />
               <p class="quote">
                 Tory and the GDC team are some of the smartest, most professional and thoughtful people I have ever worked with. They have the unique ability to marry incredible research skills and data analysis with a deep contextual understanding of what a company needs from SEO at the particular stage of their lifecycle. TGDC uncovered an exciting greenfield for us to shine in an undeveloped niche, giving us a clear and focused path to follow. TGDC is at the top of my referral list for any company building out or focusing their content program. I cannot recommend them highly enough!</p>
               <p>Julia Taylor-Brown  ·  Head of Content, Culinary & Engagement</p>
@@ -303,7 +304,7 @@ const storySEO = {
     <div class="ipu">
         <div>
             <h2 class="title">Connect the dots with us.</h2>
-            <p>We’ll help craft, teach, and carry out SEO roadmaps that check all the boxes.</p>
+            <p>We'll help craft, teach, and carry out SEO roadmaps that check all the boxes.</p>
             <a href="/contact" class="btnPrimary">TALK TO AN EXPERT</a>
         </div>
         <div>
@@ -321,7 +322,7 @@ const storySEO = {
     "name": "Gray Dot Co",
     "alternateName": "The Gray Dot Company",
     "url": "https://thegray.company",
-    "logo": "https://a-us.storyblok.com/f/1016570/581x126/f122951287/graydotco.png",
+    "logo": transformImageSrc("https://a-us.storyblok.com/f/1016570/581x126/f122951287/graydotco.png"),
     "telephone": "+1 (720) 593-1855",
     "contactPoint":{
       "url":"https://thegray.company/contact",

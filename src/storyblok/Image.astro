@@ -1,5 +1,6 @@
 ---
 import { storyblokEditable } from "@storyblok/astro";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const { blok } = Astro.props;
 ---
@@ -10,7 +11,7 @@ const { blok } = Astro.props;
       {
         blok.images?.map((image) => (
           <div>
-            <img src={`${image.filename}/m/`} alt={`${image.alt}`} />
+            <img src={transformImageSrc(`${image.filename}/m/`)} alt={`${image.alt}`} />
             <figcaption>{image.title}</figcaption>
           </div>
         ))

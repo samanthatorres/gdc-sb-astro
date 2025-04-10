@@ -3,6 +3,7 @@ import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRendere
 import { type RichTextType } from "storyblok-rich-text-astro-renderer";
 import { storyblokEditable } from '@storyblok/astro'
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+import { transformImageSrc } from "../utils/imageUtils";
 
 import { generateSlugFromContent } from "../js/addIdsToHeadings"
 
@@ -34,7 +35,7 @@ content = content ?? blok.words;
           {
             component: "img",
             props: {
-              src: attrs.src,
+              src: transformImageSrc(attrs.src),
               alt: attrs.alt || "",
             },
           },

@@ -3,6 +3,7 @@ import { useStoryblokApi } from "@storyblok/astro";
 import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../style/global.css";
+import { transformImageSrc } from "../utils/imageUtils";
 
 const sbApi = useStoryblokApi();
 const { data } = await sbApi.get("cdn/stories/opinionated-seo-opinions", {
@@ -37,9 +38,11 @@ const storySEO = {
           rel="noopener noreferrer"
         >
           <img
-            src="https://a-us.storyblok.com/f/1016570/150x150/86f496badb/apple-podcast.svg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/150x150/86f496badb/apple-podcast.svg")}
             alt="Opinionated SEO Opinions on Apple Podcasts"
             class="icon"
+            width="150"
+            height="150"
           />
         </a>
         <a
@@ -49,9 +52,11 @@ const storySEO = {
           rel="noopener noreferrer"
         >
           <img
-            src="https://a-us.storyblok.com/f/1016570/150x150/7a86ea48e5/spotify.svg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/150x150/7a86ea48e5/spotify.svg")}
             alt="Opinionated SEO Opinions on Spotify"
             class="icon"
+            width="150"
+            height="150"
           />
         </a>
         <a
@@ -61,9 +66,11 @@ const storySEO = {
           rel="noopener noreferrer"
         >
           <img
-            src="https://a-us.storyblok.com/f/1016570/150x150/811109d108/youtube.svg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/150x150/811109d108/youtube.svg")}
             alt="Opinionated SEO Opinions on YouTube"
             class="icon"
+            width="150"
+            height="150"
           />
         </a>
         <a
@@ -73,9 +80,11 @@ const storySEO = {
           rel="noopener noreferrer"
         >
           <img
-            src="https://a-us.storyblok.com/f/1016570/150x150/4ffb1b812d/amazon-music.svg"
+            src={transformImageSrc("https://a-us.storyblok.com/f/1016570/150x150/4ffb1b812d/amazon-music.svg")}
             alt="Opinionated SEO Opinions on Spotify"
             class="icon"
+            width="150"
+            height="150"
           />
         </a>
       </div>
@@ -104,10 +113,10 @@ const storySEO = {
       </div>
       <div>
         <img
-          src="https://a-us.storyblok.com/f/1016570/332x212/bd251098ed/nodege.png"
-          width="480"
-          height="280"
-          alt="decorative shapes"
+          src={transformImageSrc("https://a-us.storyblok.com/f/1016570/332x212/bd251098ed/nodege.png")}
+          width="332"
+          height="212"
+          alt="Nodege"
         />
       </div>
     </div>

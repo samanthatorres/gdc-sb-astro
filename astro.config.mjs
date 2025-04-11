@@ -54,7 +54,7 @@ export default defineConfig({
       {
       userAgent: '*',
       allow: '/',
-      disallow: ['/cdn-cgi/*', '/privacy/*']
+      disallow: ['/cdn-cgi/*', '/cdn-fpw/*' '/privacy/*']
     }
   ]
   })

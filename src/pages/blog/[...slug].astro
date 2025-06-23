@@ -26,6 +26,7 @@ const { slug } = Astro.params;
 
 const { data } = await storyblokApi.get(`cdn/stories/blog/${slug}`, {
   version: import.meta.env.DEV ? "draft" : "published",
+  resolve_links: "url",
 });
 
 const story = data.story;

@@ -67,7 +67,7 @@ const authors = data.stories;
       {/* Names row */}
       <div class="author-names">
         {authors.map((author, index) => (
-          <span>{author.content.Name.trim()}{authors.length > 1 && index < authors.length - 1 && (
+          <span>{author.content.Name?.trim() || 'Unknown Author'}{authors.length > 1 && index < authors.length - 1 && (
             <span class={index === authors.length - 2 ? "ampersand" : "comma"}>{index === authors.length - 2 ? "&" : ", "}</span>
           )}</span>
         ))}
@@ -80,8 +80,8 @@ const authors = data.stories;
             <>
               {author.content.Headshot?.filename && (
                 <img
-                  src={transformImageSrc(`${author.content.Headshot.filename}/m/40x40`)}
-                  alt={author.content.Name}
+                  src={author.content.Headshot.filename.startsWith('http') ? transformImageSrc(`${author.content.Headshot.filename}/m/40x40`) : author.content.Headshot.filename}
+                  alt={author.content.Name || 'Author'}
                   class="profile"
                 />
               )}

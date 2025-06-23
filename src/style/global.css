@@ -148,7 +148,7 @@ a:hover {
   color:var(--light-teal);
 }
 
-p a {
+p a, #article a {
   color: var(--teal);
   text-decoration: underline;
   text-decoration-color: var(--light-teal);

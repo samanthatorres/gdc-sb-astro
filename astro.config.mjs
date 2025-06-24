@@ -5,8 +5,6 @@ import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
 import vercelStatic from '@astrojs/vercel/static';
 
-import robotsTxt from "astro-robots-txt";
-
 const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
 const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
 const redirects = await getRedirects();
@@ -48,17 +46,7 @@ export default defineConfig({
       video: "storyblok/Video",
       wysiwyg: "storyblok/Wysiwyg",
     }
-  }), 
-  robotsTxt({
-    policy: [
-      {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/cdn-cgi/*', '/cdn-fpw/*', '/privacy/*']
-    }
-  ]
   })
-
 ],
   vite: {
     optimizeDeps: { exclude: ["fsevents"] },

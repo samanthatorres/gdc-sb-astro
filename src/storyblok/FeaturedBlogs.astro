@@ -4,13 +4,14 @@ import { transformImageSrc } from "../utils/imageUtils";
 
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
+const wrapClass = blok.blog_number || "wrap-three";
 const blogs = blok.blogs;
 ---
 
 <section {...storyblokEditable(blok)} class="ipu featured-blogs">
   <p class="prehead">{blok.prehead}</p>
   <TitleElement class="blok-title">{blok.headline}</TitleElement>
-  <div class="articles-grid">
+  <div class={`flex-wrap ${wrapClass}`}>
     {
       blogs?.map((blog) => {
         return (
@@ -23,6 +24,7 @@ const blogs = blok.blogs;
               height="293"
             />
             <h4>{blog.content.title}</h4>
+            <p>{blog.content.teaser}</p>
             <p class="btnTertiary">Read the blog ></p>
           </a>
         );

@@ -1,2 +1,7 @@
 User-agent: *
-Disallow: /
+Disallow: /cdn-cgi/*
+Disallow: /cdn-fpw/*
+Disallow: /privacy/*
+Allow: /
+
+Sitemap: https://thegray.company/sitemap-index.xml

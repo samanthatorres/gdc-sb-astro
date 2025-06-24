@@ -7,6 +7,8 @@ import { transformImageSrc } from "../utils/imageUtils";
 const sbApi = useStoryblokApi();
 const { data } = await sbApi.get("cdn/stories/home", {
   version: "draft",
+  resolve_links: "url",
+  resolve_relations: ['featured_blogs.blogs'],
 });
 
 const story = data.story;
@@ -187,40 +189,7 @@ const storySEO = {
     </div>
   </section>
 
-
-  <section class="inner-section">
-    <div class="ipu">
-          <div>
-            <p class="prehead">Our content</p>
-              <h2>Sharing all of our secrets.</h2>
-          </div>
-
-          <div class="flex-wrap wrap-four">
-            <a class="card-img-text" href="/blog/dmi-turning-everyday-marketing-data-into-game-changing-market-insights">
-              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/450x293/1a2a05c279/dmi-blog-teaser.png")} alt="Digital Market Intelligence: Turning Everyday Marketing Data Into Game-Changing Market Insights" width="450" height="293" />
-              <h4>Digital Market Intelligence: Turning Everyday Marketing Data Into Game-Changing Market Insights</h4>
-              <p class="btnTertiary">Read the blog ></p>
-          </a>
-          <a class="card-img-text" href="/blog/seo-guide-crawling-indexing-robots-txt-robots-meta-canonicals">
-              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/450x293/baed2fdab3/crawling-indexing-teaser.png")} alt="Crawling & Indexing in SEO: How to Use Robots.txt, Meta Robots, and Canonical Tags Correctly" width="450" height="293" />
-              <h4>Crawling & Indexing in SEO: How to Use Robots.txt, Meta Robots, and Canonical Tags Correctly</h4>
-              <p class="btnTertiary">Read the blog ></p>
-          </a>
-          <a class="card-img-text" href="/blog/defining-your-websites-seo-quality-assurance-suite-qa-for-seo">
-              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/450x293/6ca6723d92/01-seo-qa-goals.jpg")} alt="Turn Quality Assurance Into SEO Insurance: Defining Your SEO QA Process & Checklist" width="450" height="293" />
-              <h4>Turn Quality Assurance Into SEO Insurance: Defining Your SEO QA Process & Checklist</h4>
-              <p class="btnTertiary">Read the blog ></p>
-          </a>
-          <a class="card-img-text" href="/blog/website-traffic-down-what-to-do">
-              <img class="img-aspect" src={transformImageSrc("https://a-us.storyblok.com/f/1016570/1200x780/23852cf68f/seo-trafffic-drop-investigation-min.png")} alt="Organic Traffic Down? Don't Panic! Here's How to Find & Diagnose the Real Issue" width="450" height="293" />
-              <p class="meta">
-              <h4>Organic Traffic Down? Don't Panic! Here's How to Find & Diagnose the Real Issue</h4>
-              <p class="btnTertiary">Read the blog ></p>
-          </a>
-          </div>
-    </div>
-</section>
-
+  <StoryblokComponent blok={story.content} />
 
 <section class="bg-grey align-middle">
   <div class="ipu">

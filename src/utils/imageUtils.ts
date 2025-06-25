@@ -10,4 +10,18 @@ export function transformImageSrc(src: string, customDomain: string = 'assets.th
     console.warn(`Invalid URL provided to transformImageSrc: ${src}`);
     return src;
   }
+}
+
+export function getResponsiveImageSrc(src: string, baseSize: number = 80): { src: string; srcset?: string } {
+  if (!src.startsWith('http')) {
+    return { src };
+  }
+  
+  const baseUrl = transformImageSrc(`${src}/m/${baseSize}x${baseSize}`);
+  const highResUrl = transformImageSrc(`${src}/m/${baseSize * 2}x${baseSize * 2}`);
+  
+  return {
+    src: baseUrl,
+    srcset: `${baseUrl} 1x, ${highResUrl} 2x`
+  };
 } 

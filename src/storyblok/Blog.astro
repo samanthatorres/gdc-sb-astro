@@ -2,7 +2,7 @@
 import RichTextRenderer from "storyblok-rich-text-astro-renderer/RichTextRenderer.astro";
 import { storyblokEditable } from "@storyblok/astro";
 import { useStoryblokApi } from "@storyblok/astro";
-import { transformImageSrc } from "../utils/imageUtils";
+import { transformImageSrc, getResponsiveImageSrc } from "../utils/imageUtils";
 
 import Toc from "../components/Toc.astro";
 import Wysiwyg from "./Wysiwyg.astro";
@@ -80,7 +80,10 @@ const authors = data.stories;
             <>
               {author.content.Headshot?.filename && (
                 <img
-                  src={author.content.Headshot.filename.startsWith('http') ? transformImageSrc(`${author.content.Headshot.filename}/m/40x40`) : author.content.Headshot.filename}
+                  src={author.content.Headshot.filename.startsWith('http') ? transformImageSrc(`${author.content.Headshot.filename}/m/120x120 `) : author.content.Headshot.filename}
+                  srcset={author.content.Headshot.filename.startsWith('http') ? 
+                    `${transformImageSrc(`${author.content.Headshot.filename}/m/120x120`)} 1x, ${transformImageSrc(`${author.content.Headshot.filename}/m/240x240`)} 2x` : 
+                    author.content.Headshot.filename}
                   alt={author.content.Name || 'Author'}
                   class="profile"
                 />

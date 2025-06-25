@@ -30,6 +30,11 @@ const authors = data.stories;
   authors={authors}
 />
 
+{/* Custom Structured Data */}
+{blok.custom_structured_data && (
+  <script type="application/ld+json" set:html={blok.custom_structured_data}></script>
+)}
+
 <article {...storyblokEditable(blok)}>
   <section class={`hero-color ${category}`}>
     <div class="ipu">

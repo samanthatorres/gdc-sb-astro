@@ -11,4 +11,9 @@ const { blok } = Astro.props
       return <StoryblokComponent blok={blok} />
     })
   }
+
+  {/* Custom Structured Data */}
+{blok.custom_structured_data && (
+  <script type="application/ld+json" set:html={blok.custom_structured_data}></script>
+)}
 </div>

@@ -9,7 +9,7 @@ import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 
-const { title, description, ogImage, metaRobots } = Astro.props;
+const { title, description, ogImage, metaRobots, customStructuredData } = Astro.props;
 
 const storyblokApi = useStoryblokApi();
 
@@ -21,7 +21,13 @@ const { data } = await storyblokApi.get("cdn/stories/config", {
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} ogImage={ogImage} metaRobots={metaRobots} />
+    <BaseHead 
+      title={title} 
+      description={description} 
+      ogImage={ogImage} 
+      metaRobots={metaRobots} 
+      customStructuredData={customStructuredData}
+    />
     <script defer src="https://unpkg.com/@alpinejs/ui@3.13.5-beta.0/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/focus@3.13.5/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>

@@ -10,11 +10,13 @@ export async function getStaticPaths() {
     version: import.meta.env.DEV ? "draft" : "published",
   });
 
-  return data.map((story) => {
-    return {
-      params: { slug: story.full_slug },
-    };
-  });
+  return data
+    .filter((story) => story.content.component !== "testimonial" && story.content.component !== "author")
+    .map((story) => {
+      return {
+        params: { slug: story.full_slug },
+      };
+    });
 }
 
 const { slug } = Astro.params;

@@ -28,6 +28,7 @@ export default defineConfig({
       carousel: "storyblok/Carousel",
       childhero: "storyblok/ChildHero",
       config: "storyblok/Config",
+      embed: "storyblok/Embed",
       featured_blogs: "storyblok/FeaturedBlogs",
       fourup: "storyblok/FourUp",
       hero: "storyblok/Hero",

@@ -25,7 +25,16 @@ if (blok.link) {
 <section {...storyblokEditable(blok)} class={`align-middle ${ImagePlacement} bg-${bgcolor}`}>
   <div class="ipu left-right">
     <div class="align-center">
-      <img src={transformImageSrc(`${blok.image.filename}/m/`)} width="480" height="280" alt={`${blok.image.alt}`}/>
+      {blok.embed_code ? (
+        <div set:html={blok.embed_code}></div>
+      ) : (
+        <img 
+          src={blok.image?.filename ? transformImageSrc(`${blok.image.filename}/m/`) : "https://assets.thegray.company/f/1016570/373x212/5252821ef4/nur.png"} 
+          width="480" 
+          height="280" 
+          alt={blok.image?.alt || "Decorative shape"}
+        />
+      )}
     </div>
     <div>
       {blok.prehead && <p class="prehead">{blok.prehead}</p>}

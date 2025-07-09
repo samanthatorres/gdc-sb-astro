@@ -155,6 +155,30 @@ p a, #article a {
   text-decoration-thickness: 1px;
 }
 
+blockquote {
+  background: #f6f8f9;
+  padding: 20px;
+  text-align: center;
+  color: #30b9c1;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  position: relative;
+  margin-top: 30px;
+}
+
+blockquote:after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  width: 60px; 
+  height: 60px; 
+  background-image: url('/img/quotations.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .blok-title {
   font-size: var(--font-H2);
   font-family: 'DM Serif', serif;

@@ -752,7 +752,7 @@ ul.nav-links, ul.co-menu {
   width: 100%;
 }
 
-main section:last-child .ipu{
+main > section:last-child .ipu{
   padding-bottom: 9rem;
 }
 

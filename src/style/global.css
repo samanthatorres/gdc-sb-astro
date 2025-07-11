@@ -1267,7 +1267,7 @@ section .card-teal ul li {
 }
 
 .card-testimonial:after {
-  content: url('img/img_testimonial-quote.png');
+  content: url('https://assets.thegray.company/f/1016570/168x128/57d41563da/img_testimonial-quote.png');
   width:128px;
   height:168px;
   position: absolute;

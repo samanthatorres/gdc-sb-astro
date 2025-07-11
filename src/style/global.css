@@ -1255,7 +1255,7 @@ section .card-teal ul li {
   padding: 5rem 3rem 3rem;
   min-width: 40%;
   margin: 5rem auto 2rem;
-  max-width: 320px;
+  max-width: 800px;
 }
 
 .testimonials, .blocking {
@@ -1285,13 +1285,13 @@ section .card-teal ul li {
   border-radius: 75px;
 }
 
-p.quote {
+.quote p {
   color: var(--light-teal);
-  font-size: var(--font-H4);
+  font-size: var(--font-H5);
   line-height: 1.6;
 }
 
-.card-testimonial p:last-child {
+.card-testimonial > p:last-child {
   font-weight: 600;
   margin-top: 2rem;
 }

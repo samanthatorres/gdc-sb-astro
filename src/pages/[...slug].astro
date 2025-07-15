@@ -11,7 +11,20 @@ export async function getStaticPaths() {
   });
 
   return data
-    .filter((story) => story.content.component !== "testimonial" && story.content.component !== "author")
+    .filter((story) => {
+      // Always exclude testimonials
+      if (story.content.component === "testimonial") {
+        return false;
+      }
+      
+      // For authors, check the custom boolean field
+      if (story.content.component === "author") {
+        return story.content.profile_page === true;
+      }
+      
+      // Include all other story types
+      return true;
+    })
     .map((story) => {
       return {
         params: { slug: story.full_slug },

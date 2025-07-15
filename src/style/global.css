@@ -155,6 +155,30 @@ p a, #article a {
   text-decoration-thickness: 1px;
 }
 
+blockquote {
+  background: #f6f8f9;
+  padding: 20px;
+  text-align: center;
+  color: #30b9c1;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  position: relative;
+  margin-top: 30px;
+}
+
+blockquote:after {
+  content: "";
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  width: 60px; 
+  height: 60px; 
+  background-image: url('/img/quotations.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .blok-title {
   font-size: var(--font-H2);
   font-family: 'DM Serif', serif;
@@ -752,7 +776,7 @@ ul.nav-links, ul.co-menu {
   width: 100%;
 }
 
-main section:last-child .ipu{
+main > section:last-child .ipu{
   padding-bottom: 9rem;
 }
 
@@ -1036,6 +1060,7 @@ iframe {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  box-shadow: 0 0 0 0 !important;
 }
 
 .col-flex {
@@ -1230,7 +1255,7 @@ section .card-teal ul li {
   padding: 5rem 3rem 3rem;
   min-width: 40%;
   margin: 5rem auto 2rem;
-  max-width: 320px;
+  max-width: 800px;
 }
 
 .testimonials, .blocking {
@@ -1242,7 +1267,7 @@ section .card-teal ul li {
 }
 
 .card-testimonial:after {
-  content: url(img/img_testimonial-quote.png);
+  content: url('https://assets.thegray.company/f/1016570/168x128/57d41563da/img_testimonial-quote.png');
   width:128px;
   height:168px;
   position: absolute;
@@ -1260,13 +1285,13 @@ section .card-teal ul li {
   border-radius: 75px;
 }
 
-p.quote {
+.quote p {
   color: var(--light-teal);
-  font-size: var(--font-H4);
+  font-size: var(--font-H5);
   line-height: 1.6;
 }
 
-.card-testimonial p:last-child {
+.card-testimonial > p:last-child {
   font-weight: 600;
   margin-top: 2rem;
 }

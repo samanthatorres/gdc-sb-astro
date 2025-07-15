@@ -1,0 +1,18 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+
+const { blok } = Astro.props;
+---
+
+<section {...storyblokEditable(blok)}>
+  <div class="ipu">
+    <div class="col-flex-row y-scroll align-center">
+      {
+        blok.list?.map((blok) => {
+          return <StoryblokComponent blok={blok} />;
+        })
+      }
+    </div>
+  </div>
+</section>

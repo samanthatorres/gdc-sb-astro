@@ -38,6 +38,8 @@ export default defineConfig({
       listitem: "storyblok/Listitem",
       liststack: "storyblok/Liststack",
       page: "storyblok/Page",
+      quote: "storyblok/Quote",
+      quotes: "storyblok/Quotes",      
       redirects_config: "storyblok/Redirect",
       sidebyside: "storyblok/SideBySide",
       testimonial: "storyblok/Testimonial",

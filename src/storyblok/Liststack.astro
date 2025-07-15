@@ -11,13 +11,16 @@ const TitleElement = blok.heading_level || "p";
 <section {...storyblokEditable(blok)}>
   <div class="ipu">
     <div>
-      <img
-        class="icon"
-        src={transformImageSrc(`${blok.icon.filename}/m/60x0`)}
-        width="64"
-        height="64"
-        alt={`${blok.icon.alt}`}
-      />
+      {blok.icon?.filename && (
+        <img
+          class="icon"
+          src={transformImageSrc(`${blok.icon.filename}/m/60x0`)}
+          width="64"
+          height="64"
+          alt={`${blok.icon.alt}`}
+        />
+      )}
+      {blok.prehead && <p class="prehead">{blok.prehead}</p>}
       <TitleElement class="blok-title">{blok.heading}</TitleElement>
       {blok.description && <Wysiwyg blok={blok} content={blok.description} />}
     </div>

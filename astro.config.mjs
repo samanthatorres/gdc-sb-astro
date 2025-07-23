@@ -20,10 +20,8 @@ export default defineConfig({
     apiOptions: {
       region: "us",
     },
-    bridge: {
-      process.env.PUBLIC_ENV !== 'production',
-      resolveLinks: "url",
-    },
+    bridge: process.env.PUBLIC_ENV !== 'production',
+    resolveLinks: "url",
     components: {
       author: "storyblok/Author",
       blog: "storyblok/Blog",

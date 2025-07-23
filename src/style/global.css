@@ -184,6 +184,7 @@ blockquote:after {
   font-family: 'DM Serif', serif;
   font-weight: 600;
   color: var(--light-teal);
+  text-wrap: balance;
 }
 
 .menu-button-container {
@@ -907,26 +908,38 @@ main > section:last-child .ipu{
 
 .hero-pink {
   background-color: var(--pink);
+  background-image: url('/img/bg_pink.webp');
+  background-size: cover;
 }
 
 .hero-teal {
   background-color: var(--teal);
+  background-image: url('/img/bg_teal.webp');
+  background-size: cover;
 }
 
 .hero-purple {
   background-color: var(--purple);
+  background-image: url('/img/bg_purple.webp');
+  background-size: cover;
 }
 
 .hero-mustard {
   background-color: var(--mustard);
+  background-image: url('/img/bg_mustard.webp');
+  background-size: cover;
 }
 
 .hero-mint {
   background-color: var(--mint);
+  background-image: url('/img/bg_mint.webp');
+  background-size: cover;
 }
 
 .hero-turquoise {
   background-color: var(--light-teal);
+  background-image: url('/img/bg_turquoise.webp');
+  background-size: cover;
 }
 
 article section.hero-color h1.headline {
@@ -1289,6 +1302,7 @@ section .card-teal ul li {
   color: var(--light-teal);
   font-size: var(--font-H5);
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .card-testimonial > p:last-child {

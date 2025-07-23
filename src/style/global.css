@@ -184,6 +184,7 @@ blockquote:after {
   font-family: 'DM Serif', serif;
   font-weight: 600;
   color: var(--light-teal);
+  text-wrap: balance;
 }
 
 .menu-button-container {
@@ -1301,6 +1302,7 @@ section .card-teal ul li {
   color: var(--light-teal);
   font-size: var(--font-H5);
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .card-testimonial > p:last-child {

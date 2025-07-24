@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "VERCEL_ENV=development astro dev",
-    "build:production": "VERCEL_ENV=production astro build",
-    "build:preview": "VERCEL_ENV=preview astro build",
+    "dev": "BUILD_TYPE=development astro dev",
+    "build:production": "BUILD_TYPE=production astro build",
+    "build:preview": "BUILD_TYPE=preview astro build",
     "start": "astro dev",
     "preview": "astro preview",
     "astro": "astro"

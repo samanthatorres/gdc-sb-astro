@@ -4,13 +4,15 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
 import vercelStatic from '@astrojs/vercel/static';
-
 import vercel from "@astrojs/vercel";
+
+// Set BUILD_TYPE to 'preview' for SSR/bridge preview (Storyblok editor),
+// and 'production' for static production builds. Configure this in Vercel dashboard or .env.
 
 const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
 const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
 const redirects = await getRedirects();
-const vercelEnv = process.env.VERCEL_ENV;
+const buildType = process.env.BUILD_TYPE;
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +23,7 @@ export default defineConfig({
     apiOptions: {
       region: "us",
     },
-    bridge: vercelEnv !== 'production',
+    bridge: buildType !== 'production',
     resolveLinks: "url",
     components: {
       author: "storyblok/Author",
@@ -64,6 +66,6 @@ export default defineConfig({
     format: 'directory'
   },
   trailingSlash: 'never',
-  output: vercelEnv === 'preview' ? 'server' : 'static',
-  adapter: vercelEnv === 'preview' ? vercel() : undefined,
+  output: buildType === 'preview' ? 'server' : 'static',
+  adapter: buildType === 'preview' ? vercel() : undefined,
 });

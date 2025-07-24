@@ -10,6 +10,7 @@ import vercel from "@astrojs/vercel";
 const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
 const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
 const redirects = await getRedirects();
+const vercelEnv = process.env.VERCEL_ENV;
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +21,7 @@ export default defineConfig({
     apiOptions: {
       region: "us",
     },
-    bridge: process.env.PUBLIC_ENV !== 'production',
+    bridge: vercelEnv !== 'production',
     resolveLinks: "url",
     components: {
       author: "storyblok/Author",
@@ -63,6 +64,6 @@ export default defineConfig({
     format: 'directory'
   },
   trailingSlash: 'never',
-  output: process.env.PUBLIC_ENV === 'preview' ? 'server' : 'static',
-  adapter: process.env.PUBLIC_ENV === 'preview' ? vercel() : undefined,
+  output: vercelEnv === 'preview' ? 'server' : 'static',
+  adapter: vercelEnv === 'preview' ? vercel() : undefined,
 });

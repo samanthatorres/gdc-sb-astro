@@ -5,6 +5,8 @@ import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
 import vercelStatic from '@astrojs/vercel/static';
 
+import vercel from "@astrojs/vercel";
+
 const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
 const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
 const redirects = await getRedirects();
@@ -18,9 +20,8 @@ export default defineConfig({
     apiOptions: {
       region: "us",
     },
-    bridge: {
-      resolveLinks: "url",
-    },
+    bridge: process.env.PUBLIC_ENV !== 'production',
+    resolveLinks: "url",
     components: {
       author: "storyblok/Author",
       blog: "storyblok/Blog",
@@ -62,6 +63,6 @@ export default defineConfig({
     format: 'directory'
   },
   trailingSlash: 'never',
-  output: 'static',
-  adapter: vercelStatic()
+  output: process.env.PUBLIC_ENV === 'preview' ? 'server' : 'static',
+  adapter: process.env.PUBLIC_ENV === 'preview' ? vercel() : undefined,
 });

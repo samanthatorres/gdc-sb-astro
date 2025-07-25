@@ -8,8 +8,11 @@ import SocialShare from "../../components/SocialShare.astro"
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
 
-  const version = import.meta.env.DEV || import.meta.env.BUILD_TYPE === "preview" ? "draft" : "published";
-  const data = await storyblokApi.getAll("cdn/stories", { version });
+  const data = await storyblokApi.getAll("cdn/stories", {
+    content_type: "blog",
+    version: import.meta.env.DEV ? "draft" : "published",
+    resolve_links: 'story',
+  });
 
   return data.map((story) => {
     return {
@@ -21,9 +24,8 @@ export async function getStaticPaths() {
 const storyblokApi = useStoryblokApi();
 const { slug } = Astro.params;
 
-const version = import.meta.env.DEV || import.meta.env.BUILD_TYPE === "preview" ? "draft" : "published";
 const { data } = await storyblokApi.get(`cdn/stories/blog/${slug}`, {
-  version: version,
+  version: import.meta.env.DEV ? "draft" : "published",
   resolve_links: "url",
 });
 

@@ -6,9 +6,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
 
-  const data = await storyblokApi.getAll("cdn/stories", {
-    version: import.meta.env.DEV ? "draft" : "published",
-  });
+  const version =
+    import.meta.env.DEV || import.meta.env.BUILD_TYPE === "preview"
+      ? "draft"
+      : "published";
+
+  const data = await storyblokApi.getAll("cdn/stories", { version });
 
   return data
     .filter((story) => {
@@ -36,8 +39,13 @@ const { slug } = Astro.params;
 
 const storyblokApi = useStoryblokApi();
 
+const version =
+  import.meta.env.DEV || import.meta.env.BUILD_TYPE === "preview"
+    ? "draft"
+    : "published";
+
 const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-  version: import.meta.env.DEV ? "draft" : "published",
+  version: version,
   resolve_links: "url",
   resolve_relations: ['featured_blogs.blogs'],
 });

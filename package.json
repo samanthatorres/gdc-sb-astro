@@ -3,10 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "BUILD_TYPE=development astro dev",
-    "build:production": "BUILD_TYPE=production astro build",
-    "build:preview": "BUILD_TYPE=preview astro build",
+    "dev": "astro dev",
     "start": "astro dev",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

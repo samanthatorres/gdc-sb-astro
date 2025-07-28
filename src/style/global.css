@@ -471,7 +471,7 @@ textarea {
 }
 
 .btnPrimary, .btnSecondary {
-  color: var(--white);
+  color: var(--white) !important;
   background: var(--teal);
   padding: 16px 40px !important;
   border-radius: 5rem;

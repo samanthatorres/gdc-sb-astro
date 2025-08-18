@@ -3,7 +3,6 @@ import { loadEnv } from "vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
-import vercelStatic from '@astrojs/vercel/static';
 import vercel from "@astrojs/vercel";
 
 // Set BUILD_TYPE to 'preview' for SSR/bridge preview (Storyblok editor),
@@ -66,6 +65,8 @@ export default defineConfig({
     format: 'directory'
   },
   trailingSlash: 'never',
-  output: buildType === 'preview' ? 'server' : 'static',
-  adapter: buildType === 'preview' ? vercel() : undefined,
+  // output: buildType === 'preview' ? 'server' : 'static',
+  // adapter: buildType === 'preview' ? vercel() : undefined,
+  output: 'server',
+  adapter: vercel(),
 });

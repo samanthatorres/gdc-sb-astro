@@ -33,7 +33,10 @@ export async function getRedirects() {
       console.warn("[!] No destination found for redirect", redirect);
       targetUrl = "/";
     }
-    astroRedirects[redirect.source_url] = targetUrl;
+    astroRedirects[redirect.source_url] = {
+      status: 301,
+      destination: targetUrl,
+    };
   }
 
   console.log(`Found #${Object.keys(astroRedirects).length} redirects`);

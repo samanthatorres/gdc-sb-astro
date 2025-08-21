@@ -68,5 +68,9 @@ export default defineConfig({
   // output: buildType === 'preview' ? 'server' : 'static',
   // adapter: buildType === 'preview' ? vercel() : undefined,
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true, // Optional: enables Vercel's analytics tracking
+    },
+  }),
 });

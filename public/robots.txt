@@ -1,6 +1,6 @@
 User-agent: *
-Disallow: /cdn-cgi/*
 Disallow: /cdn-fpw/*
+Disallow: /cdn-cgi/*
 Disallow: /_vercel/insights/*
 Allow: /
 

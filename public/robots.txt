@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /cdn-cgi/*
 Disallow: /cdn-fpw/*
 Disallow: /privacy/*
+Disallow: /_vercel/insights/*
 Allow: /
 
 Sitemap: https://thegray.company/sitemap-index.xml

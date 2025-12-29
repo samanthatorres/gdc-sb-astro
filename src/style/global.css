@@ -593,6 +593,7 @@ header {
 .marquee p {
   text-align: center;
   margin: 0 20px;
+  color: var(--white) !important;
 }
 
 .marquee a {

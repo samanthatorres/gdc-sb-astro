@@ -471,7 +471,7 @@ textarea {
 }
 
 .btnPrimary, .btnSecondary {
-  color: var(--white) !important;
+  color: var(--white);
   background: var(--teal);
   padding: 16px 40px !important;
   border-radius: 5rem;
@@ -1733,7 +1733,7 @@ section#article.post-body img {
     }
 
     .toc ul li ul li:before {
-      left: 2.5rem;
+      left: 2rem;
     }
 
     .blog-container {

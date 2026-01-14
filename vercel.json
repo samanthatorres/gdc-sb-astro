@@ -2,8 +2,13 @@
     "trailingSlash": false,
     "redirects": [
         {
-            "source": "/josh",
-            "destination": "/outbound",
+            "source": "/services/website-roadmap-strategy",
+            "destination": "/services/seo-product-management",
+            "statusCode": 301
+        },
+        {
+            "source": "/7-practical-applications-for-digital-consumer-intelligence",
+            "destination": "/blog/7-practical-applications-for-digital-market-intelligence",
             "statusCode": 301
         }
     ]

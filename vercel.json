@@ -4,7 +4,7 @@
         {
             "source": "/josh",
             "destination": "/outbound",
-            "permanent": true
+            "statusCode": 301
         }
     ]
 }

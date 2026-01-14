@@ -3,8 +3,8 @@
     "redirects": [
         {
             "source": "/josh",
-            "destination": "/josh-test",
-            "permanent": false
+            "destination": "/outbound",
+            "permanent": true
         }
     ]
 }

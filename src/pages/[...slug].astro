@@ -44,6 +44,7 @@ const version =
     ? "draft"
     : "published";
 
+let story;
 let storySEO;
 
 try {
@@ -53,7 +54,7 @@ try {
     resolve_relations: ['featured_blogs.blogs'],
   });
   
-  const story = data.story;
+  story = data.story;
 
   if (
     !story.content.page_title ||

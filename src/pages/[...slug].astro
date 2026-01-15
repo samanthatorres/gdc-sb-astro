@@ -44,20 +44,36 @@ const version =
     ? "draft"
     : "published";
 
-const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-  version: version,
-  resolve_links: "url",
-  resolve_relations: ['featured_blogs.blogs'],
-});
+let story;
+let storySEO;
 
-const story = data.story;
-const storySEO = {
-  title: story.content.page_title,
-  description: story.content.meta_description,
-  ogImage: story.content.og_image?.filename,
-  metaRobots: story.content.noindex,
-  schema: story.content.schema
-};
+try {
+  const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+    version: version,
+    resolve_links: "url",
+    resolve_relations: ['featured_blogs.blogs'],
+  });
+  
+  story = data.story;
+
+  if (
+    !story.content.page_title ||
+    !story.content.meta_description
+  ) {
+    throw new Error(`Missing required SEO fields for ${slug}`);
+  }
+
+  storySEO = {
+    title: story.content.page_title,
+    description: story.content.meta_description,
+    ogImage: story.content.og_image?.filename,
+    metaRobots: story.content.noindex,
+    schema: story.content.schema
+  };
+} catch (error) {
+  return new Response(null, { status: 404 });
+}
+
 ---
 
 <BaseLayout

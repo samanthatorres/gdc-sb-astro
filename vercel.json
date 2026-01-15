@@ -2,11 +2,6 @@
     "trailingSlash": false,
     "redirects": [
         {
-            "source": "/management-disabled-by-josh",
-            "destination": "/team/",
-            "statusCode": 301
-        },
-        {
             "source": "/services/name%20this",
             "destination": "/services/",
             "statusCode": 301

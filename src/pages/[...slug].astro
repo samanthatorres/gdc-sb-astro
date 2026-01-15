@@ -44,6 +44,9 @@ const version =
     ? "draft"
     : "published";
 
+let story;
+let storySEO;
+
 try {
   const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
     version: version,
@@ -51,9 +54,16 @@ try {
     resolve_relations: ['featured_blogs.blogs'],
   });
   
-  const story = data.story;
+  story = data.story;
 
-  const storySEO = {
+  if (
+    !story.content.page_title ||
+    !story.content.meta_description
+  ) {
+    throw new Error(`Missing required SEO fields for ${slug}`);
+  }
+
+  storySEO = {
     title: story.content.page_title,
     description: story.content.meta_description,
     ogImage: story.content.og_image?.filename,

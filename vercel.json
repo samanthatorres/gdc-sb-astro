@@ -3,17 +3,17 @@
     "redirects": [
         {
             "source": "/management",
-            "destination": "/team/",
+            "destination": "/team",
             "statusCode": 301
         },
         {
             "source": "/services/name%20this",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/name-this",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
@@ -28,22 +28,22 @@
         },
         {
             "source": "/services/name",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/how-to-use-craigslist-to-generate-traffic",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/how-are-businesses-using-twitter",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/stories/the-well-performing-irrelevant-page",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
@@ -58,7 +58,7 @@
         },
         {
             "source": "/tips-and-tricks-to-landing-pages",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
@@ -73,12 +73,12 @@
         },
         {
             "source": "/digital-marketing-intelligence",
-            "destination": "/digital-market-intelligence/",
+            "destination": "/digital-market-intelligence",
             "statusCode": 301
         },
         {
             "source": "/services/data",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
@@ -133,12 +133,12 @@
         },
         {
             "source": "/blog/rss.xml",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/terms-conditions",
-            "destination": "/privacy/",
+            "destination": "/privacy",
             "statusCode": 301
         },
         {
@@ -198,7 +198,7 @@
         },
         {
             "source": "/privacy-policy",
-            "destination": "/privacy/",
+            "destination": "/privacy",
             "statusCode": 301
         },
         {
@@ -228,12 +228,12 @@
         },
         {
             "source": "/resume",
-            "destination": "/team/",
+            "destination": "/team",
             "statusCode": 301
         },
         {
             "source": "/about",
-            "destination": "/team/",
+            "destination": "/team",
             "statusCode": 301
         },
         {
@@ -328,22 +328,22 @@
         },
         {
             "source": "/tactics",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/software-development",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/software-services/development",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/software-services/training",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
@@ -383,82 +383,82 @@
         },
         {
             "source": "/software-services/consulting",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/software-services",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/software-consulting",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/software-development",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/software-trainings",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/i-made-this-up",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/canadian-search-engine-marketing",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/restoring-online-reputation",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/affiliate-marketing-right-for-my-business",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/budgets-on-rise-for-social-media",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/lead-generation-strategy",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/digital-marketing-strategy",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/reputation-management",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/software-development-1",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/services/facebook-twitter-youtube-marketing",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
             "source": "/training-services",
-            "destination": "/services/",
+            "destination": "/services",
             "statusCode": 301
         },
         {
@@ -478,7 +478,7 @@
         },
         {
             "source": "/how-to-dominate-google-seo-case-study",
-            "destination": "/resources/",
+            "destination": "/resources",
             "statusCode": 301
         },
         {
@@ -498,7 +498,7 @@
         },
         {
             "source": "/dmi",
-            "destination": "/digital-market-intelligence/",
+            "destination": "/digital-market-intelligence",
             "statusCode": 301
         },
         {
@@ -598,12 +598,12 @@
         },
         {
             "source": "/digital-consumer-intelligence",
-            "destination": "/digital-market-intelligence/",
+            "destination": "/digital-market-intelligence",
             "statusCode": 301
         },
         {
             "source": "/research",
-            "destination": "/digital-market-intelligence/",
+            "destination": "/digital-market-intelligence",
             "statusCode": 301
         },
         {
@@ -813,317 +813,317 @@
         },
         {
             "source": "/blog/internal-linking-tips",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/seo-changing-with-social-search",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/how-to-make-easy-money-with-google-adsense",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/multilevel-backlinks",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/5-simple-ways-to-improve-ctr",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/using-craigslist-to-get-first-page-google-ranking",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/thesis-theme-recommended-theme-for-wordpress-blogs",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/linkedin-best-practices",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/comments/feed",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/3-way-backlinks",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/5-social-media-strategies-to-expand-your-business",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/7-ways-to-a-viral-video",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/find-our-thoughts-elsewhere",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/category/advertising-income",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/advanced-video-optimization-tips",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/3",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/social-investor-jim-estill",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/16",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/automated-youtube-software/automated-youtube-software-2",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/automated-youtube-software",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/stories",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/stories/all-about-canonicals-common-mistakes",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/5-tips-to-social-media-optimization",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/the-quick-and-dirty-guide-to-remote-working-tips-tricks-tools-norms",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/seo-mistakes",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/seo-process-training-video",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/what-is-ibuzz-pro",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/5-reasons-to-ignore-3-way-link-requests",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/what-is-socialmarker-com",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/theplanet-com-review",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/building-an-internet-brand",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/affiliate-elite-review",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/does-link-building-and-guest-posting-mix",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/how-to-build-backlinks",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/3-keys-to-home-based-business-success",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/2010-social-media-facts",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/VOWNZ/using-craigslist-to-get-first-page-google-ranking",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/how-can-a-blog-help-your-business",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/smx-east-is-internet-marketing-industry-going-bust",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/make-money-via-local-google-search",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/UOfSZ/SYMUZ/does-link-building-and-guest-posting-mix",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/UiKNZ/does-link-building-and-guest-posting-mix",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/RmTcZ/SYMUZ/does-link-building-and-guest-posting-mix",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/reputation-repair-and-management",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/UnXcZ/budgets-on-rise-for-social-media",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/KcSgZ",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/feed",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/ZhfWZ",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/18",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/WUnYZ/multilevel-backlinks",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/2010-social-media-facts/feed",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/PZkoZ/budgets-on-rise-for-social-media",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/19",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/website-design-and-website-earnings/comment-page-1",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/celebrity-reputation-management",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/13",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/category/uncategorized",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/25",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/5",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/blog/page/10",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/2010-social-media-facts/comment-page-1",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/seo-changing-with-social-search/feed",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/2017/07",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
@@ -1268,17 +1268,17 @@
         },
         {
             "source": "/blog/stand-out-during-the-great-resignation-an-open-letter",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/Attend",
-            "destination": "/blog/",
+            "destination": "/blog",
             "statusCode": 301
         },
         {
             "source": "/resource/your-guide-to-content-marketing-success",
-            "destination": "/resources/",
+            "destination": "/resources",
             "statusCode": 301
         },
         {

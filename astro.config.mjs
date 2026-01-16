@@ -1,7 +1,7 @@
 import { storyblok } from "@storyblok/astro";
 import { loadEnv } from "vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
-import { getRedirects } from "./src/functions/getRedirects";
+// import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
 import vercel from "@astrojs/vercel";
 
@@ -10,13 +10,12 @@ import vercel from "@astrojs/vercel";
 
 const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
 const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
-const redirects = await getRedirects();
+// const redirects = await getRedirects();
 const buildType = process.env.BUILD_TYPE;
 
 // https://astro.build/config
 export default defineConfig({
   site: isDevelopment ? 'https://dev.thegray.company' : 'https://thegray.company',
-  redirects,
   integrations: [storyblok({
     accessToken: env.STORYBLOK_TOKEN,
     apiOptions: {

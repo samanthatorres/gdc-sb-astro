@@ -1,7 +1,6 @@
 import { storyblok } from "@storyblok/astro";
 import { loadEnv } from "vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
-// import { getRedirects } from "./src/functions/getRedirects";
 import { defineConfig } from 'astro/config';
 import vercel from "@astrojs/vercel";
 
@@ -10,7 +9,6 @@ import vercel from "@astrojs/vercel";
 
 const env = loadEnv("", process.cwd(), ["STORYBLOK", "PUBLIC"]);
 const isDevelopment = process.env.NODE_ENV === 'development' || process.argv.includes('dev');
-// const redirects = await getRedirects();
 const buildType = process.env.BUILD_TYPE;
 
 // https://astro.build/config
@@ -41,8 +39,7 @@ export default defineConfig({
       liststack: "storyblok/Liststack",
       page: "storyblok/Page",
       quote: "storyblok/Quote",
-      quotes: "storyblok/Quotes",      
-      redirects_config: "storyblok/Redirect",
+      quotes: "storyblok/Quotes",
       sidebyside: "storyblok/SideBySide",
       testimonial: "storyblok/Testimonial",
       testimonials: "storyblok/Testimonials",

@@ -18,6 +18,13 @@ const storySEO = {
   ogImage: story.content.og_image?.filename,
   metaRobots: story.content.noindex
 };
+
+
+const { data: logoData } = await sbApi.get("cdn/stories/logo-carousel", {
+  version: "draft",
+});
+
+const logoCarousel = logoData.story;
 ---
 
 <BaseLayout
@@ -128,6 +135,9 @@ const storySEO = {
           <p class="prehead">Our clients</p>
             <h2>Lasting partnerships over logos.</h2>
         </div>
+
+        <StoryblokComponent blok={logoCarousel.content} />
+
         <div class="flex-wrap logos">
           <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/e9ff9489f3/vox.png")} alt="Vox" title="Vox" width="224" height="114" />
           <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/3754183f1d/polygon.png")} alt="Polygon" title="Polygon" width="224" height="114" />

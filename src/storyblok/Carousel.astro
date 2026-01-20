@@ -5,6 +5,7 @@ import { transformImageSrc } from "../utils/imageUtils";
 const { blok } = Astro.props;
 const TitleElement = blok.heading_level || "p";
 const bgcolor = blok.bgcolor || "white";
+const alignClass = blok.titles_align_center ? "align-center" : "";
 
 let href = null;
 let target = null;
@@ -22,7 +23,7 @@ if (blok.link) {
 
 <section {...storyblokEditable(blok)} class={`bg-${bgcolor}`}>
   <div class="ipu">
-    <div class="align-center">
+    <div class={alignClass}>
       <p class="prehead">{blok.prehead}</p>
       <TitleElement class="blok-title">{blok.headline}</TitleElement>
       <div class="flex-wrap margin-l logo-carousel">

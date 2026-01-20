@@ -19,12 +19,9 @@ const storySEO = {
   metaRobots: story.content.noindex
 };
 
+const logoCarousel = story.content.body.find(blok => blok.component === 'carousel');
+const featuredBlogs = story.content.body.find(blok => blok.component === 'featured_blogs');
 
-const { data: logoData } = await sbApi.get("cdn/stories/page/logo-grid", {
-  version: "draft",
-});
-
-const logoCarousel = logoData.story;
 ---
 
 <BaseLayout
@@ -129,6 +126,9 @@ const logoCarousel = logoData.story;
   </section>
 
 
+  {logoCarousel && <StoryblokComponent blok={logoCarousel} />}
+
+
   <section class="bg-grey inner-section">
     <div class="ipu" style="padding-bottom: 4rem;">
         <div>
@@ -136,15 +136,7 @@ const logoCarousel = logoData.story;
             <h2>Lasting partnerships over logos.</h2>
         </div>
 
-        <StoryblokComponent blok={logoCarousel.content} />
 
-        <div class="flex-wrap logos">
-          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/e9ff9489f3/vox.png")} alt="Vox" title="Vox" width="224" height="114" />
-          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/3754183f1d/polygon.png")} alt="Polygon" title="Polygon" width="224" height="114" />
-          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/b59ec93364/berkshire-hathaway.png")} alt="Berkshire Hathaway Guard Insurance Companies" title="Berkshire Hathaway Guard Insurance Companies" width="224" height="114" />
-          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/dfefa763be/the-hunger-project.png")} alt="The Hunger Project" title="The Hunger Project" width="224" height="114" />
-          <img src={transformImageSrc("https://a-us.storyblok.com/f/1016570/500x255/153798f152/guittard.png")} alt="Guittard" title="Guittard" width="224" height="114" />
-        </div>
     </div>
   </section>
 
@@ -199,7 +191,8 @@ const logoCarousel = logoData.story;
     </div>
   </section>
 
-  <StoryblokComponent blok={story.content} />
+  {featuredBlogs && <StoryblokComponent blok={featuredBlogs} />}
+
 
 <section class="bg-grey align-middle">
   <div class="ipu">
